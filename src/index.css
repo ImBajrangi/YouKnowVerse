@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-navy: #071E46;
+    --color-secondary-navy: #102F60;
+    --color-navy-dark: #04122B;
+    --color-navy-surface: #0B2452;
+
+    --color-academic-gold: #D6A52B;
+    --color-gold-light: #FBF2D9;
+    --color-gold-dark: #B58618;
+
+    --color-bg-light: #F5F7FB;
+    --color-bg-card: #FFFFFF;
+    --color-text-main: #17243A;
+    --color-text-muted: #5A6A85;
+    --color-border-subtle: #E2E8F0;
+
+    --color-accent-red: #C83232;
+    --color-accent-green: #15803D;
+    --color-accent-amber: #B45309;
+    --color-accent-blue: #1D4ED8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Prevent awkward horizontal scroll */
+  #root {
+    overflow-x: clip;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Concentric Radius Helpers: R_inner = R_outer - padding */
+/* Outer: 24px (rounded-3xl), Padding: 16px (p-4) -> Inner: 8px (rounded-lg) */
+.concentric-card-outer {
+  border-radius: 24px;
+  padding: 16px;
+}
+.concentric-child-8 {
+  border-radius: 8px;
+}
+
+/* Outer: 20px (rounded-2xl), Padding: 12px (p-3) -> Inner: 8px (rounded-lg) */
+.concentric-pill-outer {
+  border-radius: 20px;
+  padding: 12px;
+}
+
+/* Strict enforcement: Zero generic hover translateY */
+.no-hover-translate,
+.card-hover,
+button,
+a {
+  transform: none !important;
+}
+
+/* Touch-optimized scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
