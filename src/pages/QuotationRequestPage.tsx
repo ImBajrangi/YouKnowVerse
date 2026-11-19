@@ -157,7 +157,8 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
 
                 <div>
                   <label className="block font-semibold text-[#0B2D3A] mb-1">Target Turnaround Urgency</label>
-                  <div className="grid grid-cols-3 gap-2">
+                  {/* Creatively Joined Urgency Segmented Track */}
+                  <div className="p-1 rounded-2xl bg-[#F7F5ED] border border-[#CCDDEA] grid grid-cols-3 gap-1">
                     {[
                       { id: 'standard', label: 'Standard', desc: '10-14 days' },
                       { id: 'fast', label: 'Priority (+20%)', desc: '5-7 days' },
@@ -167,14 +168,14 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                         type="button"
                         key={u.id}
                         onClick={() => setUrgency(u.id as any)}
-                        className={`p-3 rounded-2xl border text-center transition-all ${
+                        className={`p-2.5 rounded-xl text-center transition-all ${
                           urgency === u.id
-                            ? 'border-[#0082A6] bg-[#EBF5F8] text-[#0082A6] font-bold shadow-2xs'
-                            : 'border-slate-200 bg-[#F7F5ED]/50 text-slate-700 hover:bg-[#EBF5F8]'
+                            ? 'bg-[#0082A6] text-white font-bold shadow-xs'
+                            : 'text-slate-700 hover:text-[#0082A6] hover:bg-white/80'
                         }`}
                       >
                         <div className="text-xs font-semibold">{u.label}</div>
-                        <div className="text-[10px] text-slate-400 mt-0.5">{u.desc}</div>
+                        <div className={`text-[10px] mt-0.5 ${urgency === u.id ? 'text-white/80' : 'text-slate-400'}`}>{u.desc}</div>
                       </button>
                     ))}
                   </div>

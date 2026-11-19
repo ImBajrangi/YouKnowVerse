@@ -620,8 +620,8 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* Right 4 Cols: 3 More Service Modules */}
-          <div className="lg:col-span-4 space-y-3">
+          {/* Right 4 Cols: 3 More Service Modules Joined */}
+          <div className="lg:col-span-4 bg-white rounded-3xl border border-[#CCDDEA] shadow-subtle divide-y divide-[#CCDDEA] overflow-hidden">
             {[
               { title: 'Statistical Analysis (SPSS)', count: 'ANOVA, Regression, AMOS', img: '/images/topic-guidance.webp', slug: 'statistical-analysis-spss', id: 'srv-007' },
               { title: 'Publication Assistance', count: 'Verified Scopus & UGC-CARE', img: '/images/publication-assistance.webp', slug: 'publication-assistance', id: 'srv-005' },
@@ -630,7 +630,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div 
                 key={idx} 
                 onClick={() => onNavigate('service-detail', { slug: s.slug })}
-                className="bg-white rounded-2xl border border-[#CCDDEA] p-4 shadow-subtle flex items-center justify-between hover:border-[#0082A6] cursor-pointer transition-colors"
+                className="p-4 flex items-center justify-between hover:bg-[#EBF5F8]/50 cursor-pointer transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <img src={s.img} alt={s.title} className="w-12 h-12 rounded-xl object-cover" />
@@ -721,7 +721,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                   Select Required Academic Module
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <div className="p-1 rounded-2xl sm:rounded-full bg-[#F7F5ED] border border-[#CCDDEA] grid grid-cols-2 sm:grid-cols-4 gap-1">
                   {[
                     { id: 'thesis', label: 'PhD Thesis' },
                     { id: 'paper', label: 'Research Paper' },
@@ -731,10 +731,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <button
                       key={s.id}
                       onClick={() => setCalcService(s.id as any)}
-                      className={`py-2 px-3 rounded-xl text-xs font-bold transition-all border ${
+                      className={`py-2 px-3 rounded-xl sm:rounded-full text-xs font-bold transition-all text-center ${
                         calcService === s.id
-                          ? 'bg-[#0082A6] text-white border-[#0082A6] shadow-xs'
-                          : 'bg-[#F7F5ED] text-slate-700 border-slate-200/80 hover:bg-[#EBF5F8]'
+                          ? 'bg-[#0082A6] text-white shadow-xs'
+                          : 'text-[#0B2D3A]/80 hover:text-[#0082A6] hover:bg-white/80'
                       }`}
                     >
                       {s.label}
@@ -889,24 +889,26 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-3">
+          <div className="max-w-3xl mx-auto bg-white rounded-3xl border border-[#CCDDEA] shadow-subtle divide-y divide-[#CCDDEA] overflow-hidden">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
                 <div 
                   key={faq.id}
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className={`rounded-2xl transition-all cursor-pointer p-5 border ${
+                  className={`transition-colors cursor-pointer p-5 sm:p-6 select-none ${
                     isOpen 
-                      ? 'bg-[#EBF5F8]/70 border-[#86B9C7] shadow-xs' 
-                      : 'bg-white border-[#CCDDEA] hover:border-[#86B9C7]'
+                      ? 'bg-[#EBF5F8]/60' 
+                      : 'hover:bg-[#F7F5ED]/50'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-4">
                     <h4 className="font-bold text-sm sm:text-base text-[#0B2D3A]">
                       {faq.question}
                     </h4>
-                    <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 text-[#0082A6] shadow-2xs">
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors shadow-2xs ${
+                      isOpen ? 'bg-[#0082A6] text-white' : 'bg-[#EBF5F8] text-[#0082A6]'
+                    }`}>
                       {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                     </div>
                   </div>

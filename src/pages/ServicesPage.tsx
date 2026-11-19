@@ -140,16 +140,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
 
-                <div className="flex items-center gap-2">
+                {/* Creatively Joined Action Duo Pill */}
+                <div className="inline-flex items-center p-1 rounded-full bg-[#F7F5ED] border border-[#CCDDEA] shadow-2xs">
                   <button
                     onClick={onOpenBooking}
-                    className="px-4 py-2 rounded-full text-xs font-semibold bg-[#F7F5ED] hover:bg-[#EBF5F8] text-[#0B2D3A] border border-slate-200 transition-colors"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#0B2D3A] hover:text-[#0082A6] hover:bg-white transition-colors"
                   >
                     Consult
                   </button>
                   <button
                     onClick={() => onOpenInquiry(s.id)}
-                    className="px-4 py-2 rounded-full text-xs font-bold bg-[#0082A6] hover:bg-[#006F8E] text-white transition-colors shadow-xs"
+                    className="px-4 py-1.5 rounded-full text-xs font-bold bg-[#0082A6] hover:bg-[#006F8E] text-white shadow-xs transition-colors"
                   >
                     Request Quote
                   </button>
