@@ -60,7 +60,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
   return (
     <div className="space-y-16 pb-16 font-sans">
       {/* Hero */}
-      <section className="bg-[#071E46] text-white py-16 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-16 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Institutional Process</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -84,16 +84,16 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
             <Card key={step.num} padding="lg" className="bg-white border border-slate-200">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
                 <div className="md:col-span-2 text-center md:text-left">
-                  <span className="font-serif font-black text-4xl sm:text-5xl text-[#071E46]/20 block">
+                  <span className="font-serif font-black text-4xl sm:text-5xl text-[#0B2D3A]/20 block">
                     {step.num}
                   </span>
-                  <span className="text-[11px] font-bold text-[#D6A52B] uppercase tracking-wider block mt-1">
+                  <span className="text-[11px] font-bold text-[#0082A6] uppercase tracking-wider block mt-1">
                     Stage {step.num}
                   </span>
                 </div>
 
                 <div className="md:col-span-10 space-y-3">
-                  <h3 className="font-serif font-bold text-lg sm:text-xl text-[#071E46]">
+                  <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0B2D3A]">
                     {step.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -117,7 +117,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
 
       {/* CTA */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#071E46]">
+        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B2D3A]">
           Ready to Begin Your Research Project?
         </h3>
         <p className="text-xs sm:text-sm text-slate-600">

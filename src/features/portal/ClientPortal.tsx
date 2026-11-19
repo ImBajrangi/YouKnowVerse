@@ -140,10 +140,10 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
   };
 
   return (
-    <div className="bg-[#F5F7FB] min-h-screen py-8 px-4 sm:px-8 font-sans">
+    <div className="bg-[#F7F5ED] min-h-screen py-8 px-4 sm:px-8 font-sans">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Scholar Welcome Header */}
-        <div className="bg-[#071E46] text-white p-6 sm:p-8 rounded-3xl border border-[#102F60] shadow-premium flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="bg-[#0B2D3A] text-white p-6 sm:p-8 rounded-3xl border border-[#134455] shadow-premium flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Badge variant="gold" size="sm">Client Research Workspace</Badge>
@@ -153,7 +153,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
               Welcome back, {currentUser?.full_name || 'Vikas Kushwaha'}
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 flex items-center gap-2">
-              <Building className="w-3.5 h-3.5 text-[#D6A52B]" />
+              <Building className="w-3.5 h-3.5 text-[#0082A6]" />
               <span>{currentUser?.university || 'Aligarh Muslim University (AMU)'}</span>
               <span>•</span>
               <span>{currentUser?.academic_level || 'PhD Research Scholar'}</span>
@@ -186,22 +186,22 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <Card padding="sm" className="bg-white">
             <div className="text-xs text-slate-500 font-medium">Active Projects</div>
-            <div className="text-2xl font-serif font-bold text-[#071E46] mt-1">{projects.length}</div>
+            <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-1">{projects.length}</div>
             <div className="text-[11px] text-emerald-600 mt-0.5">1 currently in review</div>
           </Card>
           <Card padding="sm" className="bg-white">
             <div className="text-xs text-slate-500 font-medium">Documents Stored</div>
-            <div className="text-2xl font-serif font-bold text-[#071E46] mt-1">{projectDocs.length}</div>
+            <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-1">{projectDocs.length}</div>
             <div className="text-[11px] text-slate-500 mt-0.5">Encrypted private storage</div>
           </Card>
           <Card padding="sm" className="bg-white">
             <div className="text-xs text-slate-500 font-medium">Quotations</div>
-            <div className="text-2xl font-serif font-bold text-[#071E46] mt-1">{quotations.length}</div>
+            <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-1">{quotations.length}</div>
             <div className="text-[11px] text-emerald-600 mt-0.5">Approved & activated</div>
           </Card>
           <Card padding="sm" className="bg-white">
             <div className="text-xs text-slate-500 font-medium">Consultations</div>
-            <div className="text-2xl font-serif font-bold text-[#071E46] mt-1">{consultations.length}</div>
+            <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-1">{consultations.length}</div>
             <div className="text-[11px] text-blue-600 mt-0.5">Next on Nov 21</div>
           </Card>
         </div>
@@ -220,7 +220,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-colors shrink-0 ${
                 activeTab === tab.id
-                  ? 'bg-[#071E46] text-white shadow-sm'
+                  ? 'bg-[#0B2D3A] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
               }`}
             >
@@ -239,7 +239,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-bold text-[#071E46]">{currentProject.project_code}</span>
+                      <span className="font-mono text-xs font-bold text-[#0B2D3A]">{currentProject.project_code}</span>
                       <Badge variant={statusLabels[currentProject.status]?.variant || 'blue'}>
                         {statusLabels[currentProject.status]?.label || currentProject.status}
                       </Badge>
@@ -255,7 +255,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                         </select>
                       )}
                     </div>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#071E46] mt-1">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#0B2D3A] mt-1">
                       {currentProject.title}
                     </h3>
                   </div>
@@ -271,10 +271,10 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                 </p>
 
                 {/* Assigned Consultant */}
-                <div className="p-3 rounded-2xl bg-[#F5F7FB] border border-[#E2E8F0] flex items-center justify-between text-xs">
+                <div className="p-3 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] flex items-center justify-between text-xs">
                   <div>
                     <span className="text-slate-500 block text-[11px]">Assigned Academic Lead:</span>
-                    <span className="font-bold text-[#071E46]">{currentProject.assigned_consultant_name}</span>
+                    <span className="font-bold text-[#0B2D3A]">{currentProject.assigned_consultant_name}</span>
                   </div>
                   <Button
                     variant="outline"
@@ -289,7 +289,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                 {/* Milestone Progress List */}
                 <div className="space-y-3 pt-2">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-serif text-sm font-bold text-[#071E46]">
+                    <h4 className="font-serif text-sm font-bold text-[#0B2D3A]">
                       Project Deliverable Milestones
                     </h4>
                     <span className="text-[11px] text-slate-500">
@@ -338,7 +338,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
             {/* Right: Payment & Quotation Action Card */}
             <div className="space-y-6">
               <Card padding="md" className="bg-white space-y-4">
-                <h4 className="font-serif text-base font-bold text-[#071E46] border-b border-slate-100 pb-2">
+                <h4 className="font-serif text-base font-bold text-[#0B2D3A] border-b border-slate-100 pb-2">
                   Financial & Payment Status
                 </h4>
 
@@ -353,7 +353,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                   </div>
                   <div className="flex justify-between py-1">
                     <span className="text-slate-500">Balance Remaining:</span>
-                    <span className="font-bold text-[#071E46]">
+                    <span className="font-bold text-[#0B2D3A]">
                       ₹{(currentProject.total_amount - currentProject.paid_amount).toLocaleString()}
                     </span>
                   </div>
@@ -378,7 +378,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
 
               {/* Quick Actions Card */}
               <Card padding="md" className="bg-white space-y-3">
-                <h4 className="font-serif text-sm font-bold text-[#071E46]">
+                <h4 className="font-serif text-sm font-bold text-[#0B2D3A]">
                   Need Assistance or Clarification?
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -413,7 +413,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-serif text-xl font-bold text-[#071E46]">Secure Document Vault</h3>
+                <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Secure Document Vault</h3>
                 <p className="text-xs text-slate-500">Uploaded manuscripts, institutional guidelines, and final deliverables.</p>
               </div>
               <Button
@@ -430,7 +430,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
             <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-subtle">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#F8FAFC] border-b border-slate-200 text-slate-600 font-semibold">
+                  <thead className="bg-[#F7F5ED] border-b border-slate-200 text-slate-600 font-semibold">
                     <tr>
                       <th className="py-3 px-4">Document Title</th>
                       <th className="py-3 px-4">Category</th>
@@ -443,8 +443,8 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                   <tbody className="divide-y divide-slate-100">
                     {projectDocs.map(doc => (
                       <tr key={doc.id} className="hover:bg-slate-50/70 transition-colors">
-                        <td className="py-3 px-4 font-semibold text-[#071E46] flex items-center gap-2">
-                          <FileText className="w-4 h-4 text-[#D6A52B]" />
+                        <td className="py-3 px-4 font-semibold text-[#0B2D3A] flex items-center gap-2">
+                          <FileText className="w-4 h-4 text-[#0082A6]" />
                           <span>{doc.title}</span>
                           {doc.is_deliverable && (
                             <span className="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">
@@ -459,7 +459,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                         <td className="py-3 px-4 text-right">
                           <button
                             onClick={() => alert(`Downloading verified file: ${doc.file_name}`)}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#071E46] hover:text-[#D6A52B] transition-colors"
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#0B2D3A] hover:text-[#0082A6] transition-colors"
                           >
                             <Download className="w-3.5 h-3.5" />
                             <span>Download</span>
@@ -477,14 +477,14 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
         {/* Tab 3: Quotations & Invoices */}
         {activeTab === 'quotations' && (
           <div className="space-y-6">
-            <h3 className="font-serif text-xl font-bold text-[#071E46]">Quotations & Invoices</h3>
+            <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Quotations & Invoices</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {quotations.map(q => (
                 <Card key={q.id} padding="md" className="bg-white space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div>
-                      <div className="font-mono text-xs font-bold text-[#071E46]">{q.quote_number}</div>
-                      <h4 className="font-serif font-bold text-base text-[#071E46]">{q.service_title}</h4>
+                      <div className="font-mono text-xs font-bold text-[#0B2D3A]">{q.quote_number}</div>
+                      <h4 className="font-serif font-bold text-base text-[#0B2D3A]">{q.service_title}</h4>
                     </div>
                     <Badge variant={q.status === 'accepted' ? 'green' : 'amber'}>
                       {q.status.toUpperCase()}
@@ -500,8 +500,8 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                     ))}
                   </div>
 
-                  <div className="p-3 rounded-2xl bg-[#F5F7FB] border border-[#E2E8F0] space-y-1 text-xs">
-                    <div className="flex justify-between font-bold text-sm text-[#071E46]">
+                  <div className="p-3 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] space-y-1 text-xs">
+                    <div className="flex justify-between font-bold text-sm text-[#0B2D3A]">
                       <span>Total Agreed Amount:</span>
                       <span>₹{q.net_amount.toLocaleString()}</span>
                     </div>
@@ -530,9 +530,9 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
         {/* Tab 4: Messages */}
         {activeTab === 'messages' && currentProject && (
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-subtle flex flex-col h-[520px]">
-            <div className="p-4 border-b border-slate-200 bg-[#F8FAFC] flex items-center justify-between">
+            <div className="p-4 border-b border-slate-200 bg-[#F7F5ED] flex items-center justify-between">
               <div>
-                <h4 className="font-serif font-bold text-sm text-[#071E46]">
+                <h4 className="font-serif font-bold text-sm text-[#0B2D3A]">
                   Project Discussion: {currentProject.project_code}
                 </h4>
                 <p className="text-[11px] text-slate-500">
@@ -554,8 +554,8 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                     <div
                       className={`max-w-md p-3 rounded-2xl text-xs leading-relaxed ${
                         isMe
-                          ? 'bg-[#071E46] text-white rounded-br-xs'
-                          : 'bg-[#F5F7FB] border border-[#E2E8F0] text-slate-800 rounded-bl-xs'
+                          ? 'bg-[#0B2D3A] text-white rounded-br-xs'
+                          : 'bg-[#F7F5ED] border border-[#D6E6EB] text-slate-800 rounded-bl-xs'
                       }`}
                     >
                       {msg.message}
@@ -566,13 +566,13 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
             </div>
 
             {/* Input Form */}
-            <form onSubmit={handleSendMessage} className="p-3 border-t border-slate-200 flex gap-2 bg-[#F8FAFC]">
+            <form onSubmit={handleSendMessage} className="p-3 border-t border-slate-200 flex gap-2 bg-[#F7F5ED]">
               <input
                 type="text"
                 value={messageText}
                 onChange={e => setMessageText(e.target.value)}
                 placeholder="Type your message or query to your research consultant..."
-                className="flex-1 px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-white"
+                className="flex-1 px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-white"
               />
               <Button type="submit" variant="gold" size="sm" icon={<Send className="w-3.5 h-3.5" />}>
                 Send
@@ -585,7 +585,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
         {activeTab === 'consultations' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="font-serif text-xl font-bold text-[#071E46]">Upcoming Consultations</h3>
+              <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Upcoming Consultations</h3>
               <Button variant="gold" size="sm" onClick={onOpenBooking} className="text-xs">
                 Schedule New Session
               </Button>
@@ -596,7 +596,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
                 <Card key={c.id} padding="md" className="bg-white space-y-3">
                   <div className="flex justify-between items-start">
                     <div>
-                      <div className="font-bold text-sm text-[#071E46]">{c.consultation_type_label}</div>
+                      <div className="font-bold text-sm text-[#0B2D3A]">{c.consultation_type_label}</div>
                       <div className="text-xs text-slate-500 mt-0.5">{c.scheduled_date} at {c.scheduled_time}</div>
                     </div>
                     <Badge variant="blue">{c.status}</Badge>
@@ -620,7 +620,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
       >
         <form onSubmit={handleUploadDocument} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">Document Title *</label>
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">Document Title *</label>
             <input
               type="text"
               required
@@ -632,7 +632,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">Document Category *</label>
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">Document Category *</label>
             <select
               value={newDocCategory}
               onChange={e => setNewDocCategory(e.target.value as any)}
@@ -645,7 +645,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
             </select>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#F5F7FB] border border-dashed border-slate-300 text-center">
+          <div className="p-4 rounded-2xl bg-[#F7F5ED] border border-dashed border-slate-300 text-center">
             <input
               type="file"
               onChange={e => setSelectedFileName(e.target.files?.[0]?.name || '')}

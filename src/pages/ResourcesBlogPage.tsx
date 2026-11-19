@@ -33,7 +33,7 @@ export const ResourcesBlogPage: React.FC<ResourcesBlogPageProps> = ({ onOpenInqu
   return (
     <div className="space-y-12 pb-16 font-sans">
       {/* Header */}
-      <section className="bg-[#071E46] text-white py-14 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Research Resources & Editorial Guides</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -52,7 +52,7 @@ export const ResourcesBlogPage: React.FC<ResourcesBlogPageProps> = ({ onOpenInqu
           <div className="max-w-3xl mx-auto space-y-6">
             <button
               onClick={() => setActivePost(null)}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#071E46] hover:text-[#D6A52B] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0B2D3A] hover:text-[#0082A6] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to All Articles</span>
@@ -61,7 +61,7 @@ export const ResourcesBlogPage: React.FC<ResourcesBlogPageProps> = ({ onOpenInqu
             <Card padding="lg" className="bg-white border border-slate-200 space-y-6">
               <div className="space-y-3 border-b border-slate-100 pb-4">
                 <Badge variant="navy">{activePost.category}</Badge>
-                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#071E46] leading-tight">
+                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B2D3A] leading-tight">
                   {activePost.title}
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500">
@@ -116,7 +116,7 @@ export const ResourcesBlogPage: React.FC<ResourcesBlogPageProps> = ({ onOpenInqu
                     key={tag}
                     onClick={() => setSelectedTag(tag)}
                     className={`px-3 py-1.5 rounded-lg font-medium whitespace-nowrap transition-colors ${
-                      selectedTag === tag ? 'bg-[#071E46] text-white' : 'bg-slate-200/70 text-slate-700 hover:bg-slate-300'
+                      selectedTag === tag ? 'bg-[#0B2D3A] text-white' : 'bg-slate-200/70 text-slate-700 hover:bg-slate-300'
                     }`}
                   >
                     {tag === 'all' ? 'All Topics' : tag}
@@ -142,7 +142,7 @@ export const ResourcesBlogPage: React.FC<ResourcesBlogPageProps> = ({ onOpenInqu
                       </span>
                     </div>
 
-                    <h3 className="font-serif font-bold text-base text-[#071E46] leading-snug">
+                    <h3 className="font-serif font-bold text-base text-[#0B2D3A] leading-snug">
                       {post.title}
                     </h3>
 
@@ -155,7 +155,7 @@ export const ResourcesBlogPage: React.FC<ResourcesBlogPageProps> = ({ onOpenInqu
                     <span className="text-[11px] text-slate-400">{post.published_date}</span>
                     <button
                       onClick={() => setActivePost(post)}
-                      className="text-xs font-bold text-[#071E46] hover:text-[#D6A52B] transition-colors inline-flex items-center gap-1"
+                      className="text-xs font-bold text-[#0B2D3A] hover:text-[#0082A6] transition-colors inline-flex items-center gap-1"
                     >
                       <span>Read Guide</span>
                       <ArrowRight className="w-3 h-3" />

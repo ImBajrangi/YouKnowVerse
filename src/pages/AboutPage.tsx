@@ -24,7 +24,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   return (
     <div className="space-y-14 pb-16 font-sans">
       {/* Hero */}
-      <section className="bg-[#071E46] text-white py-14 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Institutional Identity</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -49,7 +49,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <Badge variant="navy">Mathura Heritage</Badge>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#071E46]">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B2D3A]">
               Bridging University Research With Global Publishing
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -58,14 +58,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
             <div className="grid grid-cols-2 gap-3 pt-2 text-xs">
               <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-subtle space-y-1">
-                <Building className="w-5 h-5 text-[#D6A52B]" />
-                <div className="font-bold text-[#071E46]">Civil Lines, Mathura</div>
+                <Building className="w-5 h-5 text-[#0082A6]" />
+                <div className="font-bold text-[#0B2D3A]">Civil Lines, Mathura</div>
                 <div className="text-[11px] text-slate-500">In-person consulting facility</div>
               </div>
 
               <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-subtle space-y-1">
                 <GraduationCap className="w-5 h-5 text-emerald-600" />
-                <div className="font-bold text-[#071E46]">15+ Subject Mentors</div>
+                <div className="font-bold text-[#0B2D3A]">15+ Subject Mentors</div>
                 <div className="text-[11px] text-slate-500">PhDs & senior editors</div>
               </div>
             </div>
@@ -82,8 +82,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
           {/* Graphical Commitments Card */}
           <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-subtle space-y-4">
-            <h3 className="font-serif font-bold text-base text-[#071E46] border-b border-slate-100 pb-3 flex items-center gap-2">
-              <Award className="w-5 h-5 text-[#D6A52B]" />
+            <h3 className="font-serif font-bold text-base text-[#0B2D3A] border-b border-slate-100 pb-3 flex items-center gap-2">
+              <Award className="w-5 h-5 text-[#0082A6]" />
               <span>Core Institutional Commitments</span>
             </h3>
 
@@ -120,41 +120,41 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
         <div className="text-center space-y-1 max-w-xl mx-auto">
           <Badge variant="navy">Academic Advisory Panel</Badge>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#071E46]">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B2D3A]">
             Experienced Research Consultants
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           <Card padding="md" className="bg-white space-y-2 border border-slate-200">
-            <div className="w-10 h-10 rounded-2xl bg-[#071E46] text-[#D6A52B] font-serif font-bold text-base flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-[#0B2D3A] text-[#0082A6] font-serif font-bold text-base flex items-center justify-center">
               VU
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-[#071E46]">Dr. Vivek Upadhyay</h4>
-              <p className="text-[11px] text-[#D6A52B] font-semibold">Director & Chief Academic Advisor</p>
+              <h4 className="font-serif font-bold text-sm text-[#0B2D3A]">Dr. Vivek Upadhyay</h4>
+              <p className="text-[11px] text-[#0082A6] font-semibold">Director & Chief Academic Advisor</p>
               <p className="text-[11px] text-slate-500 mt-1">Ph.D. in Management & Economics. 15+ years guiding doctoral candidates in institutional research.</p>
             </div>
           </Card>
 
           <Card padding="md" className="bg-white space-y-2 border border-slate-200">
-            <div className="w-10 h-10 rounded-2xl bg-[#071E46] text-[#D6A52B] font-serif font-bold text-base flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-[#0B2D3A] text-[#0082A6] font-serif font-bold text-base flex items-center justify-center">
               AM
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-[#071E46]">Dr. Ananya Mishra</h4>
-              <p className="text-[11px] text-[#D6A52B] font-semibold">Lead Research Methodologist</p>
+              <h4 className="font-serif font-bold text-sm text-[#0B2D3A]">Dr. Ananya Mishra</h4>
+              <p className="text-[11px] text-[#0082A6] font-semibold">Lead Research Methodologist</p>
               <p className="text-[11px] text-slate-500 mt-1">Specialist in quantitative research, sampling models, SEM-PLS, and SPSS/R statistical analysis.</p>
             </div>
           </Card>
 
           <Card padding="md" className="bg-white space-y-2 border border-slate-200">
-            <div className="w-10 h-10 rounded-2xl bg-[#071E46] text-[#D6A52B] font-serif font-bold text-base flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-[#0B2D3A] text-[#0082A6] font-serif font-bold text-base flex items-center justify-center">
               SD
             </div>
             <div>
-              <h4 className="font-serif font-bold text-sm text-[#071E46]">Prof. S. N. Dwivedi</h4>
-              <p className="text-[11px] text-[#D6A52B] font-semibold">Senior Academic Language Editor</p>
+              <h4 className="font-serif font-bold text-sm text-[#0B2D3A]">Prof. S. N. Dwivedi</h4>
+              <p className="text-[11px] text-[#0082A6] font-semibold">Senior Academic Language Editor</p>
               <p className="text-[11px] text-slate-500 mt-1">Peer-reviewer and department chair. Expert in academic tone, chapter cohesion, and APA referencing.</p>
             </div>
           </Card>
@@ -163,7 +163,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
       {/* CTA Section */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-4">
-        <h3 className="font-serif text-2xl font-bold text-[#071E46]">
+        <h3 className="font-serif text-2xl font-bold text-[#0B2D3A]">
           Ready to Discuss Your Academic Milestones?
         </h3>
         <p className="text-xs text-slate-600">

@@ -4,35 +4,38 @@
 
 @layer base {
   :root {
-    --color-primary-navy: #071E46;
-    --color-secondary-navy: #102F60;
-    --color-navy-dark: #04122B;
-    --color-navy-surface: #0B2452;
+    /* Designer Palette: AWSMCOLOR & Ocean/Cloudy */
+    --color-primary-teal: #0082A6;       /* Primary Vibrant Deep Teal */
+    --color-deep-teal: #0B2D3A;          /* Headings, Hero Backdrops, Highest Contrast */
+    --color-abyssal-teal: #061D26;       /* Deepest Charcoal Teal Base */
+    --color-ocean-blue: #2772A0;         /* Ocean Blue Harmonic Secondary */
+    
+    --color-bg-linen: #F7F5ED;           /* Warm Linen Alabaster Canvas */
+    --color-surface-ice: #C4DEE3;        /* Soft Powder Ice Blue */
+    --color-accent-cyan: #86B9C7;        /* Muted Steel Cyan */
+    --color-cloudy-sky: #CCDDEA;         /* Cloudy Sky Soft Tint */
 
-    --color-academic-gold: #D6A52B;
-    --color-gold-light: #FBF2D9;
-    --color-gold-dark: #B58618;
+    --color-bg-card: #FFFFFF;            /* Pristine White Floating Cards */
+    --color-text-main: #0B2D3A;          /* Deep Peacock Navy Primary Text (AAA Contrast) */
+    --color-text-muted: #3D6170;         /* Muted Slate Cyan Subtext */
+    --color-border-subtle: #D6E6EB;      /* Subtle Ice Border */
 
-    --color-bg-light: #F5F7FB;
-    --color-bg-card: #FFFFFF;
-    --color-text-main: #17243A;
-    --color-text-muted: #5A6A85;
-    --color-border-subtle: #E2E8F0;
-
-    --color-accent-red: #C83232;
-    --color-accent-green: #15803D;
+    /* Status Accents */
+    --color-accent-red: #BE123C;
+    --color-accent-green: #0F766E;
     --color-accent-amber: #B45309;
-    --color-accent-blue: #1D4ED8;
+    --color-accent-blue: #0284C7;
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    background-color: #F7F5ED;
   }
 
   body {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-main);
+    background-color: #F7F5ED;
+    color: #0B2D3A;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -42,6 +45,12 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #F7F5ED;
+  }
+
+  ::selection {
+    background-color: #C4DEE3;
+    color: #0B2D3A;
   }
 }
 
@@ -69,18 +78,18 @@ a {
   transform: none !important;
 }
 
-/* Touch-optimized scrollbar */
+/* Touch-optimized scrollbar with Palette Colors */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #F7F5ED;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #86B9C7;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #0082A6;
 }

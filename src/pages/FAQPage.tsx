@@ -42,7 +42,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onOpenInquiry, onOpenBooking }
   return (
     <div className="space-y-12 pb-16 font-sans">
       {/* Header */}
-      <section className="bg-[#071E46] text-white py-14 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Knowledgebase & Transparency</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -65,7 +65,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onOpenInquiry, onOpenBooking }
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
               placeholder="Search by keyword (e.g. publication guarantee, pricing, turnaround, NDA)..."
-              className="w-full pl-10 pr-4 py-3 rounded-2xl border border-slate-300 text-xs sm:text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-[#071E46]"
+              className="w-full pl-10 pr-4 py-3 rounded-2xl border border-slate-300 text-xs sm:text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-[#0B2D3A]"
             />
           </div>
 
@@ -76,7 +76,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onOpenInquiry, onOpenBooking }
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-3.5 py-2 rounded-xl font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === cat.id
-                    ? 'bg-[#071E46] text-white shadow-xs'
+                    ? 'bg-[#0B2D3A] text-white shadow-xs'
                     : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
                 }`}
               >
@@ -99,12 +99,12 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onOpenInquiry, onOpenBooking }
                   onClick={() => toggleOpen(item.id)}
                   className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 select-none"
                 >
-                  <span className="font-serif font-bold text-sm sm:text-base text-[#071E46] leading-snug">
+                  <span className="font-serif font-bold text-sm sm:text-base text-[#0B2D3A] leading-snug">
                     {item.question}
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 text-slate-400 shrink-0 transition-transform ${
-                      isOpen ? 'rotate-180 text-[#D6A52B]' : ''
+                      isOpen ? 'rotate-180 text-[#0082A6]' : ''
                     }`}
                   />
                 </button>
@@ -120,7 +120,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onOpenInquiry, onOpenBooking }
         </div>
 
         {/* Still have questions */}
-        <Card padding="lg" className="bg-[#071E46] text-white text-center space-y-4 rounded-3xl">
+        <Card padding="lg" className="bg-[#0B2D3A] text-white text-center space-y-4 rounded-3xl">
           <h3 className="font-serif font-bold text-xl text-white">Have a Specific Project Question?</h3>
           <p className="text-xs text-slate-300 max-w-lg mx-auto">
             Our academic coordinators in Mathura are ready to clarify any institutional doubts regarding DRC requirements or custom scopes.

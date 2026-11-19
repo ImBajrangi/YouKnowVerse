@@ -7,21 +7,21 @@ export interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="bg-[#071E46] text-slate-300 font-sans border-t border-[#102F60] mt-auto select-none">
+    <footer className="bg-[#061D26] text-slate-300 font-sans border-t border-[#134455] mt-auto select-none">
       {/* Upper Footer: Branding & Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-12 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#102F60] to-[#04122B] border border-[#D6A52B]/40 flex items-center justify-center shadow-inner">
-                <GraduationCap className="w-6 h-6 text-[#D6A52B]" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0082A6] to-[#061D26] border border-[#86B9C7]/40 flex items-center justify-center shadow-inner">
+                <GraduationCap className="w-6 h-6 text-[#C4DEE3]" />
               </div>
               <div>
                 <span className="font-serif text-xl font-bold tracking-tight text-white">
-                  AcademicPro <span className="text-[#D6A52B] text-sm uppercase">India</span>
+                  AcademicPro <span className="text-[#86B9C7] text-sm uppercase">India</span>
                 </span>
-                <p className="text-xs text-slate-400">Research Support • Academic Excellence • Your Success</p>
+                <p className="text-xs text-[#C4DEE3]/80">Research Support • Academic Excellence • Your Success</p>
               </div>
             </div>
 
@@ -31,11 +31,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
             <div className="space-y-2 text-xs text-slate-300 pt-2">
               <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-[#D6A52B] shrink-0" />
+                <MapPin className="w-4 h-4 text-[#86B9C7] shrink-0" />
                 <span>Civil Lines, Mathura, Uttar Pradesh 281001, India</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#D6A52B] shrink-0" />
+                <Phone className="w-4 h-4 text-[#86B9C7] shrink-0" />
                 <a href="tel:+919760498896" className="hover:text-white transition-colors">
                   +91 9760498896
                 </a>
@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#D6A52B] shrink-0" />
+                <Mail className="w-4 h-4 text-[#86B9C7] shrink-0" />
                 <a href="mailto:support@academicproindia.com" className="hover:text-white transition-colors">
                   support@academicproindia.com
                 </a>
@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 2: Core Services */}
           <div className="space-y-3">
-            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#D6A52B]">
+            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#86B9C7]">
               Services
             </h4>
             <ul className="space-y-2 text-xs">
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 3: Navigation */}
           <div className="space-y-3">
-            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#D6A52B]">
+            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#86B9C7]">
               Quick Links
             </h4>
             <ul className="space-y-2 text-xs">
@@ -116,19 +116,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li><button onClick={() => onNavigate('resources')} className="hover:text-white transition-colors">Research Blog & Guides</button></li>
               <li><button onClick={() => onNavigate('faq')} className="hover:text-white transition-colors">Frequently Asked Questions</button></li>
               <li><button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors">Contact Mathura Office</button></li>
-              <li><button onClick={() => onNavigate('quote-request')} className="hover:text-white transition-colors text-[#D6A52B]">Request a Free Quote</button></li>
+              <li><button onClick={() => onNavigate('quote-request')} className="hover:text-white transition-colors text-[#86B9C7]">Request a Free Quote</button></li>
             </ul>
           </div>
 
           {/* Column 4: Compliance & Policies */}
           <div className="space-y-3">
-            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#D6A52B]">
+            <h4 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#86B9C7]">
               Ethics & Legal
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <button onClick={() => onNavigate('policies', { tab: 'integrity' })} className="hover:text-white transition-colors text-left flex items-center gap-1.5 text-amber-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#D6A52B]" />
+                <button onClick={() => onNavigate('policies', { tab: 'integrity' })} className="hover:text-white transition-colors text-left flex items-center gap-1.5 text-[#C4DEE3]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#86B9C7]" />
                   <span>Academic Integrity Policy</span>
                 </button>
               </li>
@@ -140,8 +140,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Ethical Statement Banner */}
-        <div className="mt-10 p-4 rounded-2xl bg-[#04122B] border border-white/10 text-xs text-slate-300 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <div className="p-2 bg-[#071E46] text-[#D6A52B] rounded-xl shrink-0">
+        <div className="mt-10 p-4 rounded-2xl bg-[#0B2D3A] border border-[#134455] text-xs text-slate-300 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="p-2 bg-[#061D26] text-[#86B9C7] rounded-xl shrink-0">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div className="flex-1 text-[11px] sm:text-xs leading-relaxed text-slate-300">

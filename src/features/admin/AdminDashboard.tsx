@@ -94,10 +94,10 @@ export const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#F5F7FB] min-h-screen py-8 px-4 sm:px-8 font-sans">
+    <div className="bg-[#F7F5ED] min-h-screen py-8 px-4 sm:px-8 font-sans">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
-        <div className="bg-[#071E46] text-white p-6 sm:p-8 rounded-3xl border border-[#102F60] shadow-premium flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-[#0B2D3A] text-white p-6 sm:p-8 rounded-3xl border border-[#134455] shadow-premium flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
               <Badge variant="gold" size="sm">Executive Administration Panel</Badge>
@@ -139,7 +139,7 @@ export const AdminDashboard: React.FC = () => {
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-colors shrink-0 ${
                 activeTab === tab.id
-                  ? 'bg-[#071E46] text-white shadow-sm'
+                  ? 'bg-[#0B2D3A] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
               }`}
             >
@@ -157,9 +157,9 @@ export const AdminDashboard: React.FC = () => {
               <Card padding="md" className="bg-white">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500 font-medium">Total Inquiries</span>
-                  <Users className="w-4 h-4 text-[#D6A52B]" />
+                  <Users className="w-4 h-4 text-[#0082A6]" />
                 </div>
-                <div className="text-2xl font-serif font-bold text-[#071E46] mt-2">{inquiries.length}</div>
+                <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-2">{inquiries.length}</div>
                 <div className="text-[11px] text-emerald-600 flex items-center gap-1 mt-1">
                   <TrendingUp className="w-3 h-3" />
                   <span>+{newLeadsCount} awaiting review</span>
@@ -171,7 +171,7 @@ export const AdminDashboard: React.FC = () => {
                   <span className="text-xs text-slate-500 font-medium">Active Research Projects</span>
                   <FolderKanban className="w-4 h-4 text-blue-600" />
                 </div>
-                <div className="text-2xl font-serif font-bold text-[#071E46] mt-2">{activeProjectsCount}</div>
+                <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-2">{activeProjectsCount}</div>
                 <div className="text-[11px] text-slate-500 mt-1">Under consultant review</div>
               </Card>
 
@@ -189,7 +189,7 @@ export const AdminDashboard: React.FC = () => {
                   <span className="text-xs text-slate-500 font-medium">Lead Conversion Rate</span>
                   <TrendingUp className="w-4 h-4 text-indigo-600" />
                 </div>
-                <div className="text-2xl font-serif font-bold text-[#071E46] mt-2">{conversionRate}%</div>
+                <div className="text-2xl font-serif font-bold text-[#0B2D3A] mt-2">{conversionRate}%</div>
                 <div className="text-[11px] text-emerald-600 mt-1">Above academic benchmark</div>
               </Card>
             </div>
@@ -199,10 +199,10 @@ export const AdminDashboard: React.FC = () => {
               {/* Recent Inbound Leads */}
               <Card padding="md" className="bg-white space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-serif font-bold text-base text-[#071E46]">
+                  <h3 className="font-serif font-bold text-base text-[#0B2D3A]">
                     Recent Inbound Leads
                   </h3>
-                  <button onClick={() => setActiveTab('leads')} className="text-xs font-semibold text-[#D6A52B] hover:underline">
+                  <button onClick={() => setActiveTab('leads')} className="text-xs font-semibold text-[#0082A6] hover:underline">
                     View All →
                   </button>
                 </div>
@@ -211,7 +211,7 @@ export const AdminDashboard: React.FC = () => {
                   {inquiries.slice(0, 4).map(inq => (
                     <div key={inq.id} className="p-3 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
                       <div>
-                        <div className="font-bold text-[#071E46]">{inq.full_name} ({inq.academic_level})</div>
+                        <div className="font-bold text-[#0B2D3A]">{inq.full_name} ({inq.academic_level})</div>
                         <div className="text-slate-500 text-[11px]">{inq.university} • {inq.service_title}</div>
                       </div>
                       <Badge variant={inq.status === 'new' ? 'amber' : 'green'}>{inq.status}</Badge>
@@ -223,10 +223,10 @@ export const AdminDashboard: React.FC = () => {
               {/* Active Projects Status */}
               <Card padding="md" className="bg-white space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-serif font-bold text-base text-[#071E46]">
+                  <h3 className="font-serif font-bold text-base text-[#0B2D3A]">
                     Active Project Progress
                   </h3>
-                  <button onClick={() => setActiveTab('projects')} className="text-xs font-semibold text-[#D6A52B] hover:underline">
+                  <button onClick={() => setActiveTab('projects')} className="text-xs font-semibold text-[#0082A6] hover:underline">
                     Manage →
                   </button>
                 </div>
@@ -235,7 +235,7 @@ export const AdminDashboard: React.FC = () => {
                   {projects.map(p => (
                     <div key={p.id} className="p-3 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
                       <div>
-                        <div className="font-bold text-[#071E46]">{p.project_code}: {p.client_name}</div>
+                        <div className="font-bold text-[#0B2D3A]">{p.project_code}: {p.client_name}</div>
                         <div className="text-slate-500 text-[11px]">{p.current_stage_label}</div>
                       </div>
                       <span className="font-mono font-semibold text-emerald-600">₹{p.paid_amount} / ₹{p.total_amount}</span>
@@ -271,7 +271,7 @@ export const AdminDashboard: React.FC = () => {
                     key={st}
                     onClick={() => setLeadFilter(st)}
                     className={`px-3 py-1.5 rounded-lg capitalize font-medium ${
-                      leadFilter === st ? 'bg-[#071E46] text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                      leadFilter === st ? 'bg-[#0B2D3A] text-white' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
                     }`}
                   >
                     {st}
@@ -284,7 +284,7 @@ export const AdminDashboard: React.FC = () => {
             <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-subtle">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#F8FAFC] border-b border-slate-200 text-slate-600 font-semibold">
+                  <thead className="bg-[#F7F5ED] border-b border-slate-200 text-slate-600 font-semibold">
                     <tr>
                       <th className="py-3 px-4">Inquiry ID & Scholar</th>
                       <th className="py-3 px-4">University & Field</th>
@@ -298,7 +298,7 @@ export const AdminDashboard: React.FC = () => {
                     {filteredInquiries.map(inq => (
                       <tr key={inq.id} className="hover:bg-slate-50/70 transition-colors">
                         <td className="py-3 px-4">
-                          <div className="font-mono text-[11px] font-bold text-[#071E46]">{inq.inquiry_number}</div>
+                          <div className="font-mono text-[11px] font-bold text-[#0B2D3A]">{inq.inquiry_number}</div>
                           <div className="font-semibold text-slate-900">{inq.full_name}</div>
                           <div className="text-slate-500 text-[10px]">{inq.phone} • {inq.email}</div>
                         </td>
@@ -350,17 +350,17 @@ export const AdminDashboard: React.FC = () => {
         {/* Tab 3: Projects Management */}
         {activeTab === 'projects' && (
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-[#071E46]">Master Project Registry</h3>
+            <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Master Project Registry</h3>
             <div className="grid grid-cols-1 gap-4">
               {projects.map(proj => (
                 <Card key={proj.id} padding="md" className="bg-white space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-bold text-[#071E46]">{proj.project_code}</span>
+                        <span className="font-mono text-xs font-bold text-[#0B2D3A]">{proj.project_code}</span>
                         <Badge variant="blue">{proj.status.toUpperCase()}</Badge>
                       </div>
-                      <h4 className="font-serif font-bold text-base text-[#071E46] mt-0.5">{proj.title}</h4>
+                      <h4 className="font-serif font-bold text-base text-[#0B2D3A] mt-0.5">{proj.title}</h4>
                       <p className="text-xs text-slate-500">Client: {proj.client_name} ({proj.client_phone})</p>
                     </div>
 
@@ -407,19 +407,19 @@ export const AdminDashboard: React.FC = () => {
         {/* Tab 4: Services Management */}
         {activeTab === 'services' && (
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-[#071E46]">Service Catalogue & Rates</h3>
+            <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Service Catalogue & Rates</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {services.map(s => (
                 <Card key={s.id} padding="md" className="bg-white space-y-2">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-serif font-bold text-base text-[#071E46]">{s.title}</h4>
+                    <h4 className="font-serif font-bold text-base text-[#0B2D3A]">{s.title}</h4>
                     <span className={`text-xs px-2 py-0.5 rounded font-bold ${s.is_active ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-600'}`}>
                       {s.is_active ? 'Active' : 'Disabled'}
                     </span>
                   </div>
                   <p className="text-xs text-slate-600">{s.short_description}</p>
                   <div className="flex justify-between items-center text-xs pt-2 border-t border-slate-100">
-                    <span className="font-semibold text-[#071E46]">Starting: {s.starting_price || 'Quote based'}</span>
+                    <span className="font-semibold text-[#0B2D3A]">Starting: {s.starting_price || 'Quote based'}</span>
                     <Button
                       variant="outline"
                       size="sm"
@@ -438,10 +438,10 @@ export const AdminDashboard: React.FC = () => {
         {/* Tab 5: Financial Management */}
         {activeTab === 'finance' && (
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-[#071E46]">Financial Records & Invoices</h3>
+            <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Financial Records & Invoices</h3>
             <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-subtle">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#F8FAFC] border-b border-slate-200 text-slate-600 font-semibold">
+                <thead className="bg-[#F7F5ED] border-b border-slate-200 text-slate-600 font-semibold">
                   <tr>
                     <th className="py-3 px-4">Invoice #</th>
                     <th className="py-3 px-4">Project</th>
@@ -454,7 +454,7 @@ export const AdminDashboard: React.FC = () => {
                 <tbody className="divide-y divide-slate-100">
                   {payments.map(p => (
                     <tr key={p.id} className="hover:bg-slate-50/70 transition-colors">
-                      <td className="py-3 px-4 font-mono font-bold text-[#071E46]">{p.invoice_number}</td>
+                      <td className="py-3 px-4 font-mono font-bold text-[#0B2D3A]">{p.invoice_number}</td>
                       <td className="py-3 px-4 font-mono">{p.project_code}</td>
                       <td className="py-3 px-4">{p.client_name}</td>
                       <td className="py-3 px-4 font-bold text-emerald-700">₹{p.amount.toLocaleString()}</td>
@@ -474,7 +474,7 @@ export const AdminDashboard: React.FC = () => {
         {activeTab === 'cms' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="font-serif text-xl font-bold text-[#071E46]">Website FAQs & Knowledgebase</h3>
+              <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">Website FAQs & Knowledgebase</h3>
               <Button variant="gold" size="sm" onClick={() => setNewFaqModalOpen(true)} className="text-xs font-bold">
                 Add FAQ
               </Button>
@@ -483,7 +483,7 @@ export const AdminDashboard: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {faqs.map(f => (
                 <Card key={f.id} padding="md" className="bg-white space-y-2">
-                  <div className="font-semibold text-xs text-[#071E46]">{f.question}</div>
+                  <div className="font-semibold text-xs text-[#0B2D3A]">{f.question}</div>
                   <p className="text-xs text-slate-600 leading-relaxed">{f.answer}</p>
                   <div className="pt-2 text-right">
                     <button
@@ -509,7 +509,7 @@ export const AdminDashboard: React.FC = () => {
       >
         <div className="space-y-4 text-xs">
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
               Agreed Project Value (₹) *
             </label>
             <input
@@ -535,7 +535,7 @@ export const AdminDashboard: React.FC = () => {
       >
         <div className="space-y-4 text-xs">
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">Select Status *</label>
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">Select Status *</label>
             <select
               value={newProjStatus}
               onChange={e => setNewProjStatus(e.target.value as ProjectStatus)}
@@ -556,7 +556,7 @@ export const AdminDashboard: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
               Custom Stage Description (Visible to Client)
             </label>
             <input
@@ -583,7 +583,7 @@ export const AdminDashboard: React.FC = () => {
       >
         <form onSubmit={handleAddFaq} className="space-y-4 text-xs">
           <div>
-            <label className="block font-semibold text-[#071E46] mb-1">Question *</label>
+            <label className="block font-semibold text-[#0B2D3A] mb-1">Question *</label>
             <input
               type="text"
               required
@@ -595,7 +595,7 @@ export const AdminDashboard: React.FC = () => {
           </div>
 
           <div>
-            <label className="block font-semibold text-[#071E46] mb-1">Answer *</label>
+            <label className="block font-semibold text-[#0B2D3A] mb-1">Answer *</label>
             <textarea
               required
               rows={4}

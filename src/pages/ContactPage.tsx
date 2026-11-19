@@ -56,7 +56,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
   return (
     <div className="space-y-16 pb-16 font-sans">
       {/* Hero */}
-      <section className="bg-[#071E46] text-white py-14 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Institutional Contact</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -74,13 +74,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
           {/* Contact Details & Mathura Center (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
             <Card padding="lg" className="bg-white space-y-6 border border-slate-200">
-              <h2 className="font-serif font-bold text-xl text-[#071E46] border-b border-slate-100 pb-3">
+              <h2 className="font-serif font-bold text-xl text-[#0B2D3A] border-b border-slate-100 pb-3">
                 Research Office & Contact
               </h2>
 
               <div className="space-y-4 text-xs">
                 <div className="flex items-start gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#071E46]/5 text-[#D6A52B] shrink-0">
+                  <div className="p-2.5 rounded-xl bg-[#0B2D3A]/5 text-[#0082A6] shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -94,12 +94,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#071E46]/5 text-[#D6A52B] shrink-0">
+                  <div className="p-2.5 rounded-xl bg-[#0B2D3A]/5 text-[#0082A6] shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="font-bold text-slate-900 block">Telephone Hotline:</span>
-                    <a href="tel:+919760498896" className="text-slate-700 font-semibold hover:text-[#D6A52B] transition-colors">
+                    <a href="tel:+919760498896" className="text-slate-700 font-semibold hover:text-[#0082A6] transition-colors">
                       +91 9760498896
                     </a>
                   </div>
@@ -124,19 +124,19 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#071E46]/5 text-[#D6A52B] shrink-0">
+                  <div className="p-2.5 rounded-xl bg-[#0B2D3A]/5 text-[#0082A6] shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="font-bold text-slate-900 block">Email Inquiries:</span>
-                    <a href="mailto:support@academicproindia.com" className="text-slate-700 hover:text-[#D6A52B] transition-colors">
+                    <a href="mailto:support@academicproindia.com" className="text-slate-700 hover:text-[#0082A6] transition-colors">
                       support@academicproindia.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#071E46]/5 text-[#D6A52B] shrink-0">
+                  <div className="p-2.5 rounded-xl bg-[#0B2D3A]/5 text-[#0082A6] shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -161,7 +161,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
           <div className="lg:col-span-7">
             <Card padding="lg" className="bg-white border border-slate-200 space-y-6">
               <div>
-                <h2 className="font-serif font-bold text-xl text-[#071E46]">
+                <h2 className="font-serif font-bold text-xl text-[#0B2D3A]">
                   Send a Direct Research Message
                 </h2>
                 <p className="text-xs text-slate-500 mt-1">
@@ -174,7 +174,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                   <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border-2 border-emerald-200">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="font-serif font-bold text-xl text-[#071E46]">Message Delivered</h3>
+                  <h3 className="font-serif font-bold text-xl text-[#0B2D3A]">Message Delivered</h3>
                   <p className="text-xs text-slate-600 max-w-md mx-auto">
                     Thank you, {name}! Your query has been logged. An academic consultant from our Mathura office will contact you shortly.
                   </p>
@@ -186,7 +186,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                 <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-semibold text-[#071E46] mb-1">Your Name *</label>
+                      <label className="block font-semibold text-[#0B2D3A] mb-1">Your Name *</label>
                       <input
                         type="text"
                         required
@@ -198,7 +198,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                     </div>
 
                     <div>
-                      <label className="block font-semibold text-[#071E46] mb-1">Email Address *</label>
+                      <label className="block font-semibold text-[#0B2D3A] mb-1">Email Address *</label>
                       <input
                         type="email"
                         required
@@ -212,7 +212,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-semibold text-[#071E46] mb-1">Phone / WhatsApp *</label>
+                      <label className="block font-semibold text-[#0B2D3A] mb-1">Phone / WhatsApp *</label>
                       <input
                         type="tel"
                         required
@@ -224,7 +224,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                     </div>
 
                     <div>
-                      <label className="block font-semibold text-[#071E46] mb-1">Subject / Area *</label>
+                      <label className="block font-semibold text-[#0B2D3A] mb-1">Subject / Area *</label>
                       <input
                         type="text"
                         value={subject}
@@ -236,7 +236,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-[#071E46] mb-1">Detailed Message *</label>
+                    <label className="block font-semibold text-[#0B2D3A] mb-1">Detailed Message *</label>
                     <textarea
                       required
                       rows={4}

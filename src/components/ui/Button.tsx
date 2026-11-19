@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'gold' | 'outline' | 'ghost' | 'danger';
+  variant?: 'primary' | 'secondary' | 'gold' | 'outline' | 'ghost' | 'danger' | 'teal';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   icon?: React.ReactNode;
@@ -31,12 +31,13 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantClasses = {
-    primary: "bg-[#071E46] text-white hover:bg-[#102F60] focus:ring-[#071E46] border border-[#071E46]",
-    secondary: "bg-[#E7EEF8] text-[#071E46] hover:bg-[#D5E2F4] focus:ring-[#071E46] border border-[#C5D7F0]",
-    gold: "bg-[#D6A52B] text-[#071E46] font-semibold hover:bg-[#E4B94C] focus:ring-[#D6A52B] border border-[#C59520] shadow-sm",
-    outline: "bg-transparent text-[#071E46] border border-[#CBD5E1] hover:bg-slate-100 hover:border-slate-400 focus:ring-[#071E46]",
-    ghost: "bg-transparent text-[#17243A] hover:bg-slate-100 focus:ring-slate-400 border border-transparent",
-    danger: "bg-[#C83232] text-white hover:bg-red-700 focus:ring-red-600 border border-red-700",
+    primary: "bg-[#0082A6] text-white hover:bg-[#007191] focus:ring-[#0082A6] border border-[#007191] shadow-sm",
+    secondary: "bg-[#C4DEE3]/40 text-[#0B2D3A] hover:bg-[#C4DEE3]/80 focus:ring-[#0082A6] border border-[#86B9C7]/60",
+    gold: "bg-[#0B2D3A] text-[#F7F5ED] font-semibold hover:bg-[#134455] focus:ring-[#0082A6] border border-[#061D26] shadow-sm",
+    teal: "bg-[#0082A6] text-white font-semibold hover:bg-[#007191] focus:ring-[#0082A6] border border-[#007191] shadow-sm",
+    outline: "bg-transparent text-[#0B2D3A] border border-[#86B9C7] hover:bg-[#C4DEE3]/30 hover:border-[#0082A6] focus:ring-[#0082A6]",
+    ghost: "bg-transparent text-[#0B2D3A] hover:bg-[#C4DEE3]/25 focus:ring-[#86B9C7] border border-transparent",
+    danger: "bg-[#BE123C] text-white hover:bg-[#9F1239] focus:ring-red-600 border border-[#9F1239]",
   };
 
   return (

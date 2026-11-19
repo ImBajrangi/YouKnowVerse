@@ -122,7 +122,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           </div>
 
           <div className="space-y-1">
-            <h4 className="font-serif text-2xl font-bold text-[#071E46]">
+            <h4 className="font-serif text-2xl font-bold text-[#0B2D3A]">
               Session Booked for {bookedConsultation.client_name}
             </h4>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -130,10 +130,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#F5F7FB] border border-[#E2E8F0] max-w-md mx-auto text-left space-y-2 text-xs">
+          <div className="p-4 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] max-w-md mx-auto text-left space-y-2 text-xs">
             <div className="flex justify-between py-1 border-b border-slate-200">
               <span className="text-slate-500">Subject:</span>
-              <span className="font-bold text-[#071E46]">{bookedConsultation.consultation_type_label}</span>
+              <span className="font-bold text-[#0B2D3A]">{bookedConsultation.consultation_type_label}</span>
             </div>
             <div className="flex justify-between py-1 border-b border-slate-200">
               <span className="text-slate-500">Date & Slot:</span>
@@ -179,7 +179,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
           {/* Consultation Type Selector */}
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-2">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-2">
               Choose Consultation Type *
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -190,11 +190,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   onClick={() => setConsultationType(item.type)}
                   className={`p-3 text-left rounded-xl border text-xs transition-colors ${
                     consultationType === item.type
-                      ? 'border-[#071E46] bg-[#071E46]/5 ring-1 ring-[#071E46]'
+                      ? 'border-[#0B2D3A] bg-[#0B2D3A]/5 ring-1 ring-[#0B2D3A]'
                       : 'border-slate-200 hover:border-slate-300 bg-white'
                   }`}
                 >
-                  <div className="font-bold text-[#071E46]">{item.label}</div>
+                  <div className="font-bold text-[#0B2D3A]">{item.label}</div>
                   <div className="text-[11px] text-slate-500 mt-1 leading-tight">{item.desc}</div>
                 </button>
               ))}
@@ -203,7 +203,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
           {/* Mode Selector */}
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-2">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-2">
               Consultation Mode *
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -212,7 +212,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 onClick={() => setMode('online_video')}
                 className={`p-2.5 rounded-xl border text-center flex flex-col items-center gap-1 text-xs transition-colors ${
                   mode === 'online_video'
-                    ? 'border-[#071E46] bg-[#071E46] text-white'
+                    ? 'border-[#0B2D3A] bg-[#0B2D3A] text-white'
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
@@ -225,7 +225,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 onClick={() => setMode('in_person_mathura')}
                 className={`p-2.5 rounded-xl border text-center flex flex-col items-center gap-1 text-xs transition-colors ${
                   mode === 'in_person_mathura'
-                    ? 'border-[#071E46] bg-[#071E46] text-white'
+                    ? 'border-[#0B2D3A] bg-[#0B2D3A] text-white'
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
@@ -238,7 +238,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 onClick={() => setMode('phone_call')}
                 className={`p-2.5 rounded-xl border text-center flex flex-col items-center gap-1 text-xs transition-colors ${
                   mode === 'phone_call'
-                    ? 'border-[#071E46] bg-[#071E46] text-white'
+                    ? 'border-[#0B2D3A] bg-[#0B2D3A] text-white'
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
@@ -251,8 +251,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           {/* Date & Time Slot */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1 flex items-center gap-1">
-                <Calendar className="w-3.5 h-3.5 text-[#D6A52B]" />
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1 flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5 text-[#0082A6]" />
                 <span>Preferred Date *</span>
               </label>
               <input
@@ -261,19 +261,19 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 value={scheduledDate}
                 min={new Date().toISOString().split('T')[0]}
                 onChange={e => setScheduledDate(e.target.value)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-[#D6A52B]" />
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-[#0082A6]" />
                 <span>Available Time Slot *</span>
               </label>
               <select
                 value={scheduledTime}
                 onChange={e => setScheduledTime(e.target.value)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               >
                 {timeSlots.map(slot => (
                   <option key={slot} value={slot}>{slot}</option>
@@ -285,7 +285,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           {/* Scholar Contact Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Your Full Name *
               </label>
               <input
@@ -294,12 +294,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 value={clientName}
                 onChange={e => setClientName(e.target.value)}
                 placeholder="e.g. Ramesh Chandra, PhD Scholar"
-                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Email Address *
               </label>
               <input
@@ -308,14 +308,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="e.g. ramesh@university.edu"
-                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 WhatsApp Phone *
               </label>
               <input
@@ -324,18 +324,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
                 placeholder="+91 9760498896"
-                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Academic Level
               </label>
               <select
                 value={academicLevel}
                 onChange={e => setAcademicLevel(e.target.value as AcademicLevel)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               >
                 <option value="PhD Research Scholar">PhD Research Scholar</option>
                 <option value="Postgraduate / Master's (PG)">Postgraduate (PG)</option>
@@ -346,7 +346,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 University / Institution
               </label>
               <input
@@ -354,13 +354,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 value={university}
                 onChange={e => setUniversity(e.target.value)}
                 placeholder="e.g. AMU / BHU / GLA Mathura"
-                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
               Key Discussion Focus & Doubts (Optional)
             </label>
             <textarea
@@ -368,7 +368,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               value={notes}
               onChange={e => setNotes(e.target.value)}
               placeholder="e.g. Clarification on RDC comments, sample size selection, or Scopus journal response letter..."
-              className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+              className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
             />
           </div>
 

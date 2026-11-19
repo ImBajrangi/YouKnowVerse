@@ -12,10 +12,10 @@ export const UniversityNetworkGraphic: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#071E46] text-white rounded-3xl border border-[#102F60] p-6 sm:p-8 shadow-premium space-y-6 select-none">
+    <div className="w-full bg-[#0B2D3A] text-white rounded-3xl border border-[#134455] p-6 sm:p-8 shadow-premium space-y-6 select-none">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#D6A52B]">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#86B9C7]">
             Inter-Institutional Research Network
           </span>
           <h3 className="font-serif font-bold text-lg sm:text-xl text-white">
@@ -23,8 +23,8 @@ export const UniversityNetworkGraphic: React.FC = () => {
           </h3>
         </div>
 
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#102F60] border border-white/10 text-xs text-amber-200">
-          <MapPin className="w-3.5 h-3.5 text-[#D6A52B]" />
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#134455] border border-[#86B9C7]/30 text-xs text-[#C4DEE3]">
+          <MapPin className="w-3.5 h-3.5 text-[#86B9C7]" />
           <span>Hub: Mathura, Uttar Pradesh</span>
         </div>
       </div>
@@ -34,16 +34,16 @@ export const UniversityNetworkGraphic: React.FC = () => {
         {universities.map(u => (
           <div
             key={u.code}
-            className="p-3.5 rounded-2xl bg-[#0B2452]/90 border border-white/10 text-center space-y-2 hover:border-[#D6A52B]/40 transition-colors"
+            className="p-3.5 rounded-2xl bg-[#061D26]/80 border border-[#86B9C7]/20 text-center space-y-2 hover:border-[#86B9C7]/50 transition-colors"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#071E46] border border-[#D6A52B]/40 text-[#D6A52B] font-serif font-bold text-sm flex items-center justify-center mx-auto shadow-inner">
+            <div className="w-10 h-10 rounded-xl bg-[#0B2D3A] border border-[#86B9C7]/40 text-[#C4DEE3] font-serif font-bold text-sm flex items-center justify-center mx-auto shadow-inner">
               {u.code}
             </div>
             <div>
               <div className="font-serif font-bold text-xs text-white truncate">{u.name}</div>
-              <div className="text-[10px] text-slate-300 font-mono mt-0.5">{u.scholars}</div>
+              <div className="text-[10px] text-[#C4DEE3]/70 font-mono mt-0.5">{u.scholars}</div>
             </div>
-            <span className="inline-block text-[9px] font-semibold px-2 py-0.5 rounded bg-[#102F60] text-amber-200">
+            <span className="inline-block text-[9px] font-semibold px-2 py-0.5 rounded bg-[#134455] text-[#C4DEE3]">
               {u.tag}
             </span>
           </div>

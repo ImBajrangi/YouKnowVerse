@@ -151,7 +151,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           </div>
 
           <div className="space-y-2">
-            <h4 className="font-serif text-2xl font-bold text-[#071E46]">
+            <h4 className="font-serif text-2xl font-bold text-[#0B2D3A]">
               Thank You, {submittedInquiry.full_name}!
             </h4>
             <p className="text-sm text-slate-600 max-w-md mx-auto">
@@ -159,10 +159,10 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#F5F7FB] border border-[#E2E8F0] max-w-md mx-auto text-left space-y-2 text-xs">
+          <div className="p-4 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] max-w-md mx-auto text-left space-y-2 text-xs">
             <div className="flex justify-between py-1 border-b border-slate-200">
               <span className="text-slate-500">Inquiry ID:</span>
-              <span className="font-mono font-bold text-[#071E46]">{submittedInquiry.inquiry_number}</span>
+              <span className="font-mono font-bold text-[#0B2D3A]">{submittedInquiry.inquiry_number}</span>
             </div>
             <div className="flex justify-between py-1 border-b border-slate-200">
               <span className="text-slate-500">Service:</span>
@@ -207,7 +207,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           {/* Row 1: Name & Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Full Name *
               </label>
               <input
@@ -216,12 +216,12 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
                 value={fullName}
                 onChange={e => setFullName(e.target.value)}
                 placeholder="e.g. Dr. Priyadarshini Rao"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Email Address *
               </label>
               <input
@@ -230,7 +230,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="e.g. priya.rao@du.ac.in"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
           </div>
@@ -238,7 +238,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           {/* Row 2: Phone & Academic Level */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Phone / WhatsApp Number *
               </label>
               <input
@@ -247,18 +247,18 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
                 placeholder="+91 9876543210"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Academic Level *
               </label>
               <select
                 value={academicLevel}
                 onChange={e => setAcademicLevel(e.target.value as AcademicLevel)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               >
                 {academicLevels.map(lvl => (
                   <option key={lvl} value={lvl}>{lvl}</option>
@@ -270,7 +270,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           {/* Row 3: University & Research Discipline */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 University / Institution *
               </label>
               <input
@@ -279,12 +279,12 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
                 value={university}
                 onChange={e => setUniversity(e.target.value)}
                 placeholder="e.g. Delhi University / GLA University Mathura"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Research Field / Subject *
               </label>
               <input
@@ -293,20 +293,20 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
                 value={researchField}
                 onChange={e => setResearchField(e.target.value)}
                 placeholder="e.g. Biotechnology, Economics, AI, Law"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
           </div>
 
           {/* Service Selection */}
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
               Required Research Service *
             </label>
             <select
               value={serviceId}
               onChange={e => setServiceId(e.target.value)}
-              className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+              className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
             >
               {services.map(s => (
                 <option key={s.id} value={s.id}>
@@ -318,7 +318,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
 
           {/* Project Description */}
           <div>
-            <label className="block text-xs font-semibold text-[#071E46] mb-1">
+            <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
               Project Description & Specific Requirements *
             </label>
             <textarea
@@ -327,32 +327,32 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
               value={projectDescription}
               onChange={e => setProjectDescription(e.target.value)}
               placeholder="Please describe your current stage (e.g. synopsis drafting, thesis chapters 1-4, journal reviewer rebuttal), word count, and key questions..."
-              className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+              className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
             />
           </div>
 
           {/* Deadline & Budget */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Expected Submission Deadline
               </label>
               <input
                 type="date"
                 value={expectedDeadline}
                 onChange={e => setExpectedDeadline(e.target.value)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#071E46] mb-1">
+              <label className="block text-xs font-semibold text-[#0B2D3A] mb-1">
                 Approximate Budget Range
               </label>
               <select
                 value={budgetRange}
                 onChange={e => setBudgetRange(e.target.value)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#071E46] bg-slate-50/50"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B2D3A] bg-slate-50/50"
               >
                 <option value="Under ₹5,000">Under ₹5,000 (Consultation/Topic)</option>
                 <option value="₹5,000 - ₹15,000">₹5,000 - ₹15,000 (Synopsis / Paper)</option>
@@ -363,7 +363,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           </div>
 
           {/* Optional Manuscript Upload */}
-          <div className="p-3 rounded-2xl bg-[#F5F7FB] border border-dashed border-slate-300 text-center">
+          <div className="p-3 rounded-2xl bg-[#F7F5ED] border border-dashed border-slate-300 text-center">
             <label className="cursor-pointer block">
               <input
                 type="file"
@@ -371,8 +371,8 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
                 accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.csv"
                 onChange={handleFileChange}
               />
-              <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#071E46]">
-                <UploadCloud className="w-4 h-4 text-[#D6A52B]" />
+              <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#0B2D3A]">
+                <UploadCloud className="w-4 h-4 text-[#0082A6]" />
                 <span>{fileName ? `Selected: ${fileName}` : 'Attach Draft / Synopsis (PDF, DOCX max 25MB - Optional)'}</span>
               </div>
               <span className="block text-[10px] text-slate-500 mt-0.5">
@@ -384,7 +384,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           {/* Submit CTA */}
           <div className="pt-2 flex items-center justify-between">
             <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
-              <Sparkles className="w-3.5 h-3.5 text-[#D6A52B]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#0082A6]" />
               <span>Free initial scoping & quotation within 4 hours</span>
             </div>
 

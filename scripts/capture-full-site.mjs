@@ -18,9 +18,12 @@ async function saveAndConvert(page, name, fullPage = true) {
   await page.screenshot({ path: tmpPng, fullPage });
 
   try {
+    try {
+      execSync(`/usr/bin/sips -Z 15000 "${tmpPng}"`, { stdio: 'ignore' });
+    } catch {}
     execSync(`/opt/homebrew/bin/cwebp -q 85 "${tmpPng}" -o "${localWebp}"`, { stdio: 'ignore' });
     fs.copyFileSync(localWebp, artifactWebp);
-    fs.unlinkSync(tmpPng);
+    if (fs.existsSync(tmpPng)) fs.unlinkSync(tmpPng);
     console.log(`✓ Captured & converted to WebP: ${name}.webp`);
   } catch (err) {
     console.warn(`Fallback to png for ${name}:`, err.message);

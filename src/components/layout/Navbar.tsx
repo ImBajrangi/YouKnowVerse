@@ -67,25 +67,25 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#071E46] border-b border-[#102F60] shadow-md text-white select-none">
+    <header className="sticky top-0 z-40 bg-[#0B2D3A] border-b border-[#134455] shadow-md text-white select-none">
       {/* Top micro-bar for academic authority & phone */}
-      <div className="bg-[#04122B] text-slate-300 text-[11px] sm:text-xs py-1.5 px-4 sm:px-8 border-b border-white/5">
+      <div className="bg-[#061D26] text-slate-300 text-[11px] sm:text-xs py-1.5 px-4 sm:px-8 border-b border-white/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-[#D6A52B]">
+            <span className="flex items-center gap-1.5 text-[#86B9C7]">
               <Sparkles className="w-3.5 h-3.5" />
               <span className="font-medium">Academic Research Consultancy</span>
             </span>
-            <span className="hidden md:inline text-slate-400">•</span>
-            <span className="hidden md:inline text-slate-300">Mathura, Uttar Pradesh, India</span>
+            <span className="hidden md:inline text-slate-500">•</span>
+            <span className="hidden md:inline text-[#C4DEE3]">Mathura, Uttar Pradesh, India</span>
           </div>
 
           <div className="flex items-center gap-4">
             <a 
               href="tel:+919760498896" 
-              className="flex items-center gap-1.5 hover:text-white transition-colors text-slate-200"
+              className="flex items-center gap-1.5 hover:text-[#C4DEE3] transition-colors text-slate-200"
             >
-              <PhoneCall className="w-3 h-3 text-[#D6A52B]" />
+              <PhoneCall className="w-3 h-3 text-[#86B9C7]" />
               <span className="font-semibold">+91 9760498896</span>
             </a>
 
@@ -93,32 +93,32 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="relative">
               <button
                 onClick={() => setRoleSwitcherOpen(!roleSwitcherOpen)}
-                className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-md bg-[#102F60] hover:bg-[#183E7D] text-amber-200 border border-white/10"
+                className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-md bg-[#134455] hover:bg-[#0082A6] text-[#C4DEE3] border border-[#86B9C7]/30 transition-colors"
               >
                 <span>Role: {currentUser ? (currentUser.role === 'super_admin' ? 'Admin' : 'Client') : 'Guest'}</span>
                 <ChevronDown className="w-2.5 h-2.5" />
               </button>
 
               {roleSwitcherOpen && (
-                <div className="absolute right-0 mt-1 w-44 bg-[#0B2452] rounded-xl border border-white/15 shadow-xl py-1 z-50 text-xs">
-                  <div className="px-3 py-1 text-[10px] text-slate-400 uppercase font-semibold">Switch Persona</div>
+                <div className="absolute right-0 mt-1 w-44 bg-[#0B2D3A] rounded-xl border border-[#86B9C7]/30 shadow-xl py-1 z-50 text-xs">
+                  <div className="px-3 py-1 text-[10px] text-[#86B9C7] uppercase font-semibold">Switch Persona</div>
                   <button
                     onClick={() => { onSwitchRole('client'); setRoleSwitcherOpen(false); onNavigate('portal'); }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#102F60] text-slate-200 flex items-center gap-2"
+                    className="w-full text-left px-3 py-1.5 hover:bg-[#134455] text-slate-200 flex items-center gap-2"
                   >
                     <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Client (PhD Scholar)</span>
                   </button>
                   <button
                     onClick={() => { onSwitchRole('admin'); setRoleSwitcherOpen(false); onNavigate('admin'); }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#102F60] text-slate-200 flex items-center gap-2"
+                    className="w-full text-left px-3 py-1.5 hover:bg-[#134455] text-slate-200 flex items-center gap-2"
                   >
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#D6A52B]" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#86B9C7]" />
                     <span>Admin (Director)</span>
                   </button>
                   <button
                     onClick={() => { onSwitchRole('none'); setRoleSwitcherOpen(false); }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#102F60] text-rose-300 flex items-center gap-2"
+                    className="w-full text-left px-3 py-1.5 hover:bg-[#134455] text-rose-300 flex items-center gap-2"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     <span>Logout (Guest)</span>
@@ -137,19 +137,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => handleNavClick('home')}
           className="flex items-center gap-3 text-left focus:outline-none group"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#102F60] to-[#04122B] border border-[#D6A52B]/40 flex items-center justify-center shadow-inner shrink-0">
-            <GraduationCap className="w-6 h-6 text-[#D6A52B]" />
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#0082A6] to-[#061D26] border border-[#86B9C7]/40 flex items-center justify-center shadow-inner shrink-0">
+            <GraduationCap className="w-6 h-6 text-[#C4DEE3]" />
           </div>
           <div>
             <div className="flex items-baseline gap-1.5">
               <span className="font-serif text-lg sm:text-xl font-bold tracking-tight text-white">
                 AcademicPro
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#D6A52B]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#86B9C7]">
                 India
               </span>
             </div>
-            <p className="text-[10px] text-slate-300 tracking-wide font-sans hidden sm:block">
+            <p className="text-[10px] text-[#C4DEE3]/80 tracking-wide font-sans hidden sm:block">
               Research Support • Academic Excellence
             </p>
           </div>
@@ -166,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onMouseEnter={() => setServicesDropdownOpen(true)}
                     className={`px-3 py-2 rounded-lg flex items-center gap-1 transition-colors ${
                       currentPage === 'services' || currentPage === 'service-detail'
-                        ? 'text-[#D6A52B] bg-white/10'
+                        ? 'text-[#C4DEE3] bg-[#0082A6]/25 font-semibold'
                         : 'text-slate-200 hover:text-white hover:bg-white/5'
                     }`}
                   >
@@ -176,8 +176,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                   {/* Dropdown Menu */}
                   {servicesDropdownOpen && (
-                    <div className="absolute top-full left-0 w-72 bg-[#071E46] border border-[#102F60] rounded-2xl shadow-2xl p-2 z-50">
-                      <div className="px-3 py-1.5 text-[11px] font-semibold text-[#D6A52B] uppercase tracking-wider border-b border-white/10">
+                    <div className="absolute top-full left-0 w-72 bg-[#0B2D3A] border border-[#134455] rounded-2xl shadow-2xl p-2 z-50">
+                      <div className="px-3 py-1.5 text-[11px] font-semibold text-[#86B9C7] uppercase tracking-wider border-b border-white/10">
                         Primary Services
                       </div>
                       <div className="py-1">
@@ -185,7 +185,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                           <button
                             key={s.slug}
                             onClick={() => handleServiceClick(s.slug)}
-                            className="w-full text-left px-3 py-2 text-xs rounded-lg text-slate-200 hover:text-white hover:bg-[#102F60] transition-colors"
+                            className="w-full text-left px-3 py-2 text-xs rounded-lg text-slate-200 hover:text-white hover:bg-[#134455] transition-colors"
                           >
                             {s.title}
                           </button>
@@ -194,7 +194,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <div className="border-t border-white/10 pt-1.5 mt-1">
                         <button
                           onClick={() => handleNavClick('services')}
-                          className="w-full text-center text-xs text-[#D6A52B] py-1.5 font-medium hover:underline"
+                          className="w-full text-center text-xs text-[#86B9C7] py-1.5 font-medium hover:underline"
                         >
                           View All Services & Pricing →
                         </button>
@@ -211,7 +211,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => handleNavClick(item.id)}
                 className={`px-3 py-2 rounded-lg transition-colors ${
                   currentPage === item.id
-                    ? 'text-[#D6A52B] bg-white/10 font-semibold'
+                    ? 'text-[#C4DEE3] bg-[#0082A6]/25 font-semibold'
                     : 'text-slate-200 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -227,17 +227,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             variant="outline"
             size="sm"
             onClick={onOpenInquiry}
-            className="text-white border-white/30 hover:bg-white/10 text-xs"
+            className="text-white border-[#86B9C7]/50 hover:bg-white/10 text-xs"
           >
             Request Quote
           </Button>
 
           <Button
-            variant="gold"
+            variant="teal"
             size="sm"
             icon={<Calendar className="w-3.5 h-3.5" />}
             onClick={onOpenBooking}
-            className="text-xs"
+            className="text-xs shadow-md"
           >
             Book Consultation
           </Button>
@@ -249,7 +249,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               size="sm"
               icon={<ShieldCheck className="w-3.5 h-3.5" />}
               onClick={() => onNavigate('admin')}
-              className="text-xs bg-amber-100 text-[#071E46] border-amber-300"
+              className="text-xs bg-[#C4DEE3]/20 text-[#C4DEE3] border-[#86B9C7]/40 hover:bg-[#C4DEE3]/35"
             >
               Admin Panel
             </Button>
@@ -259,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               size="sm"
               icon={<UserCheck className="w-3.5 h-3.5" />}
               onClick={() => onNavigate('portal')}
-              className="text-xs"
+              className="text-xs bg-[#C4DEE3]/20 text-[#C4DEE3] border-[#86B9C7]/40 hover:bg-[#C4DEE3]/35"
             >
               Client Portal
             </Button>
@@ -270,7 +270,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={onOpenBooking}
-            className="sm:hidden px-2.5 py-1.5 bg-[#D6A52B] text-[#071E46] text-xs font-semibold rounded-lg"
+            className="sm:hidden px-2.5 py-1.5 bg-[#0082A6] text-white text-xs font-semibold rounded-lg"
           >
             Book
           </button>
@@ -286,13 +286,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#071E46] border-t border-[#102F60] px-4 py-4 space-y-2">
+        <div className="lg:hidden bg-[#0B2D3A] border-t border-[#134455] px-4 py-4 space-y-2">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
               className={`block w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium ${
-                currentPage === item.id ? 'text-[#D6A52B] bg-white/10' : 'text-slate-200 hover:bg-white/5'
+                currentPage === item.id ? 'text-[#C4DEE3] bg-[#0082A6]/25 font-semibold' : 'text-slate-200 hover:bg-white/5'
               }`}
             >
               {item.label}
@@ -308,13 +308,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
-              className="w-full py-2.5 px-3 rounded-xl bg-[#D6A52B] text-[#071E46] text-sm font-bold text-center"
+              className="w-full py-2.5 px-3 rounded-xl bg-[#0082A6] text-white text-sm font-bold text-center"
             >
               Book 1-on-1 Consultation
             </button>
             <button
               onClick={() => { setMobileMenuOpen(false); onNavigate(currentUser?.role === 'super_admin' ? 'admin' : 'portal'); }}
-              className="w-full py-2.5 px-3 rounded-xl bg-[#E7EEF8] text-[#071E46] text-sm font-semibold text-center"
+              className="w-full py-2.5 px-3 rounded-xl bg-[#C4DEE3]/20 text-[#C4DEE3] text-sm font-semibold text-center border border-[#86B9C7]/40"
             >
               {currentUser?.role === 'super_admin' ? 'Open Admin Panel' : 'Open Client Portal'}
             </button>

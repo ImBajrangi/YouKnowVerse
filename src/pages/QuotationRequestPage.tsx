@@ -79,7 +79,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
   return (
     <div className="space-y-12 pb-16 font-sans">
       {/* Header */}
-      <section className="bg-[#071E46] text-white py-14 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Transparent Scope Estimation</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -97,13 +97,13 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
           {/* Left: Configuration Form (7 Cols) */}
           <div className="lg:col-span-7">
             <Card padding="lg" className="bg-white border border-slate-200 space-y-6">
-              <h2 className="font-serif font-bold text-lg sm:text-xl text-[#071E46] border-b border-slate-100 pb-3">
+              <h2 className="font-serif font-bold text-lg sm:text-xl text-[#0B2D3A] border-b border-slate-100 pb-3">
                 1. Project Parameters
               </h2>
 
               <div className="space-y-4 text-xs">
                 <div>
-                  <label className="block font-semibold text-[#071E46] mb-1">Select Service *</label>
+                  <label className="block font-semibold text-[#0B2D3A] mb-1">Select Service *</label>
                   <select
                     value={serviceType}
                     onChange={e => setServiceType(e.target.value)}
@@ -120,9 +120,9 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
 
                 {serviceType === 'thesis-editing' && (
                   <div>
-                    <label className="block font-semibold text-[#071E46] mb-1 flex justify-between">
+                    <label className="block font-semibold text-[#0B2D3A] mb-1 flex justify-between">
                       <span>Approximate Word Count *</span>
-                      <span className="font-mono text-[#D6A52B] font-bold">{wordCount.toLocaleString()} words</span>
+                      <span className="font-mono text-[#0082A6] font-bold">{wordCount.toLocaleString()} words</span>
                     </label>
                     <input
                       type="range"
@@ -131,7 +131,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                       step={5000}
                       value={wordCount}
                       onChange={e => setWordCount(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#071E46]"
+                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0B2D3A]"
                     />
                     <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                       <span>5,000 words (Chapter)</span>
@@ -142,7 +142,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                 )}
 
                 <div>
-                  <label className="block font-semibold text-[#071E46] mb-1">Academic Level *</label>
+                  <label className="block font-semibold text-[#0B2D3A] mb-1">Academic Level *</label>
                   <select
                     value={academicLevel}
                     onChange={e => setAcademicLevel(e.target.value)}
@@ -157,7 +157,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-[#071E46] mb-1">Timeline & Urgency *</label>
+                  <label className="block font-semibold text-[#0B2D3A] mb-1">Timeline & Urgency *</label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
                       { id: 'standard', label: 'Standard', sub: '10-14 days' },
@@ -170,7 +170,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                         onClick={() => setUrgency(u.id as any)}
                         className={`p-2.5 rounded-xl border text-center transition-colors text-xs ${
                           urgency === u.id
-                            ? 'border-[#071E46] bg-[#071E46] text-white'
+                            ? 'border-[#0B2D3A] bg-[#0B2D3A] text-white'
                             : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
                         }`}
                       >
@@ -186,9 +186,9 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
 
           {/* Right: Estimate Display & Submit Form (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <Card padding="lg" className="bg-[#071E46] text-white space-y-5 border border-[#102F60] shadow-premium">
+            <Card padding="lg" className="bg-[#0B2D3A] text-white space-y-5 border border-[#134455] shadow-premium">
               <div className="space-y-1">
-                <span className="text-[11px] font-semibold text-[#D6A52B] uppercase tracking-wider">Estimated Project Investment</span>
+                <span className="text-[11px] font-semibold text-[#0082A6] uppercase tracking-wider">Estimated Project Investment</span>
                 <div className="font-serif text-3xl sm:text-4xl font-extrabold text-white">
                   ₹{estimatedCost.toLocaleString()}*
                 </div>
@@ -216,7 +216,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                       value={fullName}
                       onChange={e => setFullName(e.target.value)}
                       placeholder="e.g. Meenakshi Sunderam"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#D6A52B]"
+                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
                     />
                   </div>
 
@@ -228,7 +228,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="e.g. meenakshi@du.ac.in"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#D6A52B]"
+                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
                     />
                   </div>
 
@@ -240,7 +240,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       placeholder="+91 9760498896"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#D6A52B]"
+                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
                     />
                   </div>
 
@@ -251,7 +251,7 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                       value={university}
                       onChange={e => setUniversity(e.target.value)}
                       placeholder="e.g. Banaras Hindu University (BHU)"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#D6A52B]"
+                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
                     />
                   </div>
 

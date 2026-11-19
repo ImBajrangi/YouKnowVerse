@@ -32,7 +32,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   return (
     <div className="space-y-12 pb-16 font-sans">
       {/* Top Breadcrumb & Hero */}
-      <section className="bg-[#071E46] text-white py-12 px-4 sm:px-8">
+      <section className="bg-[#0B2D3A] text-white py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
           <button
             onClick={() => onNavigate('services')}
@@ -61,7 +61,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           <div className="lg:col-span-2 space-y-8">
             {/* Overview */}
             <Card padding="lg" className="bg-white space-y-4 border border-slate-200">
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#071E46]">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0B2D3A]">
                 Service Overview & Academic Value
               </h2>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -69,12 +69,12 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               </p>
 
               {/* Target Audience */}
-              <div className="p-4 rounded-2xl bg-[#F5F7FB] border border-[#E2E8F0] space-y-2">
-                <span className="font-bold text-xs text-[#071E46]">Who Benefits Most From This Service:</span>
+              <div className="p-4 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] space-y-2">
+                <span className="font-bold text-xs text-[#0B2D3A]">Who Benefits Most From This Service:</span>
                 <ul className="space-y-1 text-xs text-slate-600">
                   {service.ideal_for.map((aud, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <ChevronRight className="w-3.5 h-3.5 text-[#D6A52B] shrink-0" />
+                      <ChevronRight className="w-3.5 h-3.5 text-[#0082A6] shrink-0" />
                       <span>{aud}</span>
                     </li>
                   ))}
@@ -84,7 +84,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 
             {/* Key Deliverables */}
             <Card padding="lg" className="bg-white space-y-4 border border-slate-200">
-              <h3 className="font-serif text-xl font-bold text-[#071E46]">
+              <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">
                 Included Deliverables
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -102,18 +102,18 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 
             {/* 4-Step Editorial & Delivery Workflow */}
             <Card padding="lg" className="bg-white space-y-6 border border-slate-200">
-              <h3 className="font-serif text-xl font-bold text-[#071E46]">
+              <h3 className="font-serif text-xl font-bold text-[#0B2D3A]">
                 Our 4-Stage Execution Workflow
               </h3>
 
               <div className="space-y-4">
                 {service.workflow_steps.map(wf => (
-                  <div key={wf.step} className="flex items-start gap-4 p-4 rounded-2xl border border-slate-100 bg-[#F8FAFD]">
-                    <div className="w-8 h-8 rounded-full bg-[#071E46] text-[#D6A52B] font-bold text-xs flex items-center justify-center shrink-0">
+                  <div key={wf.step} className="flex items-start gap-4 p-4 rounded-2xl border border-slate-100 bg-[#F7F5ED]">
+                    <div className="w-8 h-8 rounded-full bg-[#0B2D3A] text-[#0082A6] font-bold text-xs flex items-center justify-center shrink-0">
                       0{wf.step}
                     </div>
                     <div>
-                      <h4 className="font-serif font-bold text-sm text-[#071E46]">{wf.title}</h4>
+                      <h4 className="font-serif font-bold text-sm text-[#0B2D3A]">{wf.title}</h4>
                       <p className="text-xs text-slate-600 mt-1 leading-relaxed">{wf.description}</p>
                     </div>
                   </div>
@@ -125,14 +125,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           {/* Right Sidebar (1 Col): Pricing, Timelines & Action Card */}
           <div className="space-y-6">
             <Card padding="lg" className="bg-white space-y-5 border border-slate-200 sticky top-24">
-              <h3 className="font-serif font-bold text-lg text-[#071E46] border-b border-slate-100 pb-3">
+              <h3 className="font-serif font-bold text-lg text-[#0B2D3A] border-b border-slate-100 pb-3">
                 Service Parameters
               </h3>
 
               <div className="space-y-3 text-xs">
                 <div className="flex justify-between items-center py-1 border-b border-slate-100">
                   <span className="text-slate-500 flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-[#D6A52B]" />
+                    <Clock className="w-3.5 h-3.5 text-[#0082A6]" />
                     <span>Estimated Turnaround:</span>
                   </span>
                   <span className="font-bold text-slate-800">{service.estimated_days}</span>
@@ -140,7 +140,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 
                 <div className="flex justify-between items-center py-1 border-b border-slate-100">
                   <span className="text-slate-500 flex items-center gap-1.5">
-                    <DollarSign className="w-3.5 h-3.5 text-[#D6A52B]" />
+                    <DollarSign className="w-3.5 h-3.5 text-[#0082A6]" />
                     <span>Pricing Model:</span>
                   </span>
                   <span className="font-bold text-slate-800 capitalize">

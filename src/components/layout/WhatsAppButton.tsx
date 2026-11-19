@@ -7,7 +7,7 @@ export const WhatsAppButton: React.FC = () => {
   return (
     <aside aria-label="Direct WhatsApp Contact" className="fixed bottom-5 right-5 z-40 flex items-center group">
       {/* Tooltip on Desktop */}
-      <div className="hidden sm:flex items-center mr-3 px-3.5 py-1.5 bg-[#071E46] text-white text-xs font-medium rounded-xl shadow-lg border border-[#102F60] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="hidden sm:flex items-center mr-3 px-3.5 py-1.5 bg-[#0B2D3A] text-white text-xs font-medium rounded-xl shadow-lg border border-[#134455] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
         <span>Chat with Research Advisor (+91 9760498896)</span>
       </div>
 
