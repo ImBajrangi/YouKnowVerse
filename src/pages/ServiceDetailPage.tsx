@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   CheckCircle2, 
   ArrowLeft, 
@@ -13,6 +12,7 @@ import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { CacheStore } from '../lib/cacheStore';
+import { BeforeAfterPreviewGraphic } from '../components/graphics/BeforeAfterPreviewGraphic';
 
 export interface ServiceDetailPageProps {
   slug: string;
@@ -96,6 +96,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 ))}
               </div>
             </Card>
+
+            {/* Interactive Before & After Transformation Graphic */}
+            <BeforeAfterPreviewGraphic />
 
             {/* 4-Step Editorial & Delivery Workflow */}
             <Card padding="lg" className="bg-white space-y-6 border border-slate-200">

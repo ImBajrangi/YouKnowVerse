@@ -14,6 +14,8 @@ import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { CacheStore } from '../lib/cacheStore';
+import { ResearchWorkflowGraphic } from '../components/graphics/ResearchWorkflowGraphic';
+import { JournalComparisonGraphic } from '../components/graphics/JournalComparisonGraphic';
 
 export interface ServicesPageProps {
   onNavigate: (page: string, params?: Record<string, string>) => void;
@@ -54,6 +56,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             From initial research area formulation and synopsis defense preparation to full dissertation editing and legitimate journal publication guidance.
           </p>
         </div>
+      </section>
+
+      {/* Visual Workflow Infographic */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+        <div className="text-center space-y-1">
+          <Badge variant="gold">Service Delivery Pipeline</Badge>
+          <h2 className="font-serif font-bold text-2xl text-[#071E46]">How We Deliver Your Milestones</h2>
+        </div>
+        <ResearchWorkflowGraphic />
       </section>
 
       {/* Services List */}
@@ -140,6 +151,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </Card>
           ))}
         </div>
+      </section>
+
+      {/* Journal Publishing Protection Infographic */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+        <div className="text-center space-y-1">
+          <Badge variant="navy">Verification Protocol</Badge>
+          <h2 className="font-serif font-bold text-2xl text-[#071E46]">Protecting Scholars From Predatory Journals</h2>
+        </div>
+        <JournalComparisonGraphic />
       </section>
 
       {/* Ethical Statement Callout */}

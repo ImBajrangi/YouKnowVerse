@@ -2,6 +2,7 @@ import { CheckCircle2 } from 'lucide-react';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
+import { ResearchWorkflowGraphic } from '../components/graphics/ResearchWorkflowGraphic';
 
 export interface HowItWorksPageProps {
   onNavigate?: (page: string) => void;
@@ -69,6 +70,11 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
             A transparent, ethical, step-by-step engagement model designed to give scholars absolute peace of mind and publication-grade results.
           </p>
         </div>
+      </section>
+
+      {/* Visual Pipeline Showcase */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <ResearchWorkflowGraphic />
       </section>
 
       {/* Steps Breakdown */}
