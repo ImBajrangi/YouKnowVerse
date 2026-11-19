@@ -1,18 +1,11 @@
 import React from 'react';
 import { 
-  Compass, 
-  FileCheck, 
-  BookOpen, 
-  GraduationCap, 
-  Award, 
-  Search, 
-  BarChart3, 
   CheckCircle2, 
-  ShieldCheck
+  ShieldCheck,
+  ChevronRight
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { Badge } from '../components/ui/Badge';
 import { CacheStore } from '../lib/cacheStore';
 import { ResearchWorkflowGraphic } from '../components/graphics/ResearchWorkflowGraphic';
 import { JournalComparisonGraphic } from '../components/graphics/JournalComparisonGraphic';
@@ -30,77 +23,82 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 }) => {
   const services = CacheStore.getServices();
 
-  const getServiceIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Compass': return <Compass className="w-6 h-6 text-[#0082A6]" />;
-      case 'FileCheck': return <FileCheck className="w-6 h-6 text-[#0082A6]" />;
-      case 'BookOpen': return <BookOpen className="w-6 h-6 text-[#0082A6]" />;
-      case 'GraduationCap': return <GraduationCap className="w-6 h-6 text-[#0082A6]" />;
-      case 'Award': return <Award className="w-6 h-6 text-[#0082A6]" />;
-      case 'Search': return <Search className="w-6 h-6 text-[#0082A6]" />;
-      case 'BarChart3': return <BarChart3 className="w-6 h-6 text-[#0082A6]" />;
-      default: return <BookOpen className="w-6 h-6 text-[#0082A6]" />;
-    }
+  const serviceImageMap: Record<string, string> = {
+    'research-topic-guidance': '/images/topic-guidance.webp',
+    'synopsis-review': '/images/synopsis-review.webp',
+    'thesis-editing': '/images/thesis-editing.webp',
+    'research-paper-support': '/images/research-paper.webp',
+    'publication-assistance': '/images/publication-assistance.webp',
+    'literature-search-support': '/images/literature-search.webp',
+    'statistical-analysis-spss': '/images/research-paper.webp',
   };
 
   return (
     <div className="space-y-12 pb-16 font-sans">
-      {/* Header Banner */}
-      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto space-y-4 text-center">
-          <Badge variant="gold">Academic Service Portfolio</Badge>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
+      {/* Header Banner (Clean Solid Peacock Navy, Native Fonts) */}
+      <section className="bg-[#0B2D3A] text-white py-10 sm:py-14 px-4 sm:px-8 border-b border-[#134455]">
+        <div className="max-w-7xl mx-auto space-y-3 text-center">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             Ethical Academic Research & Advisory Services
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            From initial research area formulation and synopsis defense preparation to full dissertation editing and legitimate journal publication guidance.
+          <p className="text-xs sm:text-sm text-[#C4DEE3] max-w-2xl mx-auto leading-relaxed">
+            From initial research area formulation and synopsis defense preparation to full dissertation editing and verified journal publication guidance.
           </p>
         </div>
       </section>
 
       {/* Visual Workflow Infographic */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
-        <div className="text-center space-y-1">
-          <Badge variant="gold">Service Delivery Pipeline</Badge>
-          <h2 className="font-serif font-bold text-2xl text-[#0B2D3A]">How We Deliver Your Milestones</h2>
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-3">
+        <div>
+          <h2 className="font-bold text-xl text-[#0B2D3A]">Service Delivery Milestones</h2>
+          <p className="text-xs text-[#3D6170]">Transparent four-step workflow from proposal to publication.</p>
         </div>
         <ResearchWorkflowGraphic />
       </section>
 
-      {/* Services List */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Services List with Pictures */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <div>
+          <h2 className="font-bold text-xl text-[#0B2D3A]">Available Advisory Modules</h2>
+          <p className="text-xs text-[#3D6170]">Select a module to view complete deliverables, pricing models, and timeline scope.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map(s => (
-            <Card key={s.id} padding="lg" className="bg-white space-y-6 flex flex-col justify-between border border-slate-200">
-              <div className="space-y-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#0B2D3A]/5 border border-[#0B2D3A]/10 flex items-center justify-center">
-                    {getServiceIcon(s.icon)}
+            <Card key={s.id} padding="md" className="bg-white space-y-4 flex flex-col justify-between border border-[#D6E6EB]">
+              <div className="space-y-3">
+                {/* Real WebP Image Header */}
+                <div className="relative overflow-hidden rounded-2xl border border-[#D6E6EB]">
+                  <img
+                    src={serviceImageMap[s.slug] || '/images/hero-scholar.webp'}
+                    alt={s.title}
+                    className="w-full h-44 object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2.5 right-2.5 bg-[#0B2D3A]/90 text-[#C4DEE3] text-xs font-semibold px-2.5 py-1 rounded-lg border border-white/10">
+                    {s.starting_price || 'Custom Quote'}
                   </div>
-                  <Badge variant={s.pricing_model === 'per_page' ? 'blue' : 'gold'} size="sm">
-                    {s.pricing_model === 'per_page' ? 'Word-Based' : `Starting at ${s.starting_price || 'Quote'}`}
-                  </Badge>
                 </div>
 
                 <div>
-                  <h2 className="font-serif font-bold text-xl text-[#0B2D3A]">
+                  <h3 className="font-bold text-lg text-[#0B2D3A]">
                     {s.title}
-                  </h2>
-                  <p className="text-xs text-slate-500 font-medium italic mt-1">
+                  </h3>
+                  <p className="text-xs text-[#3D6170] font-medium mt-0.5">
                     "{s.tagline}"
                   </p>
-                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                  <p className="text-xs text-[#0B2D3A] mt-2 leading-relaxed">
                     {s.full_description}
                   </p>
                 </div>
 
                 {/* Key Deliverables */}
-                <div className="space-y-2 pt-2 border-t border-slate-100">
+                <div className="space-y-1.5 pt-2 border-t border-[#D6E6EB]/60">
                   <span className="text-[11px] font-bold text-[#0B2D3A] uppercase tracking-wider block">
                     Core Deliverables Included:
                   </span>
-                  <ul className="space-y-1.5 text-xs text-slate-700">
-                    {s.key_deliverables.map((del, i) => (
+                  <ul className="space-y-1 text-xs text-[#0B2D3A]">
+                    {s.key_deliverables.slice(0, 4).map((del, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#0082A6] shrink-0 mt-0.5" />
                         <span className="leading-snug">{del}</span>
@@ -108,25 +106,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     ))}
                   </ul>
                 </div>
-
-                {/* Ideal For */}
-                <div className="p-3 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] space-y-1 text-xs">
-                  <span className="font-bold text-[#0B2D3A] text-[11px] block">Ideal For:</span>
-                  <ul className="space-y-1 text-slate-600 text-[11px]">
-                    {s.ideal_for.map((target, idx) => (
-                      <li key={idx}>• {target}</li>
-                    ))}
-                  </ul>
-                </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+              <div className="pt-3 border-t border-[#D6E6EB]/60 flex flex-wrap items-center justify-between gap-3">
                 <button
                   onClick={() => onNavigate('service-detail', { slug: s.slug })}
-                  className="text-xs font-semibold text-[#0B2D3A] hover:text-[#0082A6] transition-colors"
+                  className="text-xs font-semibold text-[#0082A6] hover:underline flex items-center gap-1"
                 >
-                  View Full Workflow & Details →
+                  <span>View Full Workflow</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -139,10 +128,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     Discuss Scope
                   </Button>
                   <Button
-                    variant="gold"
+                    variant="teal"
                     size="sm"
                     onClick={() => onOpenInquiry(s.id)}
-                    className="text-xs font-bold"
+                    className="text-xs font-semibold"
                   >
                     Request Quote
                   </Button>
@@ -154,22 +143,22 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       </section>
 
       {/* Journal Publishing Protection Infographic */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
-        <div className="text-center space-y-1">
-          <Badge variant="navy">Verification Protocol</Badge>
-          <h2 className="font-serif font-bold text-2xl text-[#0B2D3A]">Protecting Scholars From Predatory Journals</h2>
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-3">
+        <div>
+          <h2 className="font-bold text-xl text-[#0B2D3A]">Protecting Scholars From Predatory Journals</h2>
+          <p className="text-xs text-[#3D6170]">Our strict protocol verifies legitimate indexing in UGC-CARE, Scopus, and Web of Science.</p>
         </div>
         <JournalComparisonGraphic />
       </section>
 
       {/* Ethical Statement Callout */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8">
-        <div className="p-6 rounded-3xl bg-[#061D26] text-white border border-white/10 space-y-3">
-          <div className="flex items-center gap-2 text-amber-300 font-serif font-bold text-base">
-            <ShieldCheck className="w-5 h-5 text-[#0082A6]" />
-            <span>Academic Integrity & Non-Fabrication Notice</span>
+        <div className="p-5 rounded-3xl bg-[#061D26] text-white border border-[#134455] space-y-2">
+          <div className="flex items-center gap-2 text-[#86B9C7] font-bold text-sm">
+            <ShieldCheck className="w-4 h-4 text-[#0082A6]" />
+            <span>Academic Integrity & Non-Fabrication Guarantee</span>
           </div>
-          <p className="text-xs text-slate-300 leading-relaxed">
+          <p className="text-xs text-[#C4DEE3] leading-relaxed">
             All services offered by AcademicPro India comply strictly with UGC guidelines, institutional DRC requirements, and Committee on Publication Ethics (COPE) norms. We provide substantive editorial critique, statistical advice, literature synthesis, and formatting compliance to help researchers produce authentic scholarship.
           </p>
         </div>

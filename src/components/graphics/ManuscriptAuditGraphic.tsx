@@ -12,11 +12,8 @@ import {
 export const ManuscriptAuditGraphic: React.FC = () => {
   return (
     <div className="relative w-full max-w-lg mx-auto select-none">
-      {/* Decorative ambient gradient backdrop */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-[#0082A6]/40 via-[#134455] to-[#0B2D3A] rounded-3xl blur-xl opacity-60" />
-
-      {/* Main Glassmorphic Container: Concentric Outer 24px with p-5 */}
-      <div className="relative bg-[#0B2D3A]/95 border border-[#86B9C7]/40 rounded-3xl p-5 sm:p-6 shadow-2xl backdrop-blur-md text-white space-y-4">
+      {/* Clean Solid Container: Concentric Outer 24px with p-5 */}
+      <div className="relative bg-[#0B2D3A] border border-[#86B9C7]/30 rounded-3xl p-5 sm:p-6 shadow-xl text-white space-y-4">
         {/* Top Status Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
           <div className="flex items-center gap-2.5">

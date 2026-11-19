@@ -4,26 +4,16 @@ import {
   CheckCircle2, 
   ShieldCheck, 
   Clock, 
-  Compass, 
-  FileCheck, 
-  BookOpen, 
-  Award, 
-  Search, 
-  BarChart3, 
   MapPin, 
   MessageCircle, 
   Star, 
   ChevronRight,
   HelpCircle,
-  DollarSign,
-  Sparkles,
-  GraduationCap
+  Users
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { Badge } from '../components/ui/Badge';
 import { CacheStore } from '../lib/cacheStore';
-import { ManuscriptAuditGraphic } from '../components/graphics/ManuscriptAuditGraphic';
 import { ResearchWorkflowGraphic } from '../components/graphics/ResearchWorkflowGraphic';
 import { JournalComparisonGraphic } from '../components/graphics/JournalComparisonGraphic';
 import { BeforeAfterPreviewGraphic } from '../components/graphics/BeforeAfterPreviewGraphic';
@@ -44,206 +34,227 @@ export const HomePage: React.FC<HomePageProps> = ({
   const testimonials = CacheStore.getTestimonials();
   const faqs = CacheStore.getFAQs().slice(0, 5);
 
-  const getServiceIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Compass': return <Compass className="w-5 h-5 text-[#0082A6]" />;
-      case 'FileCheck': return <FileCheck className="w-5 h-5 text-[#0082A6]" />;
-      case 'BookOpen': return <BookOpen className="w-5 h-5 text-[#0082A6]" />;
-      case 'GraduationCap': return <GraduationCap className="w-5 h-5 text-[#0082A6]" />;
-      case 'Award': return <Award className="w-5 h-5 text-[#0082A6]" />;
-      case 'Search': return <Search className="w-5 h-5 text-[#0082A6]" />;
-      case 'BarChart3': return <BarChart3 className="w-5 h-5 text-[#0082A6]" />;
-      default: return <BookOpen className="w-5 h-5 text-[#0082A6]" />;
-    }
+  const serviceImageMap: Record<string, string> = {
+    'research-topic-guidance': '/images/topic-guidance.webp',
+    'synopsis-review': '/images/synopsis-review.webp',
+    'thesis-editing': '/images/thesis-editing.webp',
+    'research-paper-support': '/images/research-paper.webp',
+    'publication-assistance': '/images/publication-assistance.webp',
+    'literature-search-support': '/images/literature-search.webp',
+    'statistical-analysis-spss': '/images/research-paper.webp',
   };
 
   return (
-    <div className="space-y-14 sm:space-y-20 pb-16 font-sans">
-      {/* SECTION 1: HERO WITH GRAPHICAL AUDIT HUD */}
-      <section className="relative bg-gradient-to-b from-[#061D26] via-[#0B2D3A] to-[#061D26] text-white pt-12 sm:pt-20 pb-16 sm:pb-24 px-4 sm:px-8 overflow-hidden select-none">
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#0082A6_1px,transparent_1px)] [background-size:24px_24px]" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Content (6 Cols): Clean, Punchy Typography */}
-            <div className="lg:col-span-6 space-y-5 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#134455] border border-[#86B9C7]/40 text-xs text-[#C4DEE3]">
-                <MapPin className="w-3.5 h-3.5 text-[#86B9C7]" />
-                <span>Premier Research Consultancy • Mathura, UP</span>
+    <div className="space-y-12 sm:space-y-16 pb-16 font-sans">
+      {/* SECTION 1: HERO (SOLID PEACOCK NAVY, NO EXAGGERATED GRADIENTS, PICTURE-FRIENDLY) */}
+      <section className="bg-[#0B2D3A] text-white py-10 sm:py-16 px-4 sm:px-8 border-b border-[#134455] select-none">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Content (7 Cols): Crisp native typography */}
+            <div className="lg:col-span-7 space-y-4 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 text-xs font-medium text-[#86B9C7]">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Civil Lines, Mathura, Uttar Pradesh • Trusted Research Consultancy</span>
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.12] text-white">
-                Your Research Journey <br />
-                <span className="text-[#86B9C7] italic font-serif">Starts Here.</span>
+              <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+                Your Research Journey, <br className="hidden sm:block" />
+                <span className="text-[#86B9C7]">Our Professional Guidance.</span>
               </h1>
 
-              <p className="font-serif text-base sm:text-xl text-[#C4DEE3] font-medium">
-                Professional Academic Guidance for PhD Scholars, Researchers & Faculty.
+              <p className="text-sm sm:text-base text-[#C4DEE3] max-w-xl leading-relaxed mx-auto lg:mx-0">
+                End-to-end academic support for PhD scholars, postgraduate students, and faculty. Get expert direction on topic identification, synopsis defense, thesis refinement, and verified journal submissions.
               </p>
 
-              {/* Graphical Value Chips */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 text-xs">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 border border-[#86B9C7]/30 text-slate-200">
-                  <Sparkles className="w-3.5 h-3.5 text-[#86B9C7]" />
-                  <span>Topic & Gap Scoping</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 border border-[#86B9C7]/30 text-slate-200">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Synopsis Review</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 border border-[#86B9C7]/30 text-slate-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#C4DEE3]" />
-                  <span>Thesis Editing</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 border border-[#86B9C7]/30 text-slate-200">
-                  <Award className="w-3.5 h-3.5 text-[#86B9C7]" />
-                  <span>Scopus Publication</span>
-                </span>
-              </div>
-
-              {/* Action Buttons */}
+              {/* Direct Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
                 <Button
                   variant="teal"
-                  size="lg"
+                  size="md"
                   icon={<ArrowRight className="w-4 h-4" />}
                   iconPosition="right"
                   onClick={() => onNavigate('services')}
-                  className="w-full sm:w-auto text-sm font-bold shadow-lg"
+                  className="w-full sm:w-auto font-semibold shadow-sm"
                 >
                   Explore Services
                 </Button>
 
                 <Button
-                  variant="secondary"
-                  size="lg"
+                  variant="outline"
+                  size="md"
                   onClick={onOpenBooking}
-                  className="w-full sm:w-auto text-sm bg-white/10 text-white hover:bg-white/20 border-white/20"
+                  className="w-full sm:w-auto text-white border-[#86B9C7]/50 hover:bg-white/10"
                 >
-                  Book Consultation
+                  Book 1-on-1 Consultation
                 </Button>
 
                 <a
                   href="https://wa.me/919760498896"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20BD5A] transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white font-semibold text-xs hover:bg-[#20BD5A] transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
                   <span>WhatsApp (+91 9760498896)</span>
                 </a>
               </div>
+
+              {/* Key Trust Highlights */}
+              <div className="pt-3 border-t border-[#134455] flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs text-[#C4DEE3]">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>Strict Confidentiality & NDA</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#86B9C7]" />
+                  <span>No Ghostwriting (100% Ethical)</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="w-4 h-4 text-[#C4DEE3]" />
+                  <span>Fixed Timeline Delivery</span>
+                </span>
+              </div>
             </div>
 
-            {/* Right: Rich Interactive Visual Graphic HUD (6 Cols) */}
-            <div className="lg:col-span-6">
-              <ManuscriptAuditGraphic />
+            {/* Right: High-Res Real Academic Imagery with Concentric Frame */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#134455]/40 border border-[#86B9C7]/30 rounded-3xl p-3 sm:p-4 shadow-xl space-y-3">
+                <div className="relative overflow-hidden rounded-2xl border border-[#86B9C7]/20">
+                  <img 
+                    src="/images/hero-scholar.webp" 
+                    alt="PhD scholars and academic researchers working in university library" 
+                    className="w-full h-56 sm:h-64 object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-[#0B2D3A]/90 backdrop-blur-xs p-2.5 rounded-xl border border-white/10 flex items-center justify-between text-xs text-white">
+                    <div>
+                      <div className="font-bold text-xs text-[#C4DEE3]">DRC Defense Ready</div>
+                      <div className="text-[11px] text-slate-300">Empirical & Methodological Rigor</div>
+                    </div>
+                    <span className="font-mono font-bold text-xs px-2 py-0.5 rounded bg-[#0082A6] text-white">
+                      98.8% Pass Rate
+                    </span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                  <div className="p-2 rounded-xl bg-[#0B2D3A] border border-[#86B9C7]/20">
+                    <div className="font-bold text-white text-sm">450+</div>
+                    <div className="text-[10px] text-[#C4DEE3]">Scholars Guided</div>
+                  </div>
+                  <div className="p-2 rounded-xl bg-[#0B2D3A] border border-[#86B9C7]/20">
+                    <div className="font-bold text-emerald-400 text-sm">100%</div>
+                    <div className="text-[10px] text-[#C4DEE3]">Ethical Standards</div>
+                  </div>
+                  <div className="p-2 rounded-xl bg-[#0B2D3A] border border-[#86B9C7]/20">
+                    <div className="font-bold text-white text-sm">Mathura</div>
+                    <div className="text-[10px] text-[#C4DEE3]">Research Hub</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: TRUST INDICATORS & STATS */}
+      {/* SECTION 2: TRUST METRICS & CREDENTIALS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card padding="md" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
-            <div className="w-10 h-10 rounded-2xl bg-[#0082A6]/10 border border-[#0082A6]/20 flex items-center justify-center mx-auto text-[#0082A6]">
-              <ShieldCheck className="w-5 h-5" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <Card padding="sm" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
+            <div className="w-8 h-8 rounded-xl bg-[#0082A6]/10 flex items-center justify-center mx-auto text-[#0082A6]">
+              <ShieldCheck className="w-4 h-4" />
             </div>
-            <div className="font-serif font-bold text-2xl text-[#0B2D3A]">98.8%</div>
-            <div className="font-semibold text-xs text-[#0B2D3A]">DRC Defense Approval</div>
-            <p className="text-[11px] text-[#3D6170]">Unanimous first-pass clearance</p>
+            <div className="font-bold text-xl text-[#0B2D3A]">98.8%</div>
+            <div className="font-semibold text-xs text-[#0B2D3A]">DRC Defense Clearance</div>
+            <p className="text-[11px] text-[#3D6170]">First-pass university approvals</p>
           </Card>
 
-          <Card padding="md" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
-            <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mx-auto text-emerald-600">
-              <CheckCircle2 className="w-5 h-5" />
+          <Card padding="sm" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 flex items-center justify-center mx-auto text-emerald-600">
+              <CheckCircle2 className="w-4 h-4" />
             </div>
-            <div className="font-serif font-bold text-2xl text-emerald-700">100%</div>
-            <div className="font-semibold text-xs text-[#0B2D3A]">Confidentiality Guarantee</div>
-            <p className="text-[11px] text-[#3D6170]">Encrypted vault & mutual NDAs</p>
+            <div className="font-bold text-xl text-emerald-700">100%</div>
+            <div className="font-semibold text-xs text-[#0B2D3A]">NDA Confidentiality</div>
+            <p className="text-[11px] text-[#3D6170]">Encrypted manuscript handling</p>
           </Card>
 
-          <Card padding="md" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
-            <div className="w-10 h-10 rounded-2xl bg-[#C4DEE3]/40 border border-[#86B9C7]/50 flex items-center justify-center mx-auto text-[#0082A6]">
-              <Clock className="w-5 h-5" />
+          <Card padding="sm" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
+            <div className="w-8 h-8 rounded-xl bg-[#C4DEE3]/40 flex items-center justify-center mx-auto text-[#0082A6]">
+              <Clock className="w-4 h-4" />
             </div>
-            <div className="font-serif font-bold text-2xl text-[#0082A6]">99.4%</div>
-            <div className="font-semibold text-xs text-[#0B2D3A]">On-Time Milestone Delivery</div>
-            <p className="text-[11px] text-[#3D6170]">Guaranteed university timelines</p>
+            <div className="font-bold text-xl text-[#0082A6]">99.4%</div>
+            <div className="font-semibold text-xs text-[#0B2D3A]">On-Time Milestone Rate</div>
+            <p className="text-[11px] text-[#3D6170]">Adherence to academic schedules</p>
           </Card>
 
-          <Card padding="md" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
-            <div className="w-10 h-10 rounded-2xl bg-[#C4DEE3]/30 border border-[#86B9C7]/40 flex items-center justify-center mx-auto text-[#0082A6]">
-              <DollarSign className="w-5 h-5" />
+          <Card padding="sm" className="bg-white text-center space-y-1 border border-[#D6E6EB]">
+            <div className="w-8 h-8 rounded-xl bg-[#C4DEE3]/30 flex items-center justify-center mx-auto text-[#0082A6]">
+              <Users className="w-4 h-4" />
             </div>
-            <div className="font-serif font-bold text-2xl text-[#0B2D3A]">450+</div>
-            <div className="font-semibold text-xs text-[#0B2D3A]">Active Research Scholars</div>
-            <p className="text-[11px] text-[#3D6170]">PhD, Master's & faculty scholars</p>
+            <div className="font-bold text-xl text-[#0B2D3A]">450+</div>
+            <div className="font-semibold text-xs text-[#0B2D3A]">Scholars Supported</div>
+            <p className="text-[11px] text-[#3D6170]">PhD, Master's & faculty</p>
           </Card>
         </div>
       </section>
 
-      {/* SECTION 3: INTER-INSTITUTIONAL UNIVERSITY NETWORK GRAPHIC */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <UniversityNetworkGraphic />
-      </section>
-
-      {/* SECTION 4: 6 CORE SERVICES GRID (Visual & Card-Optimized) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
-        <div className="text-center space-y-2 max-w-2xl mx-auto">
-          <Badge variant="teal">Core Service Modules</Badge>
-          <h2 className="font-serif text-3xl font-bold text-[#0B2D3A]">
-            Expert Academic Support Services
-          </h2>
-          <p className="text-xs text-[#3D6170]">
-            Select a research module to view deliverables, timeline, and custom quotation.
-          </p>
+      {/* SECTION 3: CORE SERVICES (PICTURE-FRIENDLY CARDS WITH WEBP THUMBNAILS) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#D6E6EB] pb-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
+              Primary Research Advisory Services
+            </h2>
+            <p className="text-xs text-[#3D6170] mt-0.5">
+              Ethical guidance, substantive editing, and publication consulting tailored to Indian university norms.
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('services')}
+            className="text-xs font-semibold text-[#0082A6] hover:underline flex items-center gap-1 shrink-0"
+          >
+            <span>View All Services</span>
+            <ChevronRight className="w-3.5 h-3.5" />
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.slice(0, 6).map(service => (
             <div
               key={service.id}
-              className="bg-white rounded-3xl border border-[#D6E6EB] p-5 shadow-subtle hover:border-[#0082A6]/50 transition-colors flex flex-col justify-between space-y-4"
+              className="bg-white rounded-3xl border border-[#D6E6EB] p-4 sm:p-5 shadow-subtle hover:border-[#0082A6] transition-colors flex flex-col justify-between space-y-3.5"
             >
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-2xl bg-[#0082A6]/10 border border-[#0082A6]/20 flex items-center justify-center">
-                    {getServiceIcon(service.icon)}
+                {/* Real WebP Image Header (Concentric: Outer 24px, p-4/p-5 -> inner 16px) */}
+                <div className="relative overflow-hidden rounded-2xl border border-[#D6E6EB]">
+                  <img
+                    src={serviceImageMap[service.slug] || '/images/hero-scholar.webp'}
+                    alt={service.title}
+                    className="w-full h-36 object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2.5 right-2.5 bg-[#0B2D3A]/90 text-[#C4DEE3] text-[11px] font-semibold px-2 py-0.5 rounded-lg border border-white/10">
+                    {service.starting_price || 'Custom Quote'}
                   </div>
-                  <Badge variant="ice" size="sm">
-                    {service.starting_price || 'Quote based'}
-                  </Badge>
                 </div>
 
                 <div>
-                  <h3 className="font-serif font-bold text-base text-[#0B2D3A]">
+                  <h3 className="font-bold text-base text-[#0B2D3A]">
                     {service.title}
                   </h3>
                   <p className="text-xs text-[#3D6170] mt-1 line-clamp-2 leading-relaxed">
                     {service.short_description}
                   </p>
                 </div>
-
-                {/* Micro visual pills */}
-                <div className="p-2.5 rounded-2xl bg-[#C4DEE3]/20 border border-[#86B9C7]/30 space-y-1.5 text-[11px]">
-                  {service.key_deliverables.slice(0, 3).map((d, i) => (
-                    <div key={i} className="flex items-center gap-1.5 text-[#0B2D3A]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0082A6] shrink-0" />
-                      <span className="truncate">{d}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
-              {/* Bottom Actions */}
+              {/* Bottom Card Actions */}
               <div className="pt-3 border-t border-[#D6E6EB]/60 flex items-center justify-between">
                 <button
                   onClick={() => onNavigate('service-detail', { slug: service.slug })}
-                  className="text-xs font-semibold text-[#0082A6] hover:text-[#0B2D3A] transition-colors inline-flex items-center gap-1"
+                  className="text-xs font-semibold text-[#0082A6] hover:underline flex items-center gap-1"
                 >
-                  <span>Details</span>
+                  <span>Learn Scope</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
 
@@ -251,7 +262,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   variant="teal"
                   size="sm"
                   onClick={() => onOpenInquiry(service.id)}
-                  className="text-xs font-bold"
+                  className="text-xs font-semibold"
                 >
                   Get Assistance
                 </Button>
@@ -261,64 +272,136 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* SECTION 5: 4-STAGE VISUAL RESEARCH WORKFLOW (GRAPHICAL PIPELINE) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
-        <div className="text-center space-y-2 max-w-xl mx-auto">
-          <Badge variant="cyan">Visual Pipeline</Badge>
-          <h2 className="font-serif text-3xl font-bold text-[#0B2D3A]">
+      {/* SECTION 4: 4-STAGE VISUAL RESEARCH WORKFLOW (GRAPHICAL PIPELINE) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
             Our Research Advisory Workflow
           </h2>
-          <p className="text-xs text-[#3D6170]">
-            From initial gap discovery to university DRC approval and peer-reviewed publication.
+          <p className="text-xs text-[#3D6170] mt-0.5">
+            Transparent milestones from research gap scoping to final publication support.
           </p>
         </div>
 
         <ResearchWorkflowGraphic />
       </section>
 
-      {/* SECTION 6: BEFORE VS. AFTER VISUAL TRANSFORMATION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
-        <div className="text-center space-y-2 max-w-xl mx-auto">
-          <Badge variant="teal">Quality Benchmark</Badge>
-          <h2 className="font-serif text-3xl font-bold text-[#0B2D3A]">
-            See The Editorial Transformation
+      {/* SECTION 5: REAL PHOTO HIGHLIGHT — MATHURA RESEARCH CENTER & CONSULTATIONS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="bg-white rounded-3xl border border-[#D6E6EB] p-5 sm:p-8 shadow-subtle">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            {/* Visual Photography Duo (6 Cols) */}
+            <div className="lg:col-span-6 grid grid-cols-2 gap-3">
+              <div className="overflow-hidden rounded-2xl border border-[#D6E6EB]">
+                <img 
+                  src="/images/consultation-meeting.webp" 
+                  alt="Personal one-to-one academic advisory session in Mathura" 
+                  className="w-full h-44 sm:h-52 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-[#D6E6EB]">
+                <img 
+                  src="/images/academic-team.webp" 
+                  alt="AcademicPro senior research review committee" 
+                  className="w-full h-44 sm:h-52 object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Content (6 Cols) */}
+            <div className="lg:col-span-6 space-y-3">
+              <span className="text-xs font-semibold text-[#0082A6] uppercase tracking-wide">
+                Mathura Academic Center
+              </span>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
+                Personalized Mentorship Built on Academic Integrity
+              </h2>
+              <p className="text-xs sm:text-sm text-[#3D6170] leading-relaxed">
+                Whether you prefer in-person consultation at our Civil Lines office in Mathura or real-time online video sessions, AcademicPro India pairs you with subject-matter specialists in your exact discipline.
+              </p>
+
+              <div className="space-y-2 pt-1 text-xs text-[#0B2D3A]">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0082A6] shrink-0" />
+                  <span>Interactive Chapter-by-Chapter Feedback</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0082A6] shrink-0" />
+                  <span>SPSS & R Statistical Analysis Verification</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0082A6] shrink-0" />
+                  <span>Pre-Viva Mock Question Preparation</span>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <Button
+                  variant="teal"
+                  size="sm"
+                  onClick={onOpenBooking}
+                  className="text-xs"
+                >
+                  Schedule Your 1-on-1 Session
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: BEFORE VS. AFTER EDITORIAL TRANSFORMATION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
+            Editorial Quality Benchmark
           </h2>
-          <p className="text-xs text-[#3D6170]">
-            Compare a raw draft against an AcademicPro polished dissertation excerpt.
+          <p className="text-xs text-[#3D6170] mt-0.5">
+            Compare an unrefined draft against an AcademicPro publication-grade excerpt.
           </p>
         </div>
 
         <BeforeAfterPreviewGraphic />
       </section>
 
-      {/* SECTION 7: JOURNAL COMPARISON INFOGRAPHIC (PREDATORY VS. INDEXED) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
-        <div className="text-center space-y-2 max-w-xl mx-auto">
-          <Badge variant="navy">Academic Integrity Protocol</Badge>
-          <h2 className="font-serif text-3xl font-bold text-[#0B2D3A]">
-            Protect Your Doctoral Credentials
+      {/* SECTION 7: JOURNAL COMPARISON INFOGRAPHIC */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
+            Academic Integrity Protocol
           </h2>
-          <p className="text-xs text-[#3D6170]">
-            How we protect researchers from fake cloned journals and ensure legitimate UGC-CARE/Scopus indexing.
+          <p className="text-xs text-[#3D6170] mt-0.5">
+            Learn how we protect scholars from predatory publisher traps and verify Scopus and UGC-CARE indexation.
           </p>
         </div>
 
         <JournalComparisonGraphic />
       </section>
 
-      {/* SECTION 8: VERIFIED SCHOLAR FEEDBACK */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
-        <div className="text-center space-y-2 max-w-xl mx-auto">
-          <Badge variant="ice">Verified Testimonials</Badge>
-          <h2 className="font-serif text-3xl font-bold text-[#0B2D3A]">
-            Trusted by Indian Scholars
-          </h2>
+      {/* SECTION 8: UNIVERSITY NETWORK */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <UniversityNetworkGraphic />
+      </section>
+
+      {/* SECTION 9: VERIFIED TESTIMONIALS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
+              Verified Feedback from Scholars
+            </h2>
+            <p className="text-xs text-[#3D6170]">
+              Genuine reviews from researchers across central and state universities.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.map(t => (
-            <Card key={t.id} padding="md" className="bg-white space-y-3 flex flex-col justify-between border border-[#D6E6EB]">
-              <div className="space-y-2">
+            <Card key={t.id} padding="sm" className="bg-white space-y-2.5 flex flex-col justify-between border border-[#D6E6EB]">
+              <div className="space-y-1.5">
                 <div className="flex items-center gap-1 text-[#0082A6]">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -329,8 +412,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#D6E6EB]/60 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#0B2D3A] text-[#C4DEE3] font-bold text-xs flex items-center justify-center shrink-0">
+              <div className="pt-2.5 border-t border-[#D6E6EB]/60 flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-[#0B2D3A] text-[#C4DEE3] font-bold text-xs flex items-center justify-center shrink-0">
                   {t.avatar_initials}
                 </div>
                 <div className="min-w-0 text-xs">
@@ -343,23 +426,25 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* SECTION 9: FREQUENTLY ASKED QUESTIONS */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
-        <div className="text-center space-y-2">
-          <Badge variant="teal">Transparency</Badge>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B2D3A]">
+      {/* SECTION 10: FREQUENTLY ASKED QUESTIONS */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-8 space-y-4">
+        <div className="text-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
             Frequently Asked Questions
           </h2>
+          <p className="text-xs text-[#3D6170] mt-0.5">
+            Transparent answers regarding methodology, timelines, and academic ethics.
+          </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {faqs.map(item => (
-            <Card key={item.id} padding="md" className="bg-white space-y-1.5 border border-[#D6E6EB]">
-              <h3 className="font-serif font-bold text-xs sm:text-sm text-[#0B2D3A] flex items-center gap-2">
-                <HelpCircle className="w-4 h-4 text-[#0082A6] shrink-0" />
+            <Card key={item.id} padding="sm" className="bg-white space-y-1 border border-[#D6E6EB]">
+              <h3 className="font-bold text-xs sm:text-sm text-[#0B2D3A] flex items-center gap-2">
+                <HelpCircle className="w-3.5 h-3.5 text-[#0082A6] shrink-0" />
                 <span>{item.question}</span>
               </h3>
-              <p className="text-xs text-[#3D6170] leading-relaxed pl-6">
+              <p className="text-xs text-[#3D6170] leading-relaxed pl-5.5">
                 {item.answer}
               </p>
             </Card>
@@ -368,38 +453,38 @@ export const HomePage: React.FC<HomePageProps> = ({
 
         <div className="text-center pt-2">
           <Button variant="outline" size="sm" onClick={() => onNavigate('faq')} className="text-xs">
-            View All FAQs & Policy Details →
+            View All FAQs & Ethics Rules →
           </Button>
         </div>
       </section>
 
-      {/* SECTION 10: FINAL CTA */}
+      {/* SECTION 11: FINAL DIRECT CTA (SOLID, CLEAN, HIGH-IMPACT) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="bg-[#0B2D3A] text-white rounded-3xl p-8 sm:p-12 text-center space-y-5 shadow-premium border border-[#134455]">
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
-            Let's Turn Your Research Goals Into Reality!
+        <div className="bg-[#0B2D3A] text-white rounded-3xl p-6 sm:p-10 text-center space-y-4 shadow-xl border border-[#134455]">
+          <h2 className="text-xl sm:text-3xl font-bold text-white">
+            Ready to Accelerate Your Research Milestones?
           </h2>
-          <p className="text-xs sm:text-sm text-[#C4DEE3] max-w-xl mx-auto">
-            Connect with our Mathura research coordinators today for expert, ethical guidance on your synopsis, thesis, or journal paper.
+          <p className="text-xs sm:text-sm text-[#C4DEE3] max-w-lg mx-auto leading-relaxed">
+            Connect with our Mathura research coordinators today for a transparent assessment of your synopsis, thesis draft, or journal paper.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
               variant="teal"
-              size="lg"
+              size="md"
               onClick={() => onOpenInquiry()}
               className="w-full sm:w-auto text-xs font-bold"
             >
-              Start Your Research Journey
+              Request a Custom Quote
             </Button>
             <a
               href="https://wa.me/919760498896"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-xs hover:bg-[#20BD5A] transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs hover:bg-[#20BD5A] transition-colors"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-              <span>Contact Us on WhatsApp</span>
+              <span>Direct WhatsApp (+91 9760498896)</span>
             </a>
           </div>
         </div>

@@ -137,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => handleNavClick('home')}
           className="flex items-center gap-3 text-left focus:outline-none group"
         >
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#0082A6] to-[#061D26] border border-[#86B9C7]/40 flex items-center justify-center shadow-inner shrink-0">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#0082A6] border border-[#86B9C7]/40 flex items-center justify-center shadow-xs shrink-0">
             <GraduationCap className="w-6 h-6 text-[#C4DEE3]" />
           </div>
           <div>
