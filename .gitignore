@@ -24,4 +24,9 @@ dist-ssr
 *.sw?
 graphify-out/
 
+screenshots/
 screenshots/*
+*.png
+*.jpg
+*.jpeg
+!public/**/*
