@@ -1,4 +1,4 @@
-# AcademicPro India — Professional Academic Research Platform
+# YouKnowVerse — Professional Academic Research Platform
 
 > **"Your Research Journey, Our Professional Guidance."**  
 > *Research Support • Academic Excellence • Your Success*  
@@ -7,7 +7,7 @@
 ---
 
 ## 🏛️ Project Overview
-**AcademicPro India** is a premier, full-featured academic research support and consultancy business web platform. It establishes AcademicPro India as a trusted, high-caliber consultancy for undergraduate students, postgraduate candidates, PhD research scholars, and university faculty.
+**YouKnowVerse** is a premier, full-featured academic research support and consultancy business web platform. It establishes YouKnowVerse as a trusted, high-caliber consultancy for undergraduate students, postgraduate candidates, PhD research scholars, and university faculty.
 
 ### Core Ecosystem
 1. **Public Marketing Website**: High-conversion editorial experience with services showcase, 4-step workflow, verified feedback, and research guides.
@@ -21,7 +21,7 @@
 
 ```bash
 # Clone or navigate to directory
-cd /Users/sakhi/Code/academicpro-india
+cd /Users/sakhi/Code/youknowverse
 
 # Install dependencies
 npm install
@@ -51,12 +51,12 @@ npm run build
 
 ## 📚 Technical Documentation Directory
 All technical and operational specifications are available in the `docs/` folder:
-- [docs/PROJECT_OVERVIEW.md](file:///Users/sakhi/Code/academicpro-india/docs/PROJECT_OVERVIEW.md)
-- [docs/ARCHITECTURE.md](file:///Users/sakhi/Code/academicpro-india/docs/ARCHITECTURE.md)
-- [docs/DATABASE_SCHEMA.md](file:///Users/sakhi/Code/academicpro-india/docs/DATABASE_SCHEMA.md)
-- [docs/DATABASE_SCHEMA.sql](file:///Users/sakhi/Code/academicpro-india/docs/DATABASE_SCHEMA.sql) (26 tables + RLS)
-- [docs/DESIGN_SYSTEM.md](file:///Users/sakhi/Code/academicpro-india/docs/DESIGN_SYSTEM.md)
-- [docs/SECURITY.md](file:///Users/sakhi/Code/academicpro-india/docs/SECURITY.md)
-- [docs/API_DOCUMENTATION.md](file:///Users/sakhi/Code/academicpro-india/docs/API_DOCUMENTATION.md)
-- [docs/DEPLOYMENT.md](file:///Users/sakhi/Code/academicpro-india/docs/DEPLOYMENT.md)
-- [docs/CHANGELOG.md](file:///Users/sakhi/Code/academicpro-india/docs/CHANGELOG.md)
+- [docs/PROJECT_OVERVIEW.md](file:///Users/sakhi/Code/youknowverse/docs/PROJECT_OVERVIEW.md)
+- [docs/ARCHITECTURE.md](file:///Users/sakhi/Code/youknowverse/docs/ARCHITECTURE.md)
+- [docs/DATABASE_SCHEMA.md](file:///Users/sakhi/Code/youknowverse/docs/DATABASE_SCHEMA.md)
+- [docs/DATABASE_SCHEMA.sql](file:///Users/sakhi/Code/youknowverse/docs/DATABASE_SCHEMA.sql) (26 tables + RLS)
+- [docs/DESIGN_SYSTEM.md](file:///Users/sakhi/Code/youknowverse/docs/DESIGN_SYSTEM.md)
+- [docs/SECURITY.md](file:///Users/sakhi/Code/youknowverse/docs/SECURITY.md)
+- [docs/API_DOCUMENTATION.md](file:///Users/sakhi/Code/youknowverse/docs/API_DOCUMENTATION.md)
+- [docs/DEPLOYMENT.md](file:///Users/sakhi/Code/youknowverse/docs/DEPLOYMENT.md)
+- [docs/CHANGELOG.md](file:///Users/sakhi/Code/youknowverse/docs/CHANGELOG.md)

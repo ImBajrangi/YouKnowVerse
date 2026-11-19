@@ -181,7 +181,7 @@ export const InquiryFormModal: React.FC<InquiryFormModalProps> = ({
           {/* WhatsApp Direct Option */}
           <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={`https://wa.me/919760498896?text=Hello%20AcademicPro%20India%2C%20I%20have%20submitted%20Inquiry%20${submittedInquiry.inquiry_number}%20for%20${encodeURIComponent(submittedInquiry.service_title)}.%20Please%20review%20my%20requirements.`}
+              href={`https://wa.me/919760498896?text=Hello%20YouKnowVerse%20India%2C%20I%20have%20submitted%20Inquiry%20${submittedInquiry.inquiry_number}%20for%20${encodeURIComponent(submittedInquiry.service_title)}.%20Please%20review%20my%20requirements.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20BD5A] transition-colors"

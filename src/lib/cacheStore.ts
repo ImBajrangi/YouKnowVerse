@@ -29,7 +29,7 @@ import {
 } from './initialMockData';
 
 // Cache keys
-const STORAGE_PREFIX = 'academicpro_';
+const STORAGE_PREFIX = 'youknowverse_';
 const KEYS = {
   SERVICES: `${STORAGE_PREFIX}services`,
   INQUIRIES: `${STORAGE_PREFIX}inquiries`,
@@ -59,11 +59,11 @@ export const DEMO_CLIENT: UserProfile = {
 
 export const DEMO_ADMIN: UserProfile = {
   id: 'usr-admin-01',
-  email: 'director@academicproindia.com',
+  email: 'director@youknowverseindia.com',
   full_name: 'Dr. Vivek Upadhyay (Director)',
   phone: '+91 9760498896',
   role: 'super_admin',
-  university: 'AcademicPro India Headquarters, Mathura',
+  university: 'YouKnowVerse Headquarters, Mathura',
   research_field: 'Academic Administration & Research Ethics',
   created_at: '2026-01-01T00:00:00Z'
 };
@@ -158,9 +158,9 @@ const INITIAL_DOCUMENTS: ProjectDocument[] = [
     project_id: 'proj-001',
     uploader_id: 'usr-admin-01',
     uploader_name: 'Dr. Ananya Mishra',
-    title: 'AcademicPro Tracked Edits & Evaluation Report v2.docx',
+    title: 'YouKnowVerse Tracked Edits & Evaluation Report v2.docx',
     category: 'deliverable',
-    file_name: 'AcademicPro_Tracked_Edits_v2.docx',
+    file_name: 'YouKnowVerse_Tracked_Edits_v2.docx',
     file_size_formatted: '3.1 MB',
     file_type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     file_url: '#',
@@ -520,7 +520,7 @@ export const CacheStore = {
       status: 'scheduled',
       created_at: new Date().toISOString(),
       meeting_link: cData.mode === 'online_video' 
-        ? `https://meet.google.com/academicpro-${Math.random().toString(36).substring(2, 8)}`
+        ? `https://meet.google.com/youknowverse-${Math.random().toString(36).substring(2, 8)}`
         : 'Mathura Office: Civil Lines, Near Mathura Cantt Railway Station, UP 281001'
     };
     list.unshift(newC);

@@ -41,7 +41,7 @@ export const JournalComparisonGraphic: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: AcademicPro Verified Publishing (Emerald / Teal) */}
+        {/* Right: YouKnowVerse Verified Publishing (Emerald / Teal) */}
         <div className="p-5 sm:p-6 bg-[#EBF5F8]/40 space-y-3.5">
           <div className="flex items-center gap-2.5 border-b border-[#C4DEE3] pb-3">
             <div className="p-2 rounded-xl bg-[#EBF5F8] text-[#0082A6] border border-[#C4DEE3]">
@@ -49,7 +49,7 @@ export const JournalComparisonGraphic: React.FC = () => {
             </div>
             <div>
               <h4 className="font-bold text-sm text-[#0F172A]">
-                AcademicPro Ethical Guidance
+                YouKnowVerse Ethical Guidance
               </h4>
               <span className="text-[10px] text-[#0082A6] font-semibold uppercase tracking-wider">
                 100% Verified Scopus & UGC-CARE List

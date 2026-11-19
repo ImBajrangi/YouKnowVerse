@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  variant?: 'elevated' | 'flat' | 'outline' | 'navy' | 'linen';
+  variant?: 'elevated' | 'flat' | 'outline' | 'navy' | 'linen' | 'ocean' | 'cloudy' | 'ice';
   padding?: 'none' | 'sm' | 'md' | 'lg';
   concentricRadius?: '2xl' | '3xl';
   className?: string;
@@ -31,11 +31,14 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const variantClasses = {
-    elevated: 'bg-white border border-slate-200 shadow-xs',
+    elevated: 'bg-white border border-slate-200/90 shadow-xs',
     flat: 'bg-slate-50 border border-slate-200',
     outline: 'bg-transparent border border-slate-200',
+    ocean: 'bg-[#2772A0] text-white border border-[#1E5C82] shadow-sm',
+    cloudy: 'bg-[#CCDDEA] text-[#103852] border border-[#B0C8DA] shadow-xs',
+    ice: 'bg-[#EBF5F8] text-[#0F2C3D] border border-[#C4DEE3] shadow-xs',
     navy: 'bg-[#0B2D3A] text-white border border-[#134455] shadow-sm',
-    linen: 'bg-slate-50 border border-slate-200',
+    linen: 'bg-[#F7F5ED] text-slate-800 border border-[#E8E4D5]',
   };
 
   return (

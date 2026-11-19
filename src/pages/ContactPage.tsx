@@ -60,7 +60,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto space-y-4 text-center">
           <Badge variant="gold">Institutional Contact</Badge>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Connect With AcademicPro India
+            Connect With YouKnowVerse
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Headquartered in Mathura, Uttar Pradesh. Connect with our academic research coordinators in-person or via phone, WhatsApp, and Google Meet.
@@ -129,8 +129,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenBooking }) => {
                   </div>
                   <div>
                     <span className="font-bold text-slate-900 block">Email Inquiries:</span>
-                    <a href="mailto:support@academicproindia.com" className="text-slate-700 hover:text-[#0082A6] transition-colors">
-                      support@academicproindia.com
+                    <a href="mailto:support@youknowverseindia.com" className="text-slate-700 hover:text-[#0082A6] transition-colors">
+                      support@youknowverseindia.com
                     </a>
                   </div>
                 </div>

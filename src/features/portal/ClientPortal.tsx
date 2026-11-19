@@ -107,7 +107,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
       client_name: currentUser?.full_name || 'Vikas Kushwaha',
       amount: amount,
       payment_method: 'upi',
-      transaction_ref: `UPI/${Date.now().toString().slice(-8)}/academicpro`,
+      transaction_ref: `UPI/${Date.now().toString().slice(-8)}/youknowverse`,
       status: 'verified',
     });
 
@@ -664,7 +664,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({
         isOpen={paymentModalOpen}
         onClose={() => setPaymentModalOpen(false)}
         title="Simulated Secure Payment"
-        subtitle="AcademicPro India UPI & NetBanking Gateway Simulator"
+        subtitle="YouKnowVerse UPI & NetBanking Gateway Simulator"
       >
         <div className="space-y-4 text-xs">
           <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">

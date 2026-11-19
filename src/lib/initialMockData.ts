@@ -60,7 +60,7 @@ export const INITIAL_SERVICES: Service[] = [
     title: 'Synopsis Review & Refinement',
     tagline: 'Ensure your PhD / Master’s research proposal meets rigorous institutional standards.',
     short_description: 'Structural evaluation, methodology validation, literature gap verification, and academic formatting review before submission to the DRC / RDC.',
-    full_description: 'A research synopsis is your formal gateway to doctoral candidacy. AcademicPro India conducts a thorough, critical review of your synopsis draft. We assess conceptual clarity, ensure alignment between objectives and methodology, verify citation integrity, and supply actionable line-by-line editorial feedback.',
+    full_description: 'A research synopsis is your formal gateway to doctoral candidacy. YouKnowVerse conducts a thorough, critical review of your synopsis draft. We assess conceptual clarity, ensure alignment between objectives and methodology, verify citation integrity, and supply actionable line-by-line editorial feedback.',
     key_deliverables: [
       'Comprehensive Synopsis Evaluation Report (15+ critical audit parameters)',
       'Detailed line-by-line tracked changes MS Word document',
@@ -128,7 +128,7 @@ export const INITIAL_SERVICES: Service[] = [
     title: 'Research Paper Support',
     tagline: 'Structure compelling scholarly manuscripts ready for rigorous peer review.',
     short_description: 'End-to-end guidance in manuscript structuring, literature synthesis, methodological clarity, data presentation, and journal author guideline compliance.',
-    full_description: 'Publishing in reputable journals requires persuasive framing, clear empirical presentation, and adherence to author guidelines. AcademicPro India assists researchers in transforming raw findings or thesis chapters into tightly written, coherent journal articles conforming to standard IMRaD (Introduction, Methods, Results, and Discussion) structures.',
+    full_description: 'Publishing in reputable journals requires persuasive framing, clear empirical presentation, and adherence to author guidelines. YouKnowVerse assists researchers in transforming raw findings or thesis chapters into tightly written, coherent journal articles conforming to standard IMRaD (Introduction, Methods, Results, and Discussion) structures.',
     key_deliverables: [
       'Complete manuscript structuring and flow optimization',
       'Synthesis of empirical findings and literature comparison',
@@ -425,7 +425,7 @@ export const INITIAL_PAYMENTS: Payment[] = [
     client_name: 'Vikas Kushwaha',
     amount: 8500,
     payment_method: 'upi',
-    transaction_ref: 'UPI/329847192837/academicpro',
+    transaction_ref: 'UPI/329847192837/youknowverse',
     status: 'verified',
     invoice_number: 'INV-2026-0042',
     created_at: '2026-11-10T12:30:00Z',
@@ -461,7 +461,7 @@ export const INITIAL_CONSULTATIONS: Consultation[] = [
     scheduled_date: '2026-11-21',
     scheduled_time: '04:00 PM - 04:45 PM',
     status: 'scheduled',
-    meeting_link: 'https://meet.google.com/academicpro-consult-001',
+    meeting_link: 'https://meet.google.com/youknowverse-consult-001',
     notes: 'Reviewer 2 feedback discussion for IEEE journal paper.',
     created_at: '2026-11-17T11:00:00Z'
   },
@@ -492,7 +492,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     university: 'Banaras Hindu University (BHU)',
     service_name: 'Thesis Editing & Formatting',
     rating: 5,
-    quote: 'AcademicPro India provided exceptional line-by-line editing on my 420-page PhD thesis. The feedback on our citation formatting and chapter transition was flawless. They saved me weeks of stress prior to my final defense.',
+    quote: 'YouKnowVerse provided exceptional line-by-line editing on my 420-page PhD thesis. The feedback on our citation formatting and chapter transition was flawless. They saved me weeks of stress prior to my final defense.',
     date: 'October 2026',
     is_verified: true,
     avatar_initials: 'RT'
@@ -504,7 +504,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
     university: 'Dr. B.R. Ambedkar University, Agra',
     service_name: 'Synopsis Review & Refinement',
     rating: 5,
-    quote: 'My synopsis had been sent back twice by our RDC committee with doubts on sampling framework. AcademicPro India’s methodologist clarified our structural equation model and sampling calculation in two days. It got approved unanimously.',
+    quote: 'My synopsis had been sent back twice by our RDC committee with doubts on sampling framework. YouKnowVerse’s methodologist clarified our structural equation model and sampling calculation in two days. It got approved unanimously.',
     date: 'September 2026',
     is_verified: true,
     avatar_initials: 'MS'
@@ -540,7 +540,7 @@ export const INITIAL_FAQS: FAQItem[] = [
     id: 'faq-1',
     category: 'services',
     question: 'Do you guarantee that my paper will be published in a specific journal?',
-    answer: 'No. In strict accordance with our Academic Integrity Policy, AcademicPro India never guarantees publication or acceptance. Legitimate peer-reviewed journals maintain independent editorial boards and blind peer reviewers. We provide ethical research guidance, methodological validation, language editing, and formatting compliance to maximize your paper’s scholarly rigor.',
+    answer: 'No. In strict accordance with our Academic Integrity Policy, YouKnowVerse never guarantees publication or acceptance. Legitimate peer-reviewed journals maintain independent editorial boards and blind peer reviewers. We provide ethical research guidance, methodological validation, language editing, and formatting compliance to maximize your paper’s scholarly rigor.',
     is_featured: true
   },
   {
@@ -608,7 +608,7 @@ Begin with a broad thematic area, zoom into a documented research gap, and craft
 1. **The Overarching Central Question**: Defining the core inquiry of the doctoral work.
 2. **Sub-Questions (3 to 4 max)**: Directly mapping to each empirical chapter in your dissertation.
 
-At AcademicPro India, our research consultants assist scholars in refining conceptual frameworks into precise, defensible research designs.`,
+At YouKnowVerse, our research consultants assist scholars in refining conceptual frameworks into precise, defensible research designs.`,
     read_time: '6 min read',
     author: 'Dr. Ananya Mishra, Research Methodologist',
     category: 'Research Methodology',
@@ -655,7 +655,7 @@ Divide your literature chapter into 3-4 thematic sub-domains:
 2. **Methodological Approaches**: How past researchers measured your construct (qualitative vs. quantitative).
 3. **Empirical Findings & Gaps**: What is conclusively proven, what remains disputed, and what has never been examined in your geographical or contextual setting.
 
-Use a structured matrix comparing author, methodology, key findings, limitations, and direct relevance to your research question. AcademicPro India helps scholars build structured literature matrices with complete Zotero/Mendeley integration.`,
+Use a structured matrix comparing author, methodology, key findings, limitations, and direct relevance to your research question. YouKnowVerse helps scholars build structured literature matrices with complete Zotero/Mendeley integration.`,
     read_time: '7 min read',
     author: 'Prof. S. N. Dwivedi, Senior Academic Editor',
     category: 'Thesis Writing',

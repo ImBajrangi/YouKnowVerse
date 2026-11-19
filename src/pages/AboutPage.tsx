@@ -20,16 +20,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 }) => {
   return (
     <div className="space-y-12 pb-16 font-sans">
-      {/* Hero Banner (Clean Solid Peacock Navy, Native Fonts) */}
-      <section className="bg-[#0B2D3A] text-white py-10 sm:py-14 px-4 sm:px-8 border-b border-[#134455]">
+      {/* Hero Banner (Ocean Blue with Cloudy Sky Accents) */}
+      <section className="bg-[#2772A0] text-white py-10 sm:py-14 px-4 sm:px-8 border-b border-[#1E5C82]">
         <div className="max-w-7xl mx-auto space-y-3 text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E5C82] text-[#CCDDEA] text-xs font-semibold">
+            <span>Mathura, Uttar Pradesh, India</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
             Ethical Academic Research Advisory
           </h1>
-          <p className="text-sm sm:text-base text-[#86B9C7] font-medium max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-[#CCDDEA] font-medium max-w-xl mx-auto">
             "Your Research Journey, Our Professional Guidance."
           </p>
-          <p className="text-xs sm:text-sm text-[#C4DEE3] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#CCDDEA]/90 max-w-2xl mx-auto leading-relaxed">
             Headquartered in Mathura, Uttar Pradesh, guiding PhD candidates, Master's scholars, and faculty through doctoral synopses, empirical data modeling, and legitimate journal publication.
           </p>
         </div>
@@ -79,7 +82,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </div>
 
             <div className="pt-2 flex items-center gap-3">
-              <Button variant="teal" size="sm" onClick={onOpenBooking} className="text-xs font-semibold">
+              <Button variant="ocean" size="sm" onClick={onOpenBooking} className="text-xs font-semibold">
                 Book Consultation with Academic Lead
               </Button>
               <Button variant="outline" size="sm" onClick={() => onNavigate('contact')} className="text-xs">
@@ -93,7 +96,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <div className="overflow-hidden rounded-2xl border border-slate-200">
               <img 
                 src="/images/academic-team.webp" 
-                alt="AcademicPro advisory editorial board and peer reviewers" 
+                alt="YouKnowVerse advisory editorial board and peer reviewers" 
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />

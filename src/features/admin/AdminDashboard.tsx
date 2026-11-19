@@ -101,7 +101,7 @@ export const AdminDashboard: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <Badge variant="gold" size="sm">Executive Administration Panel</Badge>
-              <span className="text-xs text-amber-300">Director Mode (AcademicPro India)</span>
+              <span className="text-xs text-amber-300">Director Mode (YouKnowVerse)</span>
             </div>
             <h1 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight mt-1">
               Business Operations & Governance

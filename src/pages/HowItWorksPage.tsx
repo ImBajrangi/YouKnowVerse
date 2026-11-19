@@ -1,7 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { Badge } from '../components/ui/Badge';
 import { ResearchWorkflowGraphic } from '../components/graphics/ResearchWorkflowGraphic';
 
 export interface HowItWorksPageProps {
@@ -60,13 +59,15 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
   return (
     <div className="space-y-16 pb-16 font-sans">
       {/* Hero */}
-      <section className="bg-[#0B2D3A] text-white py-16 px-4 sm:px-8">
+      <section className="bg-[#2772A0] text-white py-14 px-4 sm:px-8 border-b border-[#1E5C82]">
         <div className="max-w-7xl mx-auto space-y-4 text-center">
-          <Badge variant="gold">Institutional Process</Badge>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E5C82] text-[#CCDDEA] text-xs font-semibold">
+            <span>Structured Research Protocol</span>
+          </div>
+          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
             How Our Academic Advisory Works
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#CCDDEA] max-w-2xl mx-auto leading-relaxed">
             A transparent, ethical, step-by-step engagement model designed to give scholars absolute peace of mind and publication-grade results.
           </p>
         </div>

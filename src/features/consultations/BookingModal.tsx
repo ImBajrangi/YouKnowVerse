@@ -155,7 +155,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
           <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={`https://wa.me/919760498896?text=Hello%20AcademicPro%20India%2C%20I%20have%20booked%20a%20consultation%20on%20${bookedConsultation.scheduled_date}%20at%20${encodeURIComponent(bookedConsultation.scheduled_time)}%20for%20${encodeURIComponent(bookedConsultation.consultation_type_label)}.`}
+              href={`https://wa.me/919760498896?text=Hello%20YouKnowVerse%20India%2C%20I%20have%20booked%20a%20consultation%20on%20${bookedConsultation.scheduled_date}%20at%20${encodeURIComponent(bookedConsultation.scheduled_time)}%20for%20${encodeURIComponent(bookedConsultation.consultation_type_label)}.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-semibold text-xs hover:bg-[#20BD5A] transition-colors"

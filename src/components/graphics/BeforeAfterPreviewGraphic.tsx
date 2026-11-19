@@ -37,7 +37,7 @@ export const BeforeAfterPreviewGraphic: React.FC = () => {
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            AcademicPro Polish (After)
+            YouKnowVerse Polish (After)
           </button>
         </div>
       </div>
@@ -67,7 +67,7 @@ export const BeforeAfterPreviewGraphic: React.FC = () => {
           <div className="space-y-3 font-sans">
             <div className="flex items-center gap-2 text-[#0082A6] font-semibold text-xs border-b border-[#0082A6]/20 pb-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>AcademicPro Refinement: Defensible scholarly syntax, precise empirical framing, APA 7th compliance</span>
+              <span>YouKnowVerse Refinement: Defensible scholarly syntax, precise empirical framing, APA 7th compliance</span>
             </div>
 
             <div className="space-y-2 text-[#0F172A] text-xs sm:text-sm leading-relaxed">

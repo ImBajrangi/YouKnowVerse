@@ -35,13 +35,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
   return (
     <div className="space-y-12 pb-16 font-sans">
-      {/* Header Banner (Clean Solid Peacock Navy, Native Fonts) */}
-      <section className="bg-[#0B2D3A] text-white py-10 sm:py-14 px-4 sm:px-8 border-b border-[#134455]">
+      {/* Header Banner (Ocean Blue with Cloudy Sky Accents) */}
+      <section className="bg-[#2772A0] text-white py-10 sm:py-14 px-4 sm:px-8 border-b border-[#1E5C82]">
         <div className="max-w-7xl mx-auto space-y-3 text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Ethical Academic Research & Advisory Services
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E5C82] text-[#CCDDEA] text-xs font-semibold">
+            <span>UGC-CARE &amp; Scopus Standard Advisory</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            Ethical Academic Research &amp; Advisory Services
           </h1>
-          <p className="text-xs sm:text-sm text-[#C4DEE3] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#CCDDEA] max-w-2xl mx-auto leading-relaxed">
             From initial research area formulation and synopsis defense preparation to full dissertation editing and verified journal publication guidance.
           </p>
         </div>
@@ -50,8 +53,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       {/* Visual Workflow Infographic */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-3">
         <div>
-          <h2 className="font-bold text-xl text-[#0B2D3A]">Service Delivery Milestones</h2>
-          <p className="text-xs text-[#3D6170]">Transparent four-step workflow from proposal to publication.</p>
+          <span className="text-xs font-bold uppercase tracking-wider text-[#2772A0]">Milestone Architecture</span>
+          <h2 className="font-bold text-xl text-[#0F2C3D]">Service Delivery Milestones</h2>
+          <p className="text-xs text-slate-500">Transparent four-step workflow from proposal to publication.</p>
         </div>
         <ResearchWorkflowGraphic />
       </section>
@@ -59,48 +63,49 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       {/* Services List with Pictures */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
         <div>
-          <h2 className="font-bold text-xl text-[#0B2D3A]">Available Advisory Modules</h2>
-          <p className="text-xs text-[#3D6170]">Select a module to view complete deliverables, pricing models, and timeline scope.</p>
+          <span className="text-xs font-bold uppercase tracking-wider text-[#2772A0]">Comprehensive Catalog</span>
+          <h2 className="font-bold text-xl text-[#0F2C3D]">Available Advisory Modules</h2>
+          <p className="text-xs text-slate-500">Select a module to view complete deliverables, pricing models, and timeline scope.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map(s => (
-            <Card key={s.id} padding="md" className="bg-white space-y-4 flex flex-col justify-between border border-[#D6E6EB]">
+            <Card key={s.id} padding="md" className="bg-white space-y-4 flex flex-col justify-between border border-slate-200/90 shadow-xs">
               <div className="space-y-3">
                 {/* Real WebP Image Header */}
-                <div className="relative overflow-hidden rounded-2xl border border-[#D6E6EB]">
+                <div className="relative overflow-hidden rounded-2xl border border-slate-200">
                   <img
                     src={serviceImageMap[s.slug] || '/images/hero-scholar.webp'}
                     alt={s.title}
                     className="w-full h-44 object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute top-2.5 right-2.5 bg-[#0B2D3A]/90 text-[#C4DEE3] text-xs font-semibold px-2.5 py-1 rounded-lg border border-white/10">
+                  <div className="absolute top-2.5 right-2.5 bg-[#2772A0] text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow-xs">
                     {s.starting_price || 'Custom Quote'}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-lg text-[#0B2D3A]">
+                  <h3 className="font-bold text-lg text-[#0F2C3D]">
                     {s.title}
                   </h3>
-                  <p className="text-xs text-[#3D6170] font-medium mt-0.5">
+                  <p className="text-xs text-[#2772A0] font-semibold mt-0.5">
                     "{s.tagline}"
                   </p>
-                  <p className="text-xs text-[#0B2D3A] mt-2 leading-relaxed">
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                     {s.full_description}
                   </p>
                 </div>
 
                 {/* Key Deliverables */}
-                <div className="space-y-1.5 pt-2 border-t border-[#D6E6EB]/60">
-                  <span className="text-[11px] font-bold text-[#0B2D3A] uppercase tracking-wider block">
+                <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                  <span className="text-[11px] font-bold text-[#0F2C3D] uppercase tracking-wider block">
                     Core Deliverables Included:
                   </span>
-                  <ul className="space-y-1 text-xs text-[#0B2D3A]">
+                  <ul className="space-y-1 text-xs text-slate-700">
                     {s.key_deliverables.slice(0, 4).map((del, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0082A6] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#2772A0] shrink-0 mt-0.5" />
                         <span className="leading-snug">{del}</span>
                       </li>
                     ))}
@@ -109,10 +114,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-3 border-t border-[#D6E6EB]/60 flex flex-wrap items-center justify-between gap-3">
+              <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
                 <button
                   onClick={() => onNavigate('service-detail', { slug: s.slug })}
-                  className="text-xs font-semibold text-[#0082A6] hover:underline flex items-center gap-1"
+                  className="text-xs font-semibold text-[#2772A0] hover:underline flex items-center gap-1"
                 >
                   <span>View Full Workflow</span>
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -128,7 +133,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     Discuss Scope
                   </Button>
                   <Button
-                    variant="teal"
+                    variant="ocean"
                     size="sm"
                     onClick={() => onOpenInquiry(s.id)}
                     className="text-xs font-semibold"
@@ -159,7 +164,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             <span>Academic Integrity & Non-Fabrication Guarantee</span>
           </div>
           <p className="text-xs text-[#C4DEE3] leading-relaxed">
-            All services offered by AcademicPro India comply strictly with UGC guidelines, institutional DRC requirements, and Committee on Publication Ethics (COPE) norms. We provide substantive editorial critique, statistical advice, literature synthesis, and formatting compliance to help researchers produce authentic scholarship.
+            All services offered by YouKnowVerse comply strictly with UGC guidelines, institutional DRC requirements, and Committee on Publication Ethics (COPE) norms. We provide substantive editorial critique, statistical advice, literature synthesis, and formatting compliance to help researchers produce authentic scholarship.
           </p>
         </div>
       </section>

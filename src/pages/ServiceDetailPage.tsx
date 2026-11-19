@@ -32,11 +32,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   return (
     <div className="space-y-12 pb-16 font-sans">
       {/* Top Breadcrumb & Hero */}
-      <section className="bg-[#0B2D3A] text-white py-12 px-4 sm:px-8">
+      <section className="bg-[#2772A0] text-white py-12 px-4 sm:px-8 border-b border-[#1E5C82]">
         <div className="max-w-7xl mx-auto space-y-4">
           <button
             onClick={() => onNavigate('services')}
-            className="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs text-[#CCDDEA] hover:text-white transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to All Services</span>
@@ -178,7 +178,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 </Button>
 
                 <a
-                  href={`https://wa.me/919760498896?text=Hello%20AcademicPro%20India%2C%20I%20am%20interested%20in%20${encodeURIComponent(service.title)}.`}
+                  href={`https://wa.me/919760498896?text=Hello%20YouKnowVerse%20India%2C%20I%20am%20interested%20in%20${encodeURIComponent(service.title)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-[#25D366]/10 text-emerald-800 hover:bg-[#25D366]/20 font-semibold text-xs transition-colors"

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'gold' | 'outline' | 'ghost' | 'danger' | 'teal';
+  variant?: 'primary' | 'secondary' | 'gold' | 'outline' | 'ghost' | 'danger' | 'teal' | 'ocean' | 'cloudy';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   icon?: React.ReactNode;
@@ -31,13 +31,15 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantClasses = {
-    primary: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
-    secondary: "bg-[#EBF5F8] text-[#0082A6] hover:bg-[#D9EEF3] focus:ring-[#0082A6] border border-[#C4DEE3] font-semibold",
-    gold: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
+    primary: "bg-[#2772A0] text-white hover:bg-[#1F5C82] focus:ring-[#2772A0] border border-[#1F5C82] shadow-xs font-semibold",
+    ocean: "bg-[#2772A0] text-white hover:bg-[#1F5C82] focus:ring-[#2772A0] border border-[#1F5C82] shadow-xs font-semibold",
     teal: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
-    outline: "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:text-slate-900 focus:ring-slate-400",
-    ghost: "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-transparent",
-    danger: "bg-[#BE123C] text-white hover:bg-[#9F1239] focus:ring-red-600 border border-[#9F1239]",
+    cloudy: "bg-[#CCDDEA] text-[#103852] hover:bg-[#BBD0E0] focus:ring-[#2772A0] border border-[#B0C8DA] font-semibold",
+    secondary: "bg-[#CCDDEA] text-[#103852] hover:bg-[#BBD0E0] focus:ring-[#2772A0] border border-[#B0C8DA] font-semibold",
+    gold: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
+    outline: "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:text-slate-900 focus:ring-slate-400 font-medium",
+    ghost: "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-transparent font-medium",
+    danger: "bg-[#BE123C] text-white hover:bg-[#9F1239] focus:ring-red-600 border border-[#9F1239] font-semibold",
   };
 
   return (

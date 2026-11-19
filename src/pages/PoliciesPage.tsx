@@ -20,7 +20,7 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ initialTab = 'integr
             Policies & Academic Integrity Standards
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            AcademicPro India upholds the highest standards of research ethics, document confidentiality, and transparent institutional accountability.
+            YouKnowVerse upholds the highest standards of research ethics, document confidentiality, and transparent institutional accountability.
           </p>
         </div>
       </section>
@@ -64,12 +64,12 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ initialTab = 'integr
               <div className="space-y-4">
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">1. Purpose & Core Philosophy</h3>
                 <p>
-                  AcademicPro India operates as an educational, methodological, and editorial consultancy. Our core purpose is to guide researchers in acquiring mastery over scholarly inquiry, literature synthesis, and formal academic expression. We strictly adhere to University Grants Commission (UGC) guidelines and the Committee on Publication Ethics (COPE) Code of Conduct.
+                  YouKnowVerse operates as an educational, methodological, and editorial consultancy. Our core purpose is to guide researchers in acquiring mastery over scholarly inquiry, literature synthesis, and formal academic expression. We strictly adhere to University Grants Commission (UGC) guidelines and the Committee on Publication Ethics (COPE) Code of Conduct.
                 </p>
 
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">2. Explicit Prohibitions</h3>
                 <div className="space-y-2 p-4 rounded-2xl bg-rose-50/60 border border-rose-200 text-rose-900 text-xs">
-                  <div><strong>1. No Contract Cheating or Ghostwriting:</strong> AcademicPro India will never write theses, dissertations, synopsis proposals, or research articles on behalf of a client. Clients must produce their own text; our experts provide critique, developmental editing, grammatical refinement, and structural advice.</div>
+                  <div><strong>1. No Contract Cheating or Ghostwriting:</strong> YouKnowVerse will never write theses, dissertations, synopsis proposals, or research articles on behalf of a client. Clients must produce their own text; our experts provide critique, developmental editing, grammatical refinement, and structural advice.</div>
                   <div><strong>2. Zero Data Fabrication:</strong> We will never generate fabricated empirical datasets, synthesize fake respondents, or alter statistical test outcomes to falsely support an unproven hypothesis.</div>
                   <div><strong>3. No Publication Guarantees:</strong> We never guarantee acceptance in any indexed journal. Any third-party service promising "guaranteed publication" is engaging in predatory misconduct.</div>
                 </div>
@@ -102,7 +102,7 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ initialTab = 'integr
               <div className="space-y-4">
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">1. Ownership of Research Data</h3>
                 <p>
-                  All unpublished research manuscripts, draft synopses, survey findings, datasets, figures, and research ideas provided by clients remain the 100% exclusive intellectual property of the author/researcher. AcademicPro India acquires zero intellectual property rights over any client document.
+                  All unpublished research manuscripts, draft synopses, survey findings, datasets, figures, and research ideas provided by clients remain the 100% exclusive intellectual property of the author/researcher. YouKnowVerse acquires zero intellectual property rights over any client document.
                 </p>
 
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">2. Document Vault Security</h3>
@@ -112,7 +112,7 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ initialTab = 'integr
 
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">3. Mutual Non-Disclosure Agreement (NDA)</h3>
                 <p>
-                  Before commencing any major thesis or empirical manuscript review, AcademicPro India executes a formal mutual Non-Disclosure Agreement upon request, binding all assigned editors and consultants to strict confidentiality.
+                  Before commencing any major thesis or empirical manuscript review, YouKnowVerse executes a formal mutual Non-Disclosure Agreement upon request, binding all assigned editors and consultants to strict confidentiality.
                 </p>
               </div>
             </Card>
@@ -133,12 +133,12 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ initialTab = 'integr
               <div className="space-y-4">
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">1. Quotation & Milestone Validity</h3>
                 <p>
-                  Quotations issued by AcademicPro India are valid for 14 calendar days from the date of generation. Project timelines commence strictly upon receipt of required milestone payments and all prerequisite institutional guidelines.
+                  Quotations issued by YouKnowVerse are valid for 14 calendar days from the date of generation. Project timelines commence strictly upon receipt of required milestone payments and all prerequisite institutional guidelines.
                 </p>
 
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">2. Client Cooperation & Institutional Verification</h3>
                 <p>
-                  Clients are responsible for verifying that editorial recommendations conform to their specific university department’s style guide. AcademicPro India provides advice based on accepted academic standards (APA, IEEE, Chicago, MLA, Vancouver).
+                  Clients are responsible for verifying that editorial recommendations conform to their specific university department’s style guide. YouKnowVerse provides advice based on accepted academic standards (APA, IEEE, Chicago, MLA, Vancouver).
                 </p>
 
                 <h3 className="font-serif font-bold text-base text-[#0B2D3A]">3. Post-Delivery Clarification Window</h3>
