@@ -1,8 +1,5 @@
-import { useState } from 'react';
-import { CheckCircle2 } from 'lucide-react';
-import { Card } from '../components/ui/Card';
-import { Button } from '../components/ui/Button';
-import { Badge } from '../components/ui/Badge';
+import React, { useState } from 'react';
+import { CheckCircle2, Send, ShieldCheck } from 'lucide-react';
 import { CacheStore } from '../lib/cacheStore';
 import confetti from 'canvas-confetti';
 
@@ -77,27 +74,30 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
   };
 
   return (
-    <div className="space-y-12 pb-16 font-sans">
-      {/* Header */}
-      <section className="bg-[#0B2D3A] text-white py-14 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto space-y-4 text-center">
-          <Badge variant="gold">Transparent Scope Estimation</Badge>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Instant Academic Quotation Calculator
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Configure your exact academic service, manuscript word count, and institutional deadline to view instant pricing guidelines.
-          </p>
-        </div>
+    <div className="space-y-16 sm:space-y-24 pb-20 font-sans text-[#0B2D3A] select-none">
+      
+      {/* Editorial Hero Header */}
+      <section className="pt-8 sm:pt-14 px-4 sm:px-8 max-w-5xl mx-auto text-center space-y-4">
+        <span className="px-3.5 py-1 rounded-full bg-[#EBF5F8] text-[#0082A6] text-xs font-bold uppercase tracking-wider">
+          TRANSPARENT SCOPE ESTIMATION
+        </span>
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B2D3A] leading-[1.1]">
+          Instant Academic <br />
+          <span className="font-serif italic font-normal text-[#2772A0]">Quotation Calculator</span>
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Configure your exact academic service, manuscript word count, and institutional deadline to view instant pricing guidelines.
+        </p>
       </section>
 
       {/* Main Form & Calculator */}
       <section className="max-w-5xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
           {/* Left: Configuration Form (7 Cols) */}
           <div className="lg:col-span-7">
-            <Card padding="lg" className="bg-white border border-slate-200 space-y-6">
-              <h2 className="font-serif font-bold text-lg sm:text-xl text-[#0B2D3A] border-b border-slate-100 pb-3">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#CCDDEA] shadow-subtle space-y-6">
+              <h2 className="font-extrabold text-xl text-[#0B2D3A] border-b border-slate-100 pb-3">
                 1. Project Parameters
               </h2>
 
@@ -107,20 +107,20 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                   <select
                     value={serviceType}
                     onChange={e => setServiceType(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                    className="w-full px-3.5 py-2.5 rounded-2xl border border-[#CCDDEA] bg-[#F7F5ED]/40 focus:bg-white focus:border-[#0082A6] focus:outline-none transition-colors"
                   >
-                    <option value="thesis-editing">Thesis Editing & Formatting (Word Count Based)</option>
-                    <option value="synopsis-review">Synopsis Review & Pre-RDC Defense</option>
-                    <option value="topic-guidance">Research Topic Formulation & Gap Analysis</option>
-                    <option value="paper-support">Research Paper Structuring & Scopus Readiness</option>
+                    <option value="thesis-editing">Thesis Editing &amp; Formatting (Word Count Based)</option>
+                    <option value="synopsis-review">Synopsis Review &amp; Pre-RDC Defense</option>
+                    <option value="topic-guidance">Research Topic Formulation &amp; Gap Analysis</option>
+                    <option value="paper-support">Research Paper Structuring &amp; Scopus Readiness</option>
                     <option value="publication-assistance">Legitimate Journal Publication Guidance</option>
-                    <option value="statistical-analysis">Statistical Analysis & SPSS / R Modeling</option>
+                    <option value="statistical-analysis">Statistical Analysis &amp; SPSS / R Modeling</option>
                   </select>
                 </div>
 
                 {serviceType === 'thesis-editing' && (
-                  <div>
-                    <label className="block font-semibold text-[#0B2D3A] mb-1 flex justify-between">
+                  <div className="bg-[#F7F5ED] p-4 rounded-2xl border border-slate-200/80 space-y-2">
+                    <label className="block font-semibold text-[#0B2D3A] flex justify-between">
                       <span>Approximate Word Count *</span>
                       <span className="font-mono text-[#0082A6] font-bold">{wordCount.toLocaleString()} words</span>
                     </label>
@@ -130,145 +130,158 @@ export const QuotationRequestPage: React.FC<QuotationRequestPageProps> = () => {
                       max={120000}
                       step={5000}
                       value={wordCount}
-                      onChange={e => setWordCount(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0B2D3A]"
+                      onChange={e => setWordCount(parseInt(e.target.value))}
+                      className="w-full accent-[#0082A6] cursor-pointer"
                     />
-                    <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+                    <div className="flex justify-between text-[10px] text-slate-400">
                       <span>5,000 words (Chapter)</span>
-                      <span>50,000 words (Master's)</span>
-                      <span>100,000+ words (PhD)</span>
+                      <span>45,000 words (Standard)</span>
+                      <span>1,20,000 words (Mega)</span>
                     </div>
                   </div>
                 )}
 
                 <div>
-                  <label className="block font-semibold text-[#0B2D3A] mb-1">Academic Level *</label>
+                  <label className="block font-semibold text-[#0B2D3A] mb-1">Scholar Academic Level *</label>
                   <select
                     value={academicLevel}
                     onChange={e => setAcademicLevel(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                    className="w-full px-3.5 py-2.5 rounded-2xl border border-[#CCDDEA] bg-[#F7F5ED]/40 focus:bg-white focus:border-[#0082A6] focus:outline-none transition-colors"
                   >
                     <option value="PhD Research Scholar">PhD Research Scholar</option>
-                    <option value="Postgraduate / Master's (PG)">Postgraduate / Master's (PG)</option>
-                    <option value="Undergraduate (UG)">Undergraduate (UG)</option>
-                    <option value="Faculty / Professor">Faculty / Professor</option>
-                    <option value="Independent Researcher">Independent Researcher</option>
+                    <option value="Post-Doctoral Fellow">Post-Doctoral Fellow</option>
+                    <option value="Master's Scholar">Master's / M.Phil Scholar</option>
+                    <option value="University Faculty">University Faculty / Assistant Professor</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-[#0B2D3A] mb-1">Timeline & Urgency *</label>
+                  <label className="block font-semibold text-[#0B2D3A] mb-1">Target Turnaround Urgency</label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { id: 'standard', label: 'Standard', sub: '10-14 days' },
-                      { id: 'fast', label: 'Fast Track', sub: '5-7 days' },
-                      { id: 'rush', label: 'Urgent Rush', sub: '3-4 days' },
+                      { id: 'standard', label: 'Standard', desc: '10-14 days' },
+                      { id: 'fast', label: 'Priority (+20%)', desc: '5-7 days' },
+                      { id: 'rush', label: 'Express (+45%)', desc: '3-4 days' }
                     ].map(u => (
                       <button
                         type="button"
                         key={u.id}
                         onClick={() => setUrgency(u.id as any)}
-                        className={`p-2.5 rounded-xl border text-center transition-colors text-xs ${
+                        className={`p-3 rounded-2xl border text-center transition-all ${
                           urgency === u.id
-                            ? 'border-[#0B2D3A] bg-[#0B2D3A] text-white'
-                            : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
+                            ? 'border-[#0082A6] bg-[#EBF5F8] text-[#0082A6] font-bold shadow-2xs'
+                            : 'border-slate-200 bg-[#F7F5ED]/50 text-slate-700 hover:bg-[#EBF5F8]'
                         }`}
                       >
-                        <div className="font-bold">{u.label}</div>
-                        <div className="text-[10px] opacity-80">{u.sub}</div>
+                        <div className="text-xs font-semibold">{u.label}</div>
+                        <div className="text-[10px] text-slate-400 mt-0.5">{u.desc}</div>
                       </button>
                     ))}
                   </div>
                 </div>
+
+                <div>
+                  <label className="block font-semibold text-[#0B2D3A] mb-1">University / Institute</label>
+                  <input
+                    type="text"
+                    value={university}
+                    onChange={e => setUniversity(e.target.value)}
+                    placeholder="e.g. GLA University Mathura, AMU, DU, DEI Agra"
+                    className="w-full px-3.5 py-2.5 rounded-2xl border border-[#CCDDEA] bg-[#F7F5ED]/40 focus:bg-white focus:border-[#0082A6] focus:outline-none transition-colors"
+                  />
+                </div>
               </div>
-            </Card>
+            </div>
           </div>
 
-          {/* Right: Estimate Display & Submit Form (5 Cols) */}
+          {/* Right: Live Quote Summary & Submission (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <Card padding="lg" className="bg-[#0B2D3A] text-white space-y-5 border border-[#134455] shadow-premium">
-              <div className="space-y-1">
-                <span className="text-[11px] font-semibold text-[#0082A6] uppercase tracking-wider">Estimated Project Investment</span>
-                <div className="font-serif text-3xl sm:text-4xl font-extrabold text-white">
-                  ₹{estimatedCost.toLocaleString()}*
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#CCDDEA] shadow-premium space-y-6">
+              <h2 className="font-extrabold text-xl text-[#0B2D3A] border-b border-slate-100 pb-3">
+                2. Live Quotation Summary
+              </h2>
+
+              <div className="bg-[#EBF5F8] p-5 rounded-2xl border border-[#C4DEE3] text-center space-y-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
+                  Estimated Transparent Cost
+                </span>
+                <div className="text-4xl font-black text-[#0B2D3A]">
+                  ₹{estimatedCost.toLocaleString('en-IN')}
                 </div>
-                <p className="text-[11px] text-slate-300">
-                  *Indicative scope estimate. Final quote confirmed after sample review.
+                <p className="text-[11px] text-slate-500">
+                  Inclusive of editorial review, DRC formatting, and 14-day revision guarantee.
                 </p>
               </div>
 
               {submitted ? (
-                <div className="p-4 rounded-2xl bg-emerald-950/70 border border-emerald-500/30 text-center space-y-2">
-                  <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
-                  <div className="font-serif font-bold text-base text-white">Official Quote Logged!</div>
-                  <div className="font-mono text-xs text-amber-300">{inquiryId}</div>
-                  <p className="text-xs text-slate-300">
-                    A formal PDF proposal and milestone schedule will be transmitted to your email within 4 hours.
+                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-2">
+                  <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
+                  <h4 className="font-bold text-sm text-emerald-900">Quotation Locked &amp; Submitted!</h4>
+                  <p className="text-xs text-emerald-800">
+                    Your unique Tracking ID is: <strong className="font-mono">{inquiryId}</strong>
+                  </p>
+                  <p className="text-[11px] text-slate-600">
+                    A copy has been routed to our academic team in Mathura.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-3 pt-2 text-xs">
+                <form onSubmit={handleSubmit} className="space-y-3 text-xs">
                   <div>
-                    <label className="block text-slate-300 font-semibold mb-1">Full Name *</label>
+                    <label className="block font-semibold text-[#0B2D3A] mb-1">Your Full Name *</label>
                     <input
                       type="text"
                       required
                       value={fullName}
                       onChange={e => setFullName(e.target.value)}
-                      placeholder="e.g. Meenakshi Sunderam"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
+                      placeholder="Dr. / Scholar Name"
+                      className="w-full px-3.5 py-2.5 rounded-2xl border border-[#CCDDEA] bg-[#F7F5ED]/40 focus:bg-white focus:border-[#0082A6] focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-slate-300 font-semibold mb-1">Email Address *</label>
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
-                      placeholder="e.g. meenakshi@du.ac.in"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-slate-300 font-semibold mb-1">Phone / WhatsApp *</label>
+                    <label className="block font-semibold text-[#0B2D3A] mb-1">WhatsApp / Phone *</label>
                     <input
                       type="tel"
                       required
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
-                      placeholder="+91 9760498896"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
+                      placeholder="+91 97604 98896"
+                      className="w-full px-3.5 py-2.5 rounded-2xl border border-[#CCDDEA] bg-[#F7F5ED]/40 focus:bg-white focus:border-[#0082A6] focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-slate-300 font-semibold mb-1">University / Department</label>
+                    <label className="block font-semibold text-[#0B2D3A] mb-1">Email Address *</label>
                     <input
-                      type="text"
-                      value={university}
-                      onChange={e => setUniversity(e.target.value)}
-                      placeholder="e.g. Banaras Hindu University (BHU)"
-                      className="w-full px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-[#0082A6]"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      placeholder="scholar@university.edu.in"
+                      className="w-full px-3.5 py-2.5 rounded-2xl border border-[#CCDDEA] bg-[#F7F5ED]/40 focus:bg-white focus:border-[#0082A6] focus:outline-none transition-colors"
                     />
                   </div>
 
-                  <Button
+                  <button
                     type="submit"
-                    variant="gold"
-                    fullWidth
-                    className="text-xs font-bold py-2.5 mt-2"
+                    className="w-full py-3.5 rounded-full bg-[#0082A6] hover:bg-[#006F8E] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-subtle transition-colors mt-2"
                   >
-                    Lock Estimate & Receive Quotation
-                  </Button>
+                    <Send className="w-4 h-4" />
+                    <span>Lock &amp; Submit Estimate</span>
+                  </button>
                 </form>
               )}
-            </Card>
+
+              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] text-slate-500">
+                <ShieldCheck className="w-4 h-4 text-[#0082A6] shrink-0" />
+                <span>Zero advance commitment required until scope agreement.</span>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
+
     </div>
   );
 };

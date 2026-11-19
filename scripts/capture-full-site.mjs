@@ -85,9 +85,9 @@ async function run() {
   await page.waitForTimeout(100);
   await saveAndConvert(page, '06-resources-article-detail', true);
 
-  // 7. About Us Page
+  // 7. About Page
   await page.evaluate(() => {
-    const btn = Array.from(document.querySelectorAll('button, a')).find(el => el.textContent?.trim() === 'About Us');
+    const btn = Array.from(document.querySelectorAll('button, a')).find(el => el.textContent?.trim() === 'About' || el.textContent?.trim() === 'About Us');
     btn?.click();
   });
   await page.waitForTimeout(100);
@@ -103,7 +103,7 @@ async function run() {
 
   // 9. Instant Quotation Calculator Page
   await page.evaluate(() => {
-    const btn = Array.from(document.querySelectorAll('button, a')).find(el => el.textContent?.includes('Request a Free Quote') || el.textContent?.includes('Request Quote'));
+    const btn = Array.from(document.querySelectorAll('button, a')).find(el => el.textContent?.trim() === 'Calculator' || el.textContent?.includes('Quotation Calculator'));
     btn?.click();
   });
   await page.waitForTimeout(100);

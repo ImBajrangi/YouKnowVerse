@@ -50,7 +50,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A] selection:bg-[#C4DEE3] selection:text-[#0F172A]">
+    <div className="min-h-screen flex flex-col bg-[#F7F5ED] text-[#0B2D3A] selection:bg-[#C4DEE3] selection:text-[#0B2D3A]">
       {/* Sticky Solid Navbar */}
       <Navbar
         currentPage={currentPage}

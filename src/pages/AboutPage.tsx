@@ -3,9 +3,10 @@ import {
   Award, 
   CheckCircle2, 
   Building, 
-  GraduationCap
+  GraduationCap,
+  ShieldCheck,
+  Lock
 } from 'lucide-react';
-import { Button } from '../components/ui/Button';
 import { UniversityNetworkGraphic } from '../components/graphics/UniversityNetworkGraphic';
 
 export interface AboutPageProps {
@@ -17,124 +18,156 @@ export interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({
   onNavigate,
   onOpenBooking,
+  onOpenInquiry,
 }) => {
   return (
-    <div className="space-y-12 pb-16 font-sans">
-      {/* Hero Banner (Ocean Blue with Cloudy Sky Accents) */}
-      <section className="bg-[#2772A0] text-white py-10 sm:py-14 px-4 sm:px-8 border-b border-[#1E5C82]">
-        <div className="max-w-7xl mx-auto space-y-3 text-center">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E5C82] text-[#CCDDEA] text-xs font-semibold">
-            <span>Mathura, Uttar Pradesh, India</span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            Ethical Academic Research Advisory
-          </h1>
-          <p className="text-sm sm:text-base text-[#CCDDEA] font-medium max-w-xl mx-auto">
-            "Your Research Journey, Our Professional Guidance."
-          </p>
-          <p className="text-xs sm:text-sm text-[#CCDDEA]/90 max-w-2xl mx-auto leading-relaxed">
-            Headquartered in Mathura, Uttar Pradesh, guiding PhD candidates, Master's scholars, and faculty through doctoral synopses, empirical data modeling, and legitimate journal publication.
-          </p>
-        </div>
+    <div className="space-y-16 sm:space-y-24 pb-20 font-sans text-[#0B2D3A] select-none">
+      
+      {/* Editorial Minimalist Hero Header */}
+      <section className="pt-8 sm:pt-14 px-4 sm:px-8 max-w-5xl mx-auto text-center space-y-4">
+        <span className="px-3.5 py-1 rounded-full bg-[#EBF5F8] text-[#0082A6] text-xs font-bold uppercase tracking-wider">
+          ABOUT YOUKNOWVERSE
+        </span>
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B2D3A] leading-[1.1]">
+          Ethical Academic <br />
+          <span className="font-serif italic font-normal text-[#2772A0]">Research Advisory</span>
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Headquartered in Mathura, Uttar Pradesh, guiding PhD candidates, Master's scholars, and faculty through doctoral synopses, empirical data modeling, and legitimate journal publication.
+        </p>
       </section>
 
       {/* Visual University Network Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <UniversityNetworkGraphic />
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#CCDDEA] shadow-subtle">
+          <UniversityNetworkGraphic />
+        </div>
       </section>
 
       {/* Story & Heritage with Real Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4">
-            <span className="text-xs font-semibold text-[#0082A6] uppercase tracking-wide">
-              Mathura Heritage & Pedigree
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-5">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0082A6]">
+              Mathura Heritage &amp; Pedigree
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#0B2D3A]">
-              Bridging University Research With Global Publishing
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B2D3A] leading-snug">
+              Bridging University Research With Global Publishing Standards
             </h2>
-            <p className="text-xs sm:text-sm text-[#3D6170] leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Serving prominent universities across Western Uttar Pradesh and India (GLA University, AMU, BHU, Delhi University, DBRAU Agra), we eliminate the anxiety of DRC formatting rejections and peer-review revisions through structured academic mentorship.
             </p>
 
             {/* Real WebP Campus & Center Photo */}
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-xs">
               <img 
                 src="/images/university-campus.webp" 
                 alt="University research facilities and scholarly libraries in India" 
-                className="w-full h-48 object-cover"
+                className="w-full h-52 object-cover"
                 loading="lazy"
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3 pt-1 text-xs">
-              <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-subtle space-y-1">
+            <div className="grid grid-cols-2 gap-4 pt-1 text-xs">
+              <div className="p-4 rounded-2xl bg-white border border-[#CCDDEA] shadow-subtle space-y-1">
                 <Building className="w-5 h-5 text-[#0082A6]" />
                 <div className="font-bold text-[#0B2D3A]">Civil Lines, Mathura</div>
-                <div className="text-[11px] text-[#3D6170]">In-person consulting facility</div>
+                <div className="text-[11px] text-slate-500">In-person consulting facility</div>
               </div>
 
-              <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-subtle space-y-1">
+              <div className="p-4 rounded-2xl bg-white border border-[#CCDDEA] shadow-subtle space-y-1">
                 <GraduationCap className="w-5 h-5 text-[#0082A6]" />
                 <div className="font-bold text-[#0B2D3A]">15+ Subject Mentors</div>
-                <div className="text-[11px] text-[#3D6170]">PhDs & senior editors</div>
+                <div className="text-[11px] text-slate-500">PhDs &amp; senior editors</div>
               </div>
-            </div>
-
-            <div className="pt-2 flex items-center gap-3">
-              <Button variant="ocean" size="sm" onClick={onOpenBooking} className="text-xs font-semibold">
-                Book Consultation with Academic Lead
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => onNavigate('contact')} className="text-xs">
-                Visit Mathura Office
-              </Button>
             </div>
           </div>
 
-          {/* Institutional Commitments with Real Team Photo */}
-          <div className="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-subtle space-y-4">
-            <div className="overflow-hidden rounded-2xl border border-slate-200">
-              <img 
-                src="/images/academic-team.webp" 
-                alt="YouKnowVerse advisory editorial board and peer reviewers" 
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
-            </div>
-
-            <h3 className="font-bold text-base text-[#0B2D3A] border-b border-slate-200/60 pb-2 flex items-center gap-2">
-              <Award className="w-5 h-5 text-[#0082A6]" />
-              <span>Core Institutional Commitments</span>
+          {/* Pillars of Academic Integrity */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#CCDDEA] shadow-subtle space-y-6">
+            <h3 className="font-extrabold text-xl text-[#0B2D3A] border-b border-slate-100 pb-3">
+              The Four Pillars of YouKnowVerse
             </h3>
 
-            <div className="space-y-2.5 text-xs text-[#0B2D3A]">
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-[#0B2D3A] block">Strict Non-Ghostwriting Policy:</strong>
-                  <span className="text-[#3D6170]">We do not write papers or theses for scholars. We provide developmental critique and line editing to help you author your own work.</span>
-                </div>
-              </div>
-
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-[#0B2D3A] block">Zero Fabrication Guarantee:</strong>
-                  <span className="text-[#3D6170]">We never fabricate survey respondents, simulate synthetic statistical data, or falsify citations.</span>
-                </div>
-              </div>
-
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-[#0B2D3A] block">Legitimate Peer-Review Navigation:</strong>
-                  <span className="text-[#3D6170]">We guide researchers only toward verified UGC-CARE, Scopus, and WoS indexed journals.</span>
-                </div>
-              </div>
+            <div className="space-y-4">
+              {[
+                { title: 'Strict Zero-Ghostwriting Rule', desc: 'We do not author dissertations or fabricate papers for hire. We mentor, edit, analyze, and format scholarly manuscripts produced by scholars themselves.', icon: ShieldCheck },
+                { title: 'Western UP University Expertise', desc: 'Intimate familiarity with doctoral review committee (DRC/RDC) guidelines at GLA Mathura, AMU, Dayalbagh Educational Institute, and Agra University.', icon: Award },
+                { title: 'Transparent Milestone Pricing', desc: 'No predatory advance demands. Work proceeds in verifiable chapter stages with itemized milestone invoicing in Indian Rupees (₹).', icon: CheckCircle2 },
+                { title: 'Confidentiality & Non-Disclosure', desc: 'Your proprietary research hypotheses, survey datasets, and patentable findings remain 100% protected under our standard Mutual NDA.', icon: Lock }
+              ].map((p, idx) => {
+                const IconComponent = p.icon;
+                return (
+                  <div key={idx} className="flex items-start gap-3.5">
+                    <div className="w-8 h-8 rounded-xl bg-[#EBF5F8] text-[#0082A6] flex items-center justify-center shrink-0 mt-0.5">
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-[#0B2D3A]">{p.title}</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">{p.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Leadership & Facility Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="relative rounded-3xl overflow-hidden border border-[#CCDDEA] shadow-premium">
+          <img 
+            src="/images/academic-team.webp" 
+            alt="YouKnowVerse Senior Academic Mentors in Mathura" 
+            className="w-full h-80 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2D3A] via-[#0B2D3A]/40 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white space-y-2">
+            <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider self-start text-[#C4DEE3]">
+              DIRECTORATE IN MATHURA
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Led by Experienced University Academicians &amp; Senior Editors
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
+              Our core team brings together former department chairs, UGC-NET qualified researchers, and published authors with over 12 years of doctoral advisory experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Box */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-8">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#CCDDEA] shadow-premium text-center space-y-5">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B2D3A]">
+            Schedule an In-Person or Virtual Consultation
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+            Visit our Mathura center or connect virtually via Google Meet to review your doctoral thesis requirements.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button
+              onClick={onOpenBooking}
+              className="px-6 py-3 rounded-full bg-[#0082A6] hover:bg-[#006F8E] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-subtle"
+            >
+              Book Consultation Session
+            </button>
+            <button
+              onClick={onOpenInquiry}
+              className="px-6 py-3 rounded-full bg-[#F7F5ED] hover:bg-[#EBF5F8] text-[#0B2D3A] text-xs font-bold uppercase tracking-wider transition-all border border-[#CCDDEA]"
+            >
+              Submit Manuscript Draft
+            </button>
+            <button
+              onClick={() => onNavigate('services')}
+              className="px-6 py-3 rounded-full bg-white hover:bg-[#EBF5F8] text-[#0082A6] text-xs font-bold uppercase tracking-wider transition-all border border-[#CCDDEA]"
+            >
+              Explore Services
+            </button>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

@@ -4,14 +4,11 @@ import {
   Menu, 
   X, 
   PhoneCall, 
-  Calendar, 
   UserCheck, 
   ShieldCheck, 
   ChevronDown,
-  Sparkles,
   LogOut
 } from 'lucide-react';
-import { Button } from '../ui/Button';
 import { UserProfile } from '../../types';
 
 export interface NavbarProps {
@@ -28,188 +25,54 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigate,
   currentUser,
   onOpenBooking,
-  onOpenInquiry,
   onSwitchRole,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [roleSwitcherOpen, setRoleSwitcherOpen] = useState(false);
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services', hasDropdown: true },
-    { id: 'how-it-works', label: 'How It Works' },
-    { id: 'resources', label: 'Research Blog' },
-    { id: 'about', label: 'About Us' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
-  const serviceSubItems = [
-    { slug: 'research-topic-guidance', title: 'Research Topic Guidance' },
-    { slug: 'synopsis-review', title: 'Synopsis Review & Refinement' },
-    { slug: 'thesis-editing', title: 'Thesis Editing & Formatting' },
-    { slug: 'research-paper-support', title: 'Research Paper Support' },
-    { slug: 'publication-assistance', title: 'Publication Assistance' },
-    { slug: 'literature-search-support', title: 'Literature Search & Matrix' },
-    { slug: 'statistical-analysis-spss', title: 'Statistical Analysis (SPSS/R)' },
-  ];
 
   const handleNavClick = (pageId: string) => {
     onNavigate(pageId);
     setMobileMenuOpen(false);
-    setServicesDropdownOpen(false);
   };
 
-  const handleServiceClick = (slug: string) => {
-    onNavigate('service-detail', { slug });
-    setMobileMenuOpen(false);
-    setServicesDropdownOpen(false);
-  };
+  const navItems = [
+    { id: 'services', label: 'Services' },
+    { id: 'how-it-works', label: 'How It Works' },
+    { id: 'quote-request', label: 'Calculator' },
+    { id: 'about', label: 'About' },
+    { id: 'contact', label: 'Contact' },
+  ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white border-b border-slate-200/90 shadow-xs select-none">
-      {/* Top micro-bar for academic authority & phone */}
-      <div className="bg-[#F7F5ED] text-slate-700 text-[11px] sm:text-xs py-1.5 px-4 sm:px-8 border-b border-[#CCDDEA]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="flex items-center gap-1.5 text-[#2772A0] font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Academic Research Consultancy</span>
-            </span>
-            <span className="hidden md:inline text-slate-300">•</span>
-            <span className="hidden md:inline text-slate-600">Civil Lines, Mathura, Uttar Pradesh, India</span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <a 
-              href="tel:+919760498896" 
-              className="flex items-center gap-1.5 hover:text-[#2772A0] transition-colors text-slate-700"
-            >
-              <PhoneCall className="w-3 h-3 text-[#2772A0]" />
-              <span className="font-bold">+91 9760498896</span>
-            </a>
-
-            {/* Quick Demo Role Switcher */}
-            <div className="relative">
-              <button
-                onClick={() => setRoleSwitcherOpen(!roleSwitcherOpen)}
-                className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-md bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 shadow-xs transition-colors"
-              >
-                <span>Role: {currentUser ? (currentUser.role === 'super_admin' ? 'Admin' : 'Client') : 'Guest'}</span>
-                <ChevronDown className="w-2.5 h-2.5 text-slate-400" />
-              </button>
-
-              {roleSwitcherOpen && (
-                <div className="absolute right-0 mt-1 w-44 bg-white rounded-xl border border-slate-200 shadow-lg py-1 z-50 text-xs">
-                  <div className="px-3 py-1 text-[10px] text-slate-400 uppercase font-semibold">Switch Persona</div>
-                  <button
-                    onClick={() => { onSwitchRole('client'); setRoleSwitcherOpen(false); onNavigate('portal'); }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-slate-50 text-slate-700 flex items-center gap-2"
-                  >
-                    <UserCheck className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Client (PhD Scholar)</span>
-                  </button>
-                  <button
-                    onClick={() => { onSwitchRole('admin'); setRoleSwitcherOpen(false); onNavigate('admin'); }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-slate-50 text-slate-700 flex items-center gap-2"
-                  >
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#0082A6]" />
-                    <span>Admin (Director)</span>
-                  </button>
-                  <button
-                    onClick={() => { onSwitchRole('none'); setRoleSwitcherOpen(false); }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-slate-50 text-rose-600 flex items-center gap-2"
-                  >
-                    <LogOut className="w-3.5 h-3.5" />
-                    <span>Logout (Guest)</span>
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
-        {/* Brand Logo & Tagline */}
+    <header className="sticky top-3 z-50 px-4 sm:px-8 select-none">
+      {/* Floating Minimalist Capsule Container */}
+      <div className="max-w-5xl mx-auto rounded-full bg-white/95 backdrop-blur-md border border-[#C4DEE3]/80 px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-subtle">
+        
+        {/* Left: Brand Logo & Emblem */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-3 text-left focus:outline-none group"
+          className="flex items-center gap-2.5 focus:outline-none group"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#2772A0] text-white flex items-center justify-center shadow-xs shrink-0">
-            <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="w-8 h-8 rounded-full bg-[#0082A6] text-white flex items-center justify-center shadow-xs">
+            <GraduationCap className="w-4 h-4 text-white" />
           </div>
-          <div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-[#0F2C3D]">
-                YouKnow<span className="text-[#2772A0]">Verse</span>
-              </span>
-            </div>
-            <p className="text-[10px] text-slate-500 tracking-wide hidden sm:block">
-              Research Support • Academic Excellence
-            </p>
-          </div>
+          <span className="text-base sm:text-lg font-extrabold tracking-tight text-[#0B2D3A]">
+            YouKnow<span className="font-serif italic font-normal text-[#2772A0]">Verse</span>
+          </span>
         </button>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
+        {/* Center: Clean Spacious Text Navigation (No Pill Salad) */}
+        <nav className="hidden md:flex items-center gap-1 sm:gap-2">
           {navItems.map((item) => {
-            if (item.hasDropdown) {
-              return (
-                <div key={item.id} className="relative group" onMouseLeave={() => setServicesDropdownOpen(false)}>
-                  <button
-                    onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                    onMouseEnter={() => setServicesDropdownOpen(true)}
-                    className={`px-3 py-1.5 rounded-lg flex items-center gap-1 transition-colors ${
-                      currentPage === 'services' || currentPage === 'service-detail'
-                        ? 'text-[#2772A0] bg-[#CCDDEA]/50 font-semibold'
-                        : 'text-slate-600 hover:text-[#2772A0] hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                    <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
-                  </button>
-
-                  {/* Dropdown Menu */}
-                  {servicesDropdownOpen && (
-                    <div className="absolute top-full left-0 w-72 bg-white border border-[#CCDDEA] rounded-2xl shadow-xl p-2 z-50">
-                      <div className="px-3 py-1.5 text-[11px] font-semibold text-[#2772A0] uppercase tracking-wider border-b border-slate-100">
-                        Primary Advisory Services
-                      </div>
-                      <div className="py-1">
-                        {serviceSubItems.map((s) => (
-                          <button
-                            key={s.slug}
-                            onClick={() => handleServiceClick(s.slug)}
-                            className="w-full text-left px-3 py-2 text-xs rounded-lg text-slate-700 hover:text-[#2772A0] hover:bg-[#CCDDEA]/30 transition-colors"
-                          >
-                            {s.title}
-                          </button>
-                        ))}
-                      </div>
-                      <div className="border-t border-slate-100 pt-1.5 mt-1">
-                        <button
-                          onClick={() => handleNavClick('services')}
-                          className="w-full text-center text-xs text-[#2772A0] py-1.5 font-semibold hover:underline"
-                        >
-                          View All Services & Pricing →
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            }
-
+            const isActive = currentPage === item.id || (item.id === 'services' && currentPage === 'service-detail');
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-3 py-1.5 rounded-lg transition-colors ${
-                  currentPage === item.id
-                    ? 'text-[#2772A0] bg-[#CCDDEA]/50 font-semibold'
-                    : 'text-slate-600 hover:text-[#2772A0] hover:bg-slate-50'
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-colors ${
+                  isActive
+                    ? 'bg-[#EBF5F8] text-[#0082A6] font-bold shadow-2xs'
+                    : 'text-slate-600 hover:text-[#0082A6] hover:bg-[#F7F5ED]'
                 }`}
               >
                 {item.label}
@@ -218,102 +81,125 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Action CTAs */}
-        <div className="hidden sm:flex items-center gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={onOpenInquiry}
-            className="text-xs text-slate-700 border-slate-300 hover:bg-slate-50"
-          >
-            Request Quote
-          </Button>
+        {/* Right: Persona Switcher & Single High-Impact Primary CTA */}
+        <div className="hidden sm:flex items-center gap-3">
+          
+          {/* Subtle Role Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setRoleSwitcherOpen(!roleSwitcherOpen)}
+              className="inline-flex items-center gap-1.5 text-[11px] px-3 py-1 rounded-full bg-[#F7F5ED] hover:bg-[#EBF5F8] text-slate-700 transition-colors border border-slate-200/60"
+            >
+              <span className="font-medium">
+                {currentUser ? (currentUser.role === 'super_admin' ? 'Admin' : 'Scholar') : 'Guest'}
+              </span>
+              <ChevronDown className="w-2.5 h-2.5 text-slate-400" />
+            </button>
 
-          <Button
-            variant="ocean"
-            size="sm"
-            icon={<Calendar className="w-3.5 h-3.5" />}
+            {roleSwitcherOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-2xl border border-[#C4DEE3] shadow-premium py-1.5 z-50 text-xs">
+                <div className="px-3 py-1 text-[10px] text-slate-400 uppercase font-semibold">Switch Persona</div>
+                <button
+                  onClick={() => { onSwitchRole('client'); setRoleSwitcherOpen(false); onNavigate('portal'); }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#EBF5F8] text-slate-700 flex items-center gap-2"
+                >
+                  <UserCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Client (PhD Scholar)</span>
+                </button>
+                <button
+                  onClick={() => { onSwitchRole('admin'); setRoleSwitcherOpen(false); onNavigate('admin'); }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#EBF5F8] text-slate-700 flex items-center gap-2"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#0082A6]" />
+                  <span>Admin (Director)</span>
+                </button>
+                <button
+                  onClick={() => { onSwitchRole('none'); setRoleSwitcherOpen(false); }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#EBF5F8] text-rose-600 flex items-center gap-2"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  <span>Logout</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Single High-Impact Primary Button (Ocean Blue) */}
+          <button
             onClick={onOpenBooking}
-            className="text-xs shadow-xs"
+            className="px-5 py-2 rounded-full bg-[#0082A6] hover:bg-[#006F8E] text-white text-xs font-bold tracking-wide transition-colors shadow-xs"
           >
             Book Consultation
-          </Button>
-
-          {/* Portal Button */}
-          {currentUser?.role === 'super_admin' ? (
-            <Button
-              variant="secondary"
-              size="sm"
-              icon={<ShieldCheck className="w-3.5 h-3.5" />}
-              onClick={() => onNavigate('admin')}
-              className="text-xs bg-slate-100 text-slate-800 border-slate-200 hover:bg-slate-200"
-            >
-              Admin Panel
-            </Button>
-          ) : (
-            <Button
-              variant="secondary"
-              size="sm"
-              icon={<UserCheck className="w-3.5 h-3.5" />}
-              onClick={() => onNavigate('portal')}
-              className="text-xs bg-[#EBF5F8] text-[#0082A6] border border-[#C4DEE3] hover:bg-[#D9EEF3]"
-            >
-              Client Portal
-            </Button>
-          )}
+          </button>
         </div>
 
         {/* Mobile menu toggle */}
-        <div className="lg:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-2">
           <button
             onClick={onOpenBooking}
-            className="sm:hidden px-2.5 py-1.5 bg-[#0082A6] text-white text-xs font-semibold rounded-lg"
+            className="px-3.5 py-1.5 rounded-full bg-[#0082A6] text-white text-xs font-bold"
           >
             Book
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg"
-            aria-label="Toggle navigation menu"
+            className="p-1.5 text-slate-700 hover:text-black rounded-lg"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
+
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-xl">
-          {navItems.map((item) => (
+        <div className="md:hidden mt-2 max-w-sm mx-auto bg-white rounded-3xl border border-[#C4DEE3] shadow-premium p-4 space-y-2 text-xs">
+          <button
+            onClick={() => handleNavClick('home')}
+            className="w-full text-left px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-[#EBF5F8]"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleNavClick('services')}
+            className="w-full text-left px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-[#EBF5F8]"
+          >
+            Services
+          </button>
+          <button
+            onClick={() => handleNavClick('how-it-works')}
+            className="w-full text-left px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-[#EBF5F8]"
+          >
+            How It Works
+          </button>
+          <button
+            onClick={() => handleNavClick('quote-request')}
+            className="w-full text-left px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-[#EBF5F8]"
+          >
+            Quotation Calculator
+          </button>
+          <button
+            onClick={() => handleNavClick('about')}
+            className="w-full text-left px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-[#EBF5F8]"
+          >
+            About Us
+          </button>
+          <button
+            onClick={() => handleNavClick('contact')}
+            className="w-full text-left px-4 py-2.5 rounded-xl font-bold text-slate-800 hover:bg-[#EBF5F8]"
+          >
+            Contact
+          </button>
+          <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <a href="tel:+919760498896" className="text-[#2772A0] font-bold flex items-center gap-1.5">
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>+91 9760498896</span>
+            </a>
             <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`block w-full text-left px-3 py-2 rounded-xl text-sm font-medium ${
-                currentPage === item.id ? 'text-[#0082A6] bg-[#EBF5F8] font-semibold' : 'text-slate-700 hover:bg-slate-50'
-              }`}
+              onClick={() => handleNavClick(currentUser?.role === 'super_admin' ? 'admin' : 'portal')}
+              className="px-3 py-1 bg-[#F7F5ED] rounded-lg text-slate-700 font-semibold"
             >
-              {item.label}
-            </button>
-          ))}
-
-          <div className="pt-3 border-t border-slate-100 space-y-2">
-            <button
-              onClick={() => { setMobileMenuOpen(false); onOpenInquiry(); }}
-              className="w-full py-2.5 px-3 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-50"
-            >
-              Request a Custom Quote
-            </button>
-            <button
-              onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
-              className="w-full py-2.5 px-3 rounded-xl bg-[#0082A6] text-white text-sm font-bold text-center"
-            >
-              Book 1-on-1 Consultation
-            </button>
-            <button
-              onClick={() => { setMobileMenuOpen(false); onNavigate(currentUser?.role === 'super_admin' ? 'admin' : 'portal'); }}
-              className="w-full py-2.5 px-3 rounded-xl bg-[#EBF5F8] text-[#0082A6] text-sm font-semibold text-center border border-[#C4DEE3]"
-            >
-              {currentUser?.role === 'super_admin' ? 'Open Admin Panel' : 'Open Client Portal'}
+              {currentUser?.role === 'super_admin' ? 'Admin Panel' : 'Scholar Portal'}
             </button>
           </div>
         </div>

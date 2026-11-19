@@ -4,18 +4,20 @@
 
 @layer base {
   :root {
-    /* Refined Production Palette: Vibrant Ocean Teal, Crisp White Canvas, Deep Contrast */
-    --color-primary-teal: #0082A6;       /* Primary Vibrant Ocean Teal */
+    /* Designer Curated Palette: Ocean Blue, Cloudy Sky, Deep Teal & Warm Linen */
+    --color-primary-teal: #0082A6;       /* AWSMCOLOR 1: Deep Peacock / Teal */
     --color-primary-hover: #006F8E;      /* Deep Teal Hover */
-    --color-ocean-blue: #2772A0;         /* Ocean Blue Secondary */
+    --color-ocean-blue: #2772A0;         /* Image 1: Ocean Blue */
+    --color-ocean-hover: #1F5E85;        /* Ocean Blue Hover */
     
-    --color-bg-canvas: #F8FAFC;          /* Clean, Breathable Modern Canvas */
-    --color-bg-card: #FFFFFF;            /* Pristine White Surface */
-    --color-surface-tint: #EBF5F8;       /* Subtle Soft Ice Tint */
-    --color-border-subtle: #E2E8F0;      /* Crisp Card & Divider Border */
-    --color-border-accent: #C4DEE3;      /* Delicate Accent Border */
+    --color-bg-canvas: #F7F5ED;          /* AWSMCOLOR 2: Warm Linen Off-White Canvas */
+    --color-bg-card: #FFFFFF;            /* Pure Crisp White Card Surface */
+    --color-surface-tint: #C4DEE3;       /* AWSMCOLOR 3: Soft Powder Ice Blue */
+    --color-cloudy-sky: #CCDDEA;         /* Image 1: Cloudy Sky Accent */
+    --color-border-subtle: #E2DEC8;      /* Delicate Linen Border */
+    --color-border-accent: #86B9C7;      /* AWSMCOLOR 4: Muted Steel Cyan */
 
-    --color-text-main: #0F172A;          /* Deep High-Contrast Slate Primary Text */
+    --color-text-main: #0B2D3A;          /* Deep Contrast Peacock Navy */
     --color-text-muted: #475569;         /* Neutral Readable Subtext */
     --color-text-subtle: #64748B;        /* Muted Metadata & Captions */
 
@@ -23,18 +25,18 @@
     --color-accent-red: #BE123C;
     --color-accent-green: #0F766E;
     --color-accent-amber: #B45309;
-    --color-accent-blue: #0284C7;
+    --color-accent-blue: #2772A0;
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
-    background-color: #F8FAFC;
+    background-color: #F7F5ED;
   }
 
   body {
-    background-color: #F8FAFC;
-    color: #0F172A;
+    background-color: #F7F5ED;
+    color: #0B2D3A;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -44,12 +46,12 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #F8FAFC;
+    background-color: #F7F5ED;
   }
 
   ::selection {
     background-color: #C4DEE3;
-    color: #0F172A;
+    color: #0B2D3A;
   }
 }
 

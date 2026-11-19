@@ -1,6 +1,5 @@
+import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
-import { Card } from '../components/ui/Card';
-import { Button } from '../components/ui/Button';
 import { ResearchWorkflowGraphic } from '../components/graphics/ResearchWorkflowGraphic';
 
 export interface HowItWorksPageProps {
@@ -17,7 +16,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
     {
       num: '01',
       title: 'Select Your Service & Submit Your Requirements',
-      desc: 'Browse our service catalogue or submit an inquiry detailing your university, department guidelines, manuscript length, and target deadlines.',
+      desc: 'Browse our service catalog or submit an inquiry detailing your university, department guidelines, manuscript length, and target deadlines.',
       bullets: [
         'Upload your draft synopsis, thesis chapters, or raw data securely',
         'Specify institutional formatting guidelines (e.g., DU, AMU, BHU, GLA)',
@@ -37,7 +36,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
     {
       num: '03',
       title: 'Collaborative Execution & Milestone Reviews',
-      desc: 'Your assigned subject specialist and senior editor commence work in structured passes with continuous client communication.',
+      desc: 'Your assigned subject specialist and senior editor commence work in structured passes with continuous scholar communication.',
       bullets: [
         'Tracked changes in MS Word showing every stylistic correction',
         'Direct project messaging thread with your assigned consultant',
@@ -57,82 +56,94 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({
   ];
 
   return (
-    <div className="space-y-16 pb-16 font-sans">
-      {/* Hero */}
-      <section className="bg-[#2772A0] text-white py-14 px-4 sm:px-8 border-b border-[#1E5C82]">
-        <div className="max-w-7xl mx-auto space-y-4 text-center">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E5C82] text-[#CCDDEA] text-xs font-semibold">
-            <span>Structured Research Protocol</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
-            How Our Academic Advisory Works
-          </h1>
-          <p className="text-xs sm:text-sm text-[#CCDDEA] max-w-2xl mx-auto leading-relaxed">
-            A transparent, ethical, step-by-step engagement model designed to give scholars absolute peace of mind and publication-grade results.
-          </p>
-        </div>
+    <div className="space-y-16 sm:space-y-24 pb-20 font-sans text-[#0B2D3A] select-none">
+      
+      {/* Editorial Hero Header */}
+      <section className="pt-8 sm:pt-14 px-4 sm:px-8 max-w-5xl mx-auto text-center space-y-4">
+        <span className="px-3.5 py-1 rounded-full bg-[#EBF5F8] text-[#0082A6] text-xs font-bold uppercase tracking-wider">
+          STRUCTURED RESEARCH PROTOCOL
+        </span>
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B2D3A] leading-[1.1]">
+          How Our Academic <br />
+          <span className="font-serif italic font-normal text-[#2772A0]">Advisory Works</span>
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          A transparent, ethical, step-by-step engagement model designed to give scholars absolute peace of mind and publication-grade results.
+        </p>
       </section>
 
       {/* Visual Pipeline Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <ResearchWorkflowGraphic />
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#CCDDEA] shadow-subtle">
+          <ResearchWorkflowGraphic />
+        </div>
       </section>
 
       {/* Steps Breakdown */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
-        <div className="space-y-6">
-          {steps.map(step => (
-            <Card key={step.num} padding="lg" className="bg-white border border-slate-200">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-                <div className="md:col-span-2 text-center md:text-left">
-                  <span className="font-serif font-black text-4xl sm:text-5xl text-[#0B2D3A]/20 block">
-                    {step.num}
-                  </span>
-                  <span className="text-[11px] font-bold text-[#0082A6] uppercase tracking-wider block mt-1">
-                    Stage {step.num}
-                  </span>
-                </div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        {steps.map(step => (
+          <div 
+            key={step.num} 
+            className="bg-white rounded-3xl p-6 sm:p-8 border border-[#CCDDEA] shadow-subtle hover:border-[#0082A6] transition-colors"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div className="md:col-span-2 text-center md:text-left">
+                <span className="font-serif font-black text-4xl sm:text-5xl text-[#0082A6]/30 block">
+                  {step.num}
+                </span>
+                <span className="text-[11px] font-bold text-[#0082A6] uppercase tracking-wider block mt-1">
+                  Stage {step.num}
+                </span>
+              </div>
 
-                <div className="md:col-span-10 space-y-3">
-                  <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0B2D3A]">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {step.desc}
-                  </p>
+              <div className="md:col-span-10 space-y-3">
+                <h3 className="font-extrabold text-xl text-[#0B2D3A]">
+                  {step.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {step.desc}
+                </p>
 
-                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
-                    {step.bullets.map((b, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                        <span>{b}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {step.bullets.map((b, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs text-slate-700 bg-[#F7F5ED] p-3 rounded-2xl border border-slate-200/80">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0082A6] shrink-0 mt-0.5" />
+                      <span className="leading-snug">{b}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </Card>
-          ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Bottom CTA Banner */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-8">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#CCDDEA] shadow-premium text-center space-y-5">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B2D3A]">
+            Ready to Begin Your Research Journey?
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+            Book an introductory 30-minute mentoring session or request a confidential milestone quotation for your thesis.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button
+              onClick={onOpenBooking}
+              className="px-6 py-3 rounded-full bg-[#0082A6] hover:bg-[#006F8E] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-subtle"
+            >
+              Book Advisory Session
+            </button>
+            <button
+              onClick={onOpenInquiry}
+              className="px-6 py-3 rounded-full bg-[#F7F5ED] hover:bg-[#EBF5F8] text-[#0B2D3A] text-xs font-bold uppercase tracking-wider transition-all border border-[#CCDDEA]"
+            >
+              Submit Manuscript Draft
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B2D3A]">
-          Ready to Begin Your Research Project?
-        </h3>
-        <p className="text-xs sm:text-sm text-slate-600">
-          Submit your requirements today or schedule a consultation with our academic panel.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Button variant="gold" size="md" onClick={onOpenInquiry} className="text-xs font-bold">
-            Start With a Free Inquiry
-          </Button>
-          <Button variant="secondary" size="md" onClick={onOpenBooking} className="text-xs">
-            Schedule Scope Call
-          </Button>
-        </div>
-      </section>
     </div>
   );
 };
