@@ -31,12 +31,12 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantClasses = {
-    primary: "bg-[#0082A6] text-white hover:bg-[#007191] focus:ring-[#0082A6] border border-[#007191] shadow-sm",
-    secondary: "bg-[#C4DEE3]/40 text-[#0B2D3A] hover:bg-[#C4DEE3]/80 focus:ring-[#0082A6] border border-[#86B9C7]/60",
-    gold: "bg-[#0B2D3A] text-[#F7F5ED] font-semibold hover:bg-[#134455] focus:ring-[#0082A6] border border-[#061D26] shadow-sm",
-    teal: "bg-[#0082A6] text-white font-semibold hover:bg-[#007191] focus:ring-[#0082A6] border border-[#007191] shadow-sm",
-    outline: "bg-transparent text-[#0B2D3A] border border-[#86B9C7] hover:bg-[#C4DEE3]/30 hover:border-[#0082A6] focus:ring-[#0082A6]",
-    ghost: "bg-transparent text-[#0B2D3A] hover:bg-[#C4DEE3]/25 focus:ring-[#86B9C7] border border-transparent",
+    primary: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
+    secondary: "bg-[#EBF5F8] text-[#0082A6] hover:bg-[#D9EEF3] focus:ring-[#0082A6] border border-[#C4DEE3] font-semibold",
+    gold: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
+    teal: "bg-[#0082A6] text-white hover:bg-[#006F8E] focus:ring-[#0082A6] border border-[#006F8E] shadow-xs font-semibold",
+    outline: "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:text-slate-900 focus:ring-slate-400",
+    ghost: "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-transparent",
     danger: "bg-[#BE123C] text-white hover:bg-[#9F1239] focus:ring-red-600 border border-[#9F1239]",
   };
 

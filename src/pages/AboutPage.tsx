@@ -55,7 +55,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </p>
 
             {/* Real WebP Campus & Center Photo */}
-            <div className="relative overflow-hidden rounded-2xl border border-[#D6E6EB]">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200">
               <img 
                 src="/images/university-campus.webp" 
                 alt="University research facilities and scholarly libraries in India" 
@@ -65,13 +65,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </div>
 
             <div className="grid grid-cols-2 gap-3 pt-1 text-xs">
-              <div className="p-3 rounded-2xl bg-white border border-[#D6E6EB] shadow-subtle space-y-1">
+              <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-subtle space-y-1">
                 <Building className="w-5 h-5 text-[#0082A6]" />
                 <div className="font-bold text-[#0B2D3A]">Civil Lines, Mathura</div>
                 <div className="text-[11px] text-[#3D6170]">In-person consulting facility</div>
               </div>
 
-              <div className="p-3 rounded-2xl bg-white border border-[#D6E6EB] shadow-subtle space-y-1">
+              <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-subtle space-y-1">
                 <GraduationCap className="w-5 h-5 text-[#0082A6]" />
                 <div className="font-bold text-[#0B2D3A]">15+ Subject Mentors</div>
                 <div className="text-[11px] text-[#3D6170]">PhDs & senior editors</div>
@@ -89,8 +89,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </div>
 
           {/* Institutional Commitments with Real Team Photo */}
-          <div className="bg-white rounded-3xl border border-[#D6E6EB] p-5 sm:p-6 shadow-subtle space-y-4">
-            <div className="overflow-hidden rounded-2xl border border-[#D6E6EB]">
+          <div className="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-subtle space-y-4">
+            <div className="overflow-hidden rounded-2xl border border-slate-200">
               <img 
                 src="/images/academic-team.webp" 
                 alt="AcademicPro advisory editorial board and peer reviewers" 
@@ -99,13 +99,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               />
             </div>
 
-            <h3 className="font-bold text-base text-[#0B2D3A] border-b border-[#D6E6EB]/60 pb-2 flex items-center gap-2">
+            <h3 className="font-bold text-base text-[#0B2D3A] border-b border-slate-200/60 pb-2 flex items-center gap-2">
               <Award className="w-5 h-5 text-[#0082A6]" />
               <span>Core Institutional Commitments</span>
             </h3>
 
             <div className="space-y-2.5 text-xs text-[#0B2D3A]">
-              <div className="p-3 rounded-xl bg-[#F7F5ED] border border-[#D6E6EB] flex items-start gap-2.5">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-[#0B2D3A] block">Strict Non-Ghostwriting Policy:</strong>
@@ -113,7 +113,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#F7F5ED] border border-[#D6E6EB] flex items-start gap-2.5">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-[#0B2D3A] block">Zero Fabrication Guarantee:</strong>
@@ -121,7 +121,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#F7F5ED] border border-[#D6E6EB] flex items-start gap-2.5">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-[#0B2D3A] block">Legitimate Peer-Review Navigation:</strong>

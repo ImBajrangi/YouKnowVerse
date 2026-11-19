@@ -69,7 +69,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               </p>
 
               {/* Target Audience */}
-              <div className="p-4 rounded-2xl bg-[#F7F5ED] border border-[#D6E6EB] space-y-2">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                 <span className="font-bold text-xs text-[#0B2D3A]">Who Benefits Most From This Service:</span>
                 <ul className="space-y-1 text-xs text-slate-600">
                   {service.ideal_for.map((aud, i) => (
@@ -108,7 +108,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 
               <div className="space-y-4">
                 {service.workflow_steps.map(wf => (
-                  <div key={wf.step} className="flex items-start gap-4 p-4 rounded-2xl border border-slate-100 bg-[#F7F5ED]">
+                  <div key={wf.step} className="flex items-start gap-4 p-4 rounded-2xl border border-slate-100 bg-slate-50">
                     <div className="w-8 h-8 rounded-full bg-[#0B2D3A] text-[#0082A6] font-bold text-xs flex items-center justify-center shrink-0">
                       0{wf.step}
                     </div>

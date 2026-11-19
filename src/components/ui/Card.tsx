@@ -31,11 +31,11 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const variantClasses = {
-    elevated: 'bg-white border border-[#D6E6EB] shadow-subtle',
-    flat: 'bg-[#C4DEE3]/25 border border-[#86B9C7]/40',
-    outline: 'bg-transparent border border-[#86B9C7]/50',
-    navy: 'bg-[#0B2D3A] text-[#F7F5ED] border border-[#134455] shadow-premium',
-    linen: 'bg-[#F7F5ED] border border-[#D6E6EB]',
+    elevated: 'bg-white border border-slate-200 shadow-xs',
+    flat: 'bg-slate-50 border border-slate-200',
+    outline: 'bg-transparent border border-slate-200',
+    navy: 'bg-[#0B2D3A] text-white border border-[#134455] shadow-sm',
+    linen: 'bg-slate-50 border border-slate-200',
   };
 
   return (

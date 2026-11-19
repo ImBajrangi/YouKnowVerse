@@ -12,20 +12,20 @@ export const UniversityNetworkGraphic: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#0B2D3A] text-white rounded-3xl border border-[#134455] p-6 sm:p-8 shadow-premium space-y-6 select-none">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+    <div className="w-full bg-white text-slate-800 rounded-3xl border border-slate-200 p-5 sm:p-7 shadow-xs space-y-5 select-none font-sans">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#86B9C7]">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0082A6]">
             Inter-Institutional Research Network
           </span>
-          <h3 className="font-serif font-bold text-lg sm:text-xl text-white">
+          <h3 className="font-bold text-lg sm:text-xl text-[#0F172A]">
             Trusted Across Premier Universities & Institutes
           </h3>
         </div>
 
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#134455] border border-[#86B9C7]/30 text-xs text-[#C4DEE3]">
-          <MapPin className="w-3.5 h-3.5 text-[#86B9C7]" />
-          <span>Hub: Mathura, Uttar Pradesh</span>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF5F8] border border-[#C4DEE3] text-xs font-semibold text-[#0082A6]">
+          <MapPin className="w-3.5 h-3.5" />
+          <span>Research Hub: Mathura, Uttar Pradesh</span>
         </div>
       </div>
 
@@ -34,16 +34,16 @@ export const UniversityNetworkGraphic: React.FC = () => {
         {universities.map(u => (
           <div
             key={u.code}
-            className="p-3.5 rounded-2xl bg-[#061D26]/80 border border-[#86B9C7]/20 text-center space-y-2 hover:border-[#86B9C7]/50 transition-colors"
+            className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-[#0082A6] transition-colors"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#0B2D3A] border border-[#86B9C7]/40 text-[#C4DEE3] font-serif font-bold text-sm flex items-center justify-center mx-auto shadow-inner">
+            <div className="w-10 h-10 rounded-xl bg-[#EBF5F8] border border-[#C4DEE3] text-[#0082A6] font-bold text-sm flex items-center justify-center mx-auto shadow-xs">
               {u.code}
             </div>
             <div>
-              <div className="font-serif font-bold text-xs text-white truncate">{u.name}</div>
-              <div className="text-[10px] text-[#C4DEE3]/70 font-mono mt-0.5">{u.scholars}</div>
+              <div className="font-bold text-xs text-[#0F172A] truncate">{u.name}</div>
+              <div className="text-[11px] text-slate-500 font-mono mt-0.5">{u.scholars}</div>
             </div>
-            <span className="inline-block text-[9px] font-semibold px-2 py-0.5 rounded bg-[#134455] text-[#C4DEE3]">
+            <span className="inline-block text-[10px] font-semibold px-2 py-0.5 rounded bg-white text-slate-600 border border-slate-200">
               {u.tag}
             </span>
           </div>

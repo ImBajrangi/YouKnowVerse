@@ -4,21 +4,20 @@
 
 @layer base {
   :root {
-    /* Designer Palette: AWSMCOLOR & Ocean/Cloudy */
-    --color-primary-teal: #0082A6;       /* Primary Vibrant Deep Teal */
-    --color-deep-teal: #0B2D3A;          /* Headings, Hero Backdrops, Highest Contrast */
-    --color-abyssal-teal: #061D26;       /* Deepest Charcoal Teal Base */
-    --color-ocean-blue: #2772A0;         /* Ocean Blue Harmonic Secondary */
+    /* Refined Production Palette: Vibrant Ocean Teal, Crisp White Canvas, Deep Contrast */
+    --color-primary-teal: #0082A6;       /* Primary Vibrant Ocean Teal */
+    --color-primary-hover: #006F8E;      /* Deep Teal Hover */
+    --color-ocean-blue: #2772A0;         /* Ocean Blue Secondary */
     
-    --color-bg-linen: #F7F5ED;           /* Warm Linen Alabaster Canvas */
-    --color-surface-ice: #C4DEE3;        /* Soft Powder Ice Blue */
-    --color-accent-cyan: #86B9C7;        /* Muted Steel Cyan */
-    --color-cloudy-sky: #CCDDEA;         /* Cloudy Sky Soft Tint */
+    --color-bg-canvas: #F8FAFC;          /* Clean, Breathable Modern Canvas */
+    --color-bg-card: #FFFFFF;            /* Pristine White Surface */
+    --color-surface-tint: #EBF5F8;       /* Subtle Soft Ice Tint */
+    --color-border-subtle: #E2E8F0;      /* Crisp Card & Divider Border */
+    --color-border-accent: #C4DEE3;      /* Delicate Accent Border */
 
-    --color-bg-card: #FFFFFF;            /* Pristine White Floating Cards */
-    --color-text-main: #0B2D3A;          /* Deep Peacock Navy Primary Text (AAA Contrast) */
-    --color-text-muted: #3D6170;         /* Muted Slate Cyan Subtext */
-    --color-border-subtle: #D6E6EB;      /* Subtle Ice Border */
+    --color-text-main: #0F172A;          /* Deep High-Contrast Slate Primary Text */
+    --color-text-muted: #475569;         /* Neutral Readable Subtext */
+    --color-text-subtle: #64748B;        /* Muted Metadata & Captions */
 
     /* Status Accents */
     --color-accent-red: #BE123C;
@@ -30,12 +29,12 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
-    background-color: #F7F5ED;
+    background-color: #F8FAFC;
   }
 
   body {
-    background-color: #F7F5ED;
-    color: #0B2D3A;
+    background-color: #F8FAFC;
+    color: #0F172A;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -45,12 +44,12 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #F7F5ED;
+    background-color: #F8FAFC;
   }
 
   ::selection {
     background-color: #C4DEE3;
-    color: #0B2D3A;
+    color: #0F172A;
   }
 }
 
@@ -84,10 +83,10 @@ a {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F5ED;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #86B9C7;
+  background: #CBD5E1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
